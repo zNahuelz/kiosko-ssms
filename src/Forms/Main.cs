@@ -14,6 +14,7 @@ namespace kiosko_ssms.Forms
     {
         private NewProduct newProductForm;
         private ProductList productListForm;
+        public ProductDetail productDetailForm;
 
         public Main()
         {
@@ -29,7 +30,7 @@ namespace kiosko_ssms.Forms
             }
         }
 
-        private void OpenForm<T>(ref T formInstance, FormClosedEventHandler formClosedHandler) where T : Form, new()
+        public void OpenForm<T>(ref T formInstance, FormClosedEventHandler formClosedHandler) where T : Form, new()
         {
             if (formInstance == null)
             {
@@ -46,7 +47,7 @@ namespace kiosko_ssms.Forms
             }
         }
 
-        private void CloseForm<T>(ref T formInstance, object sender, FormClosedEventArgs eventArgs) where T : Form
+        public void CloseForm<T>(ref T formInstance, object sender, FormClosedEventArgs eventArgs) where T : Form
         {
             formInstance = null;
         }

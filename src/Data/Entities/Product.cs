@@ -14,6 +14,7 @@ namespace kiosko_ssms.Data.Entities
         public string Barcode { get; set; }
         public decimal BuyPrice { get; set; }
         public decimal SellPrice { get; set; }
+        public decimal Profit { get; set; }
         public int Stock { get; set; }
         public int StockMin { get; set; }
         public bool IsVisible { get; set; }

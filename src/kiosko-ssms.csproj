@@ -185,12 +185,6 @@
     <Compile Include="Data\Migrations\RoleSeeder.cs" />
     <Compile Include="Data\Migrations\SupplierSeeder.cs" />
     <Compile Include="Data\Migrations\UserSeeder.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +197,12 @@
     <Compile Include="Forms\NewProduct.Designer.cs">
       <DependentUpon>NewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductDetail.Designer.cs">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,15 +211,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PresentationService.cs" />
     <Compile Include="Services\ProductService.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductDetail.resx">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
@@ -268,6 +271,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Setup1.bmp" />
+    <None Include="Resources\search_file_3.png" />
+    <None Include="Resources\outlook_express-4.png" />
+    <None Include="Resources\replace_directory.png" />
+    <None Include="Resources\directory_check-2.png" />
+    <None Include="Resources\overlay_refresh-0.png" />
+    <None Include="Resources\IE Refresh.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

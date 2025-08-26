@@ -1,4 +1,6 @@
 ﻿using kiosko_ssms.Data;
+using kiosko_ssms.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +18,34 @@ namespace kiosko_ssms.Services
             this.dbContext = dbContext;
         }
 
-        public List<Data.Entities.Product> GetAllProducts()
+        public List<Product> GetAllProducts(bool showDeleted)
         {
-            return dbContext.Products.Where(p => !p.IsDeleted).OrderBy(p => p.Name).ToList();
+            var products = dbContext.Products.Include(p => p.Presentation).Include(p => p.Supplier).Where(p => showDeleted ? p.IsDeleted : !p.IsDeleted).OrderBy(p => p.Stock).ToList();
+            return products;
+        }
+
+        public List<Product> GetProductsByName(string name)
+        {
+            var products = dbContext.Products.Include(p => p.Presentation).Include(p => p.Supplier).Where(p => p.Name.Contains(name.Trim().ToUpper()) && !p.IsDeleted).OrderBy(p => p.Name).ToList();
+            return products;
+        }
+
+        public List<Product> GetProductsByBarcode(string barcode)
+        {
+            var products = dbContext.Products.Include(p => p.Presentation).Include(p => p.Supplier).Where(p => p.Barcode == barcode.Trim() && !p.IsDeleted).ToList();
+            return products;
+        }
+
+        public List<Product> GetProductsBySupplier(int supplierId)
+        {
+            var products = dbContext.Products.Include(p => p.Presentation).Include(p => p.Supplier).Where(p => p.SupplierId == supplierId && !p.IsDeleted).OrderBy(p => p.Name).ToList();
+            return products;
+        }
+
+        public List<Product> GetProductsByPresentation(int presentationId)
+        {
+            var products = dbContext.Products.Include(p => p.Presentation).Include(p => p.Supplier).Where(p => p.PresentationId == presentationId && !p.IsDeleted).OrderBy(p => p.Name).ToList();
+            return products;
         }
     }
 }
