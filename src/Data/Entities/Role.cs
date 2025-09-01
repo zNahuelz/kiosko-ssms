@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace kiosko_ssms.Data.Entities
 {
@@ -15,6 +12,6 @@ namespace kiosko_ssms.Data.Entities
         public DateTime UpdatedAt { get; set; }
 
         //Relationships
-        public List<User> Users { get; set; } = new List<User>();   
+        public List<User> Users { get; set; } = new List<User>();
     }
 }

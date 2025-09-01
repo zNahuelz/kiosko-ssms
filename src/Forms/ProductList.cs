@@ -122,14 +122,13 @@ namespace kiosko_ssms.Forms
                 switch (mode)
                 {
                     case "BY_NAME":
-                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text);
-
+                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text.Trim().ToUpper());
                         break;
                     case "BY_BARCODE":
-                        products = new ProductService(DB_CONTEXT).GetProductsByBarcode(txtSearch.Text);
+                        products = new ProductService(DB_CONTEXT).GetProductsByBarcode(txtSearch.Text.Trim());
                         break;
                     case "BY_DESCRIPTION":
-                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text);
+                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text.Trim().ToUpper());
                         break;
                     case "BY_SUPPLIER":
                         if (cbSuppliers.SelectedItem is Supplier selectedSupplier)
@@ -235,6 +234,11 @@ namespace kiosko_ssms.Forms
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+                btnSearch.PerformClick();
+            }
+
+            if (txtSearch.Text.Length >= 3 && (cbSearchMode.SelectedIndex == 0 || cbSearchMode.SelectedIndex == 2))
+            {
                 btnSearch.PerformClick();
             }
         }
