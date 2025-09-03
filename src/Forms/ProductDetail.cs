@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data.Entities;
 using System;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
 {
@@ -33,6 +34,18 @@ namespace kiosko_ssms.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBarcode_DoubleClick(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBarcode.Text);
+            tssLabel.Text = "Código de barras copiado al portapapeles!";
+        }
+
+        private void txtId_DoubleClick(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtId.Text);
+            tssLabel.Text = "ID copiado al portapapeles!";
         }
     }
 }

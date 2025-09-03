@@ -1,6 +1,6 @@
 ﻿namespace kiosko_ssms.Forms
 {
-    partial class NewProduct
+    partial class EditProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProduct));
-            this.gbInfo = new Krypton.Toolkit.KryptonGroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
             this.txtProfit = new Krypton.Toolkit.KryptonTextBox();
             this.nudStockMin = new Krypton.Toolkit.KryptonNumericUpDown();
@@ -47,43 +46,43 @@
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.btnClear = new Krypton.Toolkit.KryptonButton();
-            this.btnSave = new Krypton.Toolkit.KryptonButton();
+            this.btnReset = new Krypton.Toolkit.KryptonButton();
+            this.btnUpdate = new Krypton.Toolkit.KryptonButton();
             this.cbPresentation = new Krypton.Toolkit.KryptonComboBox();
             this.cbSupplier = new Krypton.Toolkit.KryptonComboBox();
             this.btnRandomBarcode = new Krypton.Toolkit.KryptonButton();
             this.txtDescription = new Krypton.Toolkit.KryptonTextBox();
             this.txtName = new Krypton.Toolkit.KryptonTextBox();
             this.txtBarcode = new Krypton.Toolkit.KryptonTextBox();
-            this.statusStripMain = new Krypton.Toolkit.KryptonStatusStrip();
+            this.gbSearch = new Krypton.Toolkit.KryptonGroupBox();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
+            this.btnSearch = new Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel11 = new Krypton.Toolkit.KryptonLabel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gbInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbInfo.Panel)).BeginInit();
-            this.gbInfo.SuspendLayout();
+            this.chkIsDeleted = new System.Windows.Forms.CheckBox();
+            this.chkIsVisible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).BeginInit();
             this.gbMain.Panel.SuspendLayout();
             this.gbMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbPresentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbSearch.Panel)).BeginInit();
+            this.gbSearch.Panel.SuspendLayout();
+            this.gbSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // gbInfo
-            // 
-            this.gbInfo.Location = new System.Drawing.Point(12, 12);
-            this.gbInfo.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.gbInfo.Size = new System.Drawing.Size(695, 135);
-            this.gbInfo.TabIndex = 0;
-            this.gbInfo.Values.Heading = "INFORMACIÓN";
-            // 
             // gbMain
             // 
-            this.gbMain.Location = new System.Drawing.Point(12, 153);
+            this.gbMain.Location = new System.Drawing.Point(12, 143);
             this.gbMain.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007Silver;
             // 
             // gbMain.Panel
             // 
+            this.gbMain.Panel.Controls.Add(this.chkIsVisible);
+            this.gbMain.Panel.Controls.Add(this.chkIsDeleted);
             this.gbMain.Panel.Controls.Add(this.txtProfit);
             this.gbMain.Panel.Controls.Add(this.nudStockMin);
             this.gbMain.Panel.Controls.Add(this.nudStock);
@@ -99,8 +98,8 @@
             this.gbMain.Panel.Controls.Add(this.kryptonLabel3);
             this.gbMain.Panel.Controls.Add(this.kryptonLabel2);
             this.gbMain.Panel.Controls.Add(this.kryptonLabel1);
-            this.gbMain.Panel.Controls.Add(this.btnClear);
-            this.gbMain.Panel.Controls.Add(this.btnSave);
+            this.gbMain.Panel.Controls.Add(this.btnReset);
+            this.gbMain.Panel.Controls.Add(this.btnUpdate);
             this.gbMain.Panel.Controls.Add(this.cbPresentation);
             this.gbMain.Panel.Controls.Add(this.cbSupplier);
             this.gbMain.Panel.Controls.Add(this.btnRandomBarcode);
@@ -108,7 +107,7 @@
             this.gbMain.Panel.Controls.Add(this.txtName);
             this.gbMain.Panel.Controls.Add(this.txtBarcode);
             this.gbMain.Size = new System.Drawing.Size(695, 452);
-            this.gbMain.TabIndex = 1;
+            this.gbMain.TabIndex = 2;
             this.gbMain.Values.Heading = "INFORMACIÓN DEL PRODUCTO";
             // 
             // txtProfit
@@ -314,27 +313,27 @@
             this.kryptonLabel1.TabIndex = 13;
             this.kryptonLabel1.Values.Text = "CÓDIGO DE BARRAS";
             // 
-            // btnClear
+            // btnReset
             // 
-            this.btnClear.Location = new System.Drawing.Point(388, 211);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnClear.Size = new System.Drawing.Size(265, 43);
-            this.btnClear.TabIndex = 12;
-            this.btnClear.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnClear.Values.Text = "LIMPIAR";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnReset.Location = new System.Drawing.Point(388, 262);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnReset.Size = new System.Drawing.Size(265, 43);
+            this.btnReset.TabIndex = 12;
+            this.btnReset.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnReset.Values.Text = "REINICIAR";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnSave
+            // btnUpdate
             // 
-            this.btnSave.Location = new System.Drawing.Point(388, 135);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.PaletteMode = Krypton.Toolkit.PaletteMode.SparkleOrangeLightMode;
-            this.btnSave.Size = new System.Drawing.Size(265, 43);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnSave.Values.Text = "GUARDAR";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(388, 186);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.PaletteMode = Krypton.Toolkit.PaletteMode.SparkleOrangeLightMode;
+            this.btnUpdate.Size = new System.Drawing.Size(265, 43);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Values.Text = "ACTUALIZAR";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cbPresentation
             // 
@@ -389,38 +388,87 @@
             this.txtBarcode.Size = new System.Drawing.Size(194, 23);
             this.txtBarcode.TabIndex = 0;
             // 
-            // statusStripMain
+            // gbSearch
             // 
-            this.statusStripMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.statusStripMain.Location = new System.Drawing.Point(0, 616);
-            this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.ProgressBars = null;
-            this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStripMain.Size = new System.Drawing.Size(722, 22);
-            this.statusStripMain.TabIndex = 2;
-            this.statusStripMain.Text = "kryptonStatusStrip1";
+            this.gbSearch.Location = new System.Drawing.Point(12, 5);
+            this.gbSearch.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007Blue;
+            // 
+            // gbSearch.Panel
+            // 
+            this.gbSearch.Panel.Controls.Add(this.kryptonLabel11);
+            this.gbSearch.Panel.Controls.Add(this.btnSearch);
+            this.gbSearch.Panel.Controls.Add(this.txtKeyword);
+            this.gbSearch.Size = new System.Drawing.Size(695, 132);
+            this.gbSearch.TabIndex = 3;
+            this.gbSearch.Values.Heading = "BUSQUEDA DE PRODUCTO";
+            // 
+            // txtKeyword
+            // 
+            this.txtKeyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKeyword.ForeColor = System.Drawing.Color.Red;
+            this.txtKeyword.Location = new System.Drawing.Point(26, 35);
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(312, 38);
+            this.txtKeyword.TabIndex = 0;
+            this.txtKeyword.DoubleClick += new System.EventHandler(this.txtKeyword_DoubleClick);
+            this.txtKeyword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyword_KeyPress);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(388, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.PaletteMode = Krypton.Toolkit.PaletteMode.SparkleBlue;
+            this.btnSearch.Size = new System.Drawing.Size(265, 38);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSearch.Values.Text = "BUSCAR";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // kryptonLabel11
+            // 
+            this.kryptonLabel11.Location = new System.Drawing.Point(121, 9);
+            this.kryptonLabel11.Name = "kryptonLabel11";
+            this.kryptonLabel11.Size = new System.Drawing.Size(123, 20);
+            this.kryptonLabel11.TabIndex = 29;
+            this.kryptonLabel11.Values.Text = "CÓDIGO DE BARRAS";
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // NewProduct
+            // chkIsDeleted
+            // 
+            this.chkIsDeleted.AutoSize = true;
+            this.chkIsDeleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.chkIsDeleted.Location = new System.Drawing.Point(415, 138);
+            this.chkIsDeleted.Name = "chkIsDeleted";
+            this.chkIsDeleted.Size = new System.Drawing.Size(85, 17);
+            this.chkIsDeleted.TabIndex = 31;
+            this.chkIsDeleted.Text = "ELIMINADO";
+            this.chkIsDeleted.UseVisualStyleBackColor = false;
+            // 
+            // chkIsVisible
+            // 
+            this.chkIsVisible.AutoSize = true;
+            this.chkIsVisible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.chkIsVisible.Location = new System.Drawing.Point(553, 138);
+            this.chkIsVisible.Name = "chkIsVisible";
+            this.chkIsVisible.Size = new System.Drawing.Size(66, 17);
+            this.chkIsVisible.TabIndex = 32;
+            this.chkIsVisible.Text = "VISIBLE";
+            this.chkIsVisible.UseVisualStyleBackColor = false;
+            // 
+            // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 638);
-            this.Controls.Add(this.statusStripMain);
+            this.ClientSize = new System.Drawing.Size(724, 610);
+            this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.gbMain);
-            this.Controls.Add(this.gbInfo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "NewProduct";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "REGISTRO DE PRODUCTO";
-            this.Load += new System.EventHandler(this.NewProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gbInfo.Panel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbInfo)).EndInit();
-            this.gbInfo.ResumeLayout(false);
+            this.Name = "EditProduct";
+            this.Text = "GESTIÓN DE PRODUCTO";
+            this.Load += new System.EventHandler(this.EditProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).EndInit();
             this.gbMain.Panel.ResumeLayout(false);
             this.gbMain.Panel.PerformLayout();
@@ -428,40 +476,48 @@
             this.gbMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbPresentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbSearch.Panel)).EndInit();
+            this.gbSearch.Panel.ResumeLayout(false);
+            this.gbSearch.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gbSearch)).EndInit();
+            this.gbSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Krypton.Toolkit.KryptonGroupBox gbInfo;
         private Krypton.Toolkit.KryptonGroupBox gbMain;
-        private Krypton.Toolkit.KryptonTextBox txtBarcode;
-        private Krypton.Toolkit.KryptonTextBox txtDescription;
-        private Krypton.Toolkit.KryptonTextBox txtName;
-        private Krypton.Toolkit.KryptonButton btnRandomBarcode;
-        private Krypton.Toolkit.KryptonStatusStrip statusStripMain;
-        private Krypton.Toolkit.KryptonComboBox cbPresentation;
-        private Krypton.Toolkit.KryptonComboBox cbSupplier;
-        private Krypton.Toolkit.KryptonButton btnSave;
-        private Krypton.Toolkit.KryptonButton btnClear;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel5;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonTextBox txtProfit;
+        private Krypton.Toolkit.KryptonNumericUpDown nudStockMin;
+        private Krypton.Toolkit.KryptonNumericUpDown nudStock;
+        private Krypton.Toolkit.KryptonNumericUpDown nudSellPrice;
+        private Krypton.Toolkit.KryptonNumericUpDown nudBuyPrice;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel10;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel9;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
         private Krypton.Toolkit.KryptonLabel kryptonLabel6;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel10;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel9;
-        private Krypton.Toolkit.KryptonNumericUpDown nudSellPrice;
-        private Krypton.Toolkit.KryptonNumericUpDown nudBuyPrice;
-        private Krypton.Toolkit.KryptonNumericUpDown nudStockMin;
-        private Krypton.Toolkit.KryptonNumericUpDown nudStock;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonButton btnReset;
+        private Krypton.Toolkit.KryptonButton btnUpdate;
+        private Krypton.Toolkit.KryptonComboBox cbPresentation;
+        private Krypton.Toolkit.KryptonComboBox cbSupplier;
+        private Krypton.Toolkit.KryptonButton btnRandomBarcode;
+        private Krypton.Toolkit.KryptonTextBox txtDescription;
+        private Krypton.Toolkit.KryptonTextBox txtName;
+        private Krypton.Toolkit.KryptonTextBox txtBarcode;
+        private Krypton.Toolkit.KryptonGroupBox gbSearch;
+        private System.Windows.Forms.TextBox txtKeyword;
+        private Krypton.Toolkit.KryptonButton btnSearch;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel11;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private Krypton.Toolkit.KryptonTextBox txtProfit;
+        private System.Windows.Forms.CheckBox chkIsDeleted;
+        private System.Windows.Forms.CheckBox chkIsVisible;
     }
 }

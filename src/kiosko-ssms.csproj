@@ -185,6 +185,12 @@
     <Compile Include="Data\Migrations\RoleSeeder.cs" />
     <Compile Include="Data\Migrations\SupplierSeeder.cs" />
     <Compile Include="Data\Migrations\UserSeeder.cs" />
+    <Compile Include="Forms\EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\SupplierService.cs" />
     <Compile Include="Utils\Constants.cs" />
+    <EmbeddedResource Include="Forms\EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +286,16 @@
     <None Include="Resources\directory_check-2.png" />
     <None Include="Resources\overlay_refresh-0.png" />
     <None Include="Resources\IE Refresh.png" />
+    <None Include="Resources\Attributes.png" />
+    <None Include="Resources\Fax Received Succesfully.png" />
+    <None Include="Resources\Pop up blocked.png" />
+    <None Include="Resources\Directory Services.png" />
+    <None Include="Resources\Address Book.png" />
+    <None Include="Resources\Address BookXP.png" />
+    <None Include="Resources\Fax Sender Information.png" />
+    <None Include="Resources\Windows Journal.png" />
+    <None Include="Resources\usd.png" />
+    <None Include="Resources\chart.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

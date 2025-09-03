@@ -93,6 +93,36 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Address_BookXP {
+            get {
+                object obj = ResourceManager.GetObject("Address BookXP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Attributes {
+            get {
+                object obj = ResourceManager.GetObject("Attributes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chart {
+            get {
+                object obj = ResourceManager.GetObject("chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cylinder_database {
             get {
                 object obj = ResourceManager.GetObject("cylinder_database", resourceCulture);
@@ -106,6 +136,36 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap directory_check_2 {
             get {
                 object obj = ResourceManager.GetObject("directory_check-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Directory_Services {
+            get {
+                object obj = ResourceManager.GetObject("Directory Services", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fax_Received_Succesfully {
+            get {
+                object obj = ResourceManager.GetObject("Fax Received Succesfully", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fax_Sender_Information {
+            get {
+                object obj = ResourceManager.GetObject("Fax Sender Information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +213,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pop_up_blocked {
+            get {
+                object obj = ResourceManager.GetObject("Pop up blocked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap replace_directory {
             get {
                 object obj = ResourceManager.GetObject("replace_directory", resourceCulture);
@@ -186,6 +256,26 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap Setup1 {
             get {
                 object obj = ResourceManager.GetObject("Setup1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usd {
+            get {
+                object obj = ResourceManager.GetObject("usd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Windows_Journal {
+            get {
+                object obj = ResourceManager.GetObject("Windows Journal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

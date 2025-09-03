@@ -9,6 +9,7 @@ namespace kiosko_ssms.Services
 {
     public class ProductService
     {
+        //TODO: Use a new dbcontext for each operation.
         private readonly AppDbContext dbContext;
 
         public ProductService(AppDbContext dbContext)
@@ -67,6 +68,32 @@ namespace kiosko_ssms.Services
             dbContext.Products.Add(product);
             dbContext.SaveChanges();
             return product;
+        }
+
+        public Product UpdateProduct(Product product)
+        {
+            var existing = dbContext.Products.Find(product.Id);
+            if (existing == null)
+            {
+                throw new InvalidOperationException("Producto no encontrado.");
+            }
+
+            existing.Name = product.Name?.Trim().ToUpper();
+            existing.Description = product.Description?.Trim().ToUpper();
+            existing.Barcode = product.Barcode?.Trim().ToUpper();
+            existing.BuyPrice = product.BuyPrice;
+            existing.SellPrice = product.SellPrice;
+            existing.Profit = (product.SellPrice - product.BuyPrice) <= 0 ? 0 : product.SellPrice - product.BuyPrice;
+            existing.Stock = product.Stock;
+            existing.StockMin = product.StockMin;
+            existing.SupplierId = product.SupplierId;
+            existing.PresentationId = product.PresentationId;
+            existing.IsDeleted = product.IsDeleted;
+            existing.IsVisible = product.IsVisible;
+            existing.UpdatedAt = DateTime.UtcNow;
+
+            dbContext.SaveChanges();
+            return existing;
         }
     }
 }

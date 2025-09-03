@@ -54,6 +54,9 @@
             this.kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel11 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel12 = new Krypton.Toolkit.KryptonLabel();
+            this.ssMain = new System.Windows.Forms.StatusStrip();
+            this.tssLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ssMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
@@ -75,6 +78,7 @@
             this.txtId.Size = new System.Drawing.Size(224, 23);
             this.txtId.TabIndex = 2;
             this.txtId.Text = "kryptonTextBox1";
+            this.txtId.DoubleClick += new System.EventHandler(this.txtId_DoubleClick);
             // 
             // txtName
             // 
@@ -104,6 +108,7 @@
             this.txtBarcode.Size = new System.Drawing.Size(159, 23);
             this.txtBarcode.TabIndex = 5;
             this.txtBarcode.Text = "kryptonTextBox4";
+            this.txtBarcode.DoubleClick += new System.EventHandler(this.txtBarcode_DoubleClick);
             // 
             // txtBuyPrice
             // 
@@ -273,12 +278,31 @@
             this.kryptonLabel12.TabIndex = 25;
             this.kryptonLabel12.Values.Text = "PRESENTACIÓN";
             // 
+            // ssMain
+            // 
+            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssLabel});
+            this.ssMain.Location = new System.Drawing.Point(0, 566);
+            this.ssMain.Name = "ssMain";
+            this.ssMain.Size = new System.Drawing.Size(283, 22);
+            this.ssMain.TabIndex = 26;
+            this.ssMain.Text = "statusStrip1";
+            // 
+            // tssLabel
+            // 
+            this.tssLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssLabel.ForeColor = System.Drawing.Color.Teal;
+            this.tssLabel.Name = "tssLabel";
+            this.tssLabel.Size = new System.Drawing.Size(268, 17);
+            this.tssLabel.Text = "Doble click para copiar ID/código de barras";
+            // 
             // ProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 566);
+            this.ClientSize = new System.Drawing.Size(283, 588);
             this.CloseBox = false;
+            this.Controls.Add(this.ssMain);
             this.Controls.Add(this.kryptonLabel12);
             this.Controls.Add(this.kryptonLabel11);
             this.Controls.Add(this.kryptonLabel10);
@@ -310,6 +334,8 @@
             this.MinimizeBox = false;
             this.Name = "ProductDetail";
             this.Text = "DETALLE DE PRODUCTO";
+            this.ssMain.ResumeLayout(false);
+            this.ssMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +367,7 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel10;
         private Krypton.Toolkit.KryptonLabel kryptonLabel11;
         private Krypton.Toolkit.KryptonLabel kryptonLabel12;
+        private System.Windows.Forms.StatusStrip ssMain;
+        private System.Windows.Forms.ToolStripStatusLabel tssLabel;
     }
 }

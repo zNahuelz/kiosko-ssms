@@ -8,6 +8,7 @@ namespace kiosko_ssms.Forms
         private NewProduct newProductForm;
         private ProductList productListForm;
         public ProductDetail productDetailForm;
+        private EditProduct editProductForm;
 
         public Main()
         {
@@ -40,6 +41,18 @@ namespace kiosko_ssms.Forms
             }
         }
 
+        private void KillChildForms()
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+            newProductForm = null;
+            productListForm = null;
+            productDetailForm = null;
+            editProductForm = null;
+        }
+
         public void CloseForm<T>(ref T formInstance, object sender, FormClosedEventArgs eventArgs) where T : Form
         {
             formInstance = null;
@@ -53,6 +66,16 @@ namespace kiosko_ssms.Forms
         private void btnProductsList_Click(object sender, EventArgs e)
         {
             OpenForm(ref productListForm, (s, ev) => CloseForm(ref productListForm, s, ev));
+        }
+
+        private void btnEditProduct_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref editProductForm, (s, ev) => CloseForm(ref editProductForm, s, ev));
+        }
+
+        private void btnKillForms_Click(object sender, EventArgs e)
+        {
+            KillChildForms();
         }
     }
 }
