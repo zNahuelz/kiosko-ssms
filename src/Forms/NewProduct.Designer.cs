@@ -392,11 +392,11 @@
             // statusStripMain
             // 
             this.statusStripMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.statusStripMain.Location = new System.Drawing.Point(0, 616);
+            this.statusStripMain.Location = new System.Drawing.Point(0, 588);
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.ProgressBars = null;
             this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStripMain.Size = new System.Drawing.Size(722, 22);
+            this.statusStripMain.Size = new System.Drawing.Size(750, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "kryptonStatusStrip1";
             // 
@@ -408,12 +408,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 638);
+            this.ClientSize = new System.Drawing.Size(750, 610);
             this.Controls.Add(this.statusStripMain);
             this.Controls.Add(this.gbMain);
             this.Controls.Add(this.gbInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRO DE PRODUCTO";

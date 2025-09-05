@@ -16,7 +16,25 @@ namespace kiosko_ssms.Services
 
         public List<Supplier> GetAllSuppliers(bool showDeleted)
         {
-            var suppliers = dbContext.Suppliers.Where(s => showDeleted ? s.IsDeleted : !s.IsDeleted).OrderBy(s => s.Name).ToList();
+            var suppliers = dbContext.Suppliers.Where(s => showDeleted || !s.IsDeleted).OrderBy(s => s.Name).ToList();
+            return suppliers;
+        }
+
+        public List<Supplier> GetSuppliersByName(string name, bool showDeleted)
+        {
+            var suppliers = dbContext.Suppliers
+                .Where(s => s.Name.Contains(name) && (showDeleted || !s.IsDeleted))
+                .OrderBy(s => s.Name)
+                .ToList();
+            return suppliers;
+        }
+
+        public List<Supplier> GetSuppliersByRUC(string ruc, bool showDeleted)
+        {
+            var suppliers = dbContext.Suppliers
+                .Where(s => s.Ruc.Contains(ruc) && (showDeleted || !s.IsDeleted))
+                .OrderBy(s => s.Name)
+                .ToList();
             return suppliers;
         }
     }

@@ -65,7 +65,7 @@
             this.mainRibbon.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.mainTab});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1285, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1321, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -156,12 +156,14 @@
             this.btnSuppliersList.ImageLarge = global::kiosko_ssms.Properties.Resources.address_book;
             this.btnSuppliersList.ImageSmall = global::kiosko_ssms.Properties.Resources.address_book;
             this.btnSuppliersList.TextLine1 = "LISTADO";
+            this.btnSuppliersList.Click += new System.EventHandler(this.btnSuppliersList_Click);
             // 
             // btnNewSupplier
             // 
             this.btnNewSupplier.ImageLarge = global::kiosko_ssms.Properties.Resources.address_book_pad_users;
             this.btnNewSupplier.ImageSmall = global::kiosko_ssms.Properties.Resources.address_book_pad_users;
             this.btnNewSupplier.TextLine1 = "NUEVO";
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
             // 
             // btnEditSupplier
             // 
@@ -232,7 +234,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1285, 433);
+            this.ClientSize = new System.Drawing.Size(1321, 409);
             this.CloseBox = false;
             this.Controls.Add(this.mainRibbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

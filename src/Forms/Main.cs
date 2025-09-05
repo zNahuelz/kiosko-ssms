@@ -9,6 +9,9 @@ namespace kiosko_ssms.Forms
         private ProductList productListForm;
         public ProductDetail productDetailForm;
         private EditProduct editProductForm;
+        private SupplierList supplierListForm;
+        public SupplierDetail supplierDetailForm;
+        private NewSupplier newSupplierForm;
 
         public Main()
         {
@@ -73,9 +76,21 @@ namespace kiosko_ssms.Forms
             OpenForm(ref editProductForm, (s, ev) => CloseForm(ref editProductForm, s, ev));
         }
 
+        private void btnSuppliersList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref supplierListForm, (s, ev) => CloseForm(ref supplierListForm, s, ev));
+        }
+
+        private void btnNewSupplier_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newSupplierForm, (s, ev) => CloseForm(ref newSupplierForm, s, ev));
+        }
+
         private void btnKillForms_Click(object sender, EventArgs e)
         {
             KillChildForms();
         }
+
+
     }
 }
