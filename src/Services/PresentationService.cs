@@ -14,7 +14,7 @@ namespace kiosko_ssms.Services
             this.dbContext = dbContext;
         }
 
-        public List<Presentation> getAllPresentations(bool showDeleted)
+        public List<Presentation> GetAllPresentations(bool showDeleted)
         {
             var presentations = dbContext.Presentations.Where(p => showDeleted ? p.IsDeleted : !p.IsDeleted).OrderBy(p => p.Name).ToList();
             return presentations;

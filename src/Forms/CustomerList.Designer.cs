@@ -1,6 +1,6 @@
 ﻿namespace kiosko_ssms.Forms
 {
-    partial class ProductList
+    partial class CustomerList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,55 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductList));
-            this.dgvProducts = new Krypton.Toolkit.KryptonDataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerList));
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnReset = new Krypton.Toolkit.KryptonButton();
             this.btnSearch = new Krypton.Toolkit.KryptonButton();
-            this.cbPresentations = new Krypton.Toolkit.KryptonComboBox();
-            this.cbSuppliers = new Krypton.Toolkit.KryptonComboBox();
+            this.cbVisibility = new Krypton.Toolkit.KryptonComboBox();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.cbSearchMode = new Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvCustomers = new Krypton.Toolkit.KryptonDataGridView();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.tssMainLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).BeginInit();
             this.gbMain.Panel.SuspendLayout();
             this.gbMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPresentations)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSuppliers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbVisibility)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSearchMode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.ssMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvProducts
-            // 
-            this.dgvProducts.AllowUserToAddRows = false;
-            this.dgvProducts.AllowUserToDeleteRows = false;
-            this.dgvProducts.AllowUserToOrderColumns = true;
-            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
-            this.dgvProducts.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.dgvProducts.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvProducts.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvProducts.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvProducts.Location = new System.Drawing.Point(12, 12);
-            this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.Size = new System.Drawing.Size(807, 620);
-            this.dgvProducts.TabIndex = 0;
-            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
-            this.dgvProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellDoubleClick);
-            this.dgvProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProducts_CellFormatting);
             // 
             // gbMain
             // 
             this.gbMain.CaptionStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.gbMain.Location = new System.Drawing.Point(825, 12);
+            this.gbMain.Location = new System.Drawing.Point(829, 14);
             this.gbMain.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010BlueLightMode;
             // 
             // gbMain.Panel
@@ -85,13 +62,12 @@
             this.gbMain.Panel.Controls.Add(this.label2);
             this.gbMain.Panel.Controls.Add(this.btnReset);
             this.gbMain.Panel.Controls.Add(this.btnSearch);
-            this.gbMain.Panel.Controls.Add(this.cbPresentations);
-            this.gbMain.Panel.Controls.Add(this.cbSuppliers);
+            this.gbMain.Panel.Controls.Add(this.cbVisibility);
             this.gbMain.Panel.Controls.Add(this.txtSearch);
             this.gbMain.Panel.Controls.Add(this.cbSearchMode);
             this.gbMain.Panel.Controls.Add(this.label1);
             this.gbMain.Size = new System.Drawing.Size(229, 620);
-            this.gbMain.TabIndex = 1;
+            this.gbMain.TabIndex = 3;
             this.gbMain.Values.Heading = "HERRAMIENTAS";
             // 
             // label2
@@ -130,27 +106,17 @@
             this.btnSearch.Values.Text = "BUSCAR";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cbPresentations
+            // cbVisibility
             // 
-            this.cbPresentations.AccessibleName = "cbSearchType";
-            this.cbPresentations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPresentations.DropDownWidth = 201;
-            this.cbPresentations.Location = new System.Drawing.Point(12, 107);
-            this.cbPresentations.Name = "cbPresentations";
-            this.cbPresentations.Size = new System.Drawing.Size(201, 22);
-            this.cbPresentations.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbPresentations.TabIndex = 4;
-            // 
-            // cbSuppliers
-            // 
-            this.cbSuppliers.AccessibleName = "cbSearchType";
-            this.cbSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSuppliers.DropDownWidth = 201;
-            this.cbSuppliers.Location = new System.Drawing.Point(12, 76);
-            this.cbSuppliers.Name = "cbSuppliers";
-            this.cbSuppliers.Size = new System.Drawing.Size(201, 22);
-            this.cbSuppliers.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbSuppliers.TabIndex = 3;
+            this.cbVisibility.AccessibleName = "cbVisibility";
+            this.cbVisibility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVisibility.DropDownWidth = 201;
+            this.cbVisibility.Location = new System.Drawing.Point(12, 107);
+            this.cbVisibility.Name = "cbVisibility";
+            this.cbVisibility.Size = new System.Drawing.Size(201, 22);
+            this.cbVisibility.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbVisibility.TabIndex = 4;
+            this.cbVisibility.SelectedIndexChanged += new System.EventHandler(this.cbVisibility_SelectedIndexChanged);
             // 
             // txtSearch
             // 
@@ -170,7 +136,6 @@
             this.cbSearchMode.Size = new System.Drawing.Size(201, 22);
             this.cbSearchMode.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cbSearchMode.TabIndex = 1;
-            this.cbSearchMode.SelectedIndexChanged += new System.EventHandler(this.cbSearchMode_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -184,14 +149,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "FILTRADO";
             // 
+            // dgvCustomers
+            // 
+            this.dgvCustomers.AllowUserToAddRows = false;
+            this.dgvCustomers.AllowUserToDeleteRows = false;
+            this.dgvCustomers.AllowUserToOrderColumns = true;
+            this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.dgvCustomers.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.dgvCustomers.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvCustomers.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvCustomers.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvCustomers.Location = new System.Drawing.Point(16, 14);
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.ReadOnly = true;
+            this.dgvCustomers.Size = new System.Drawing.Size(807, 620);
+            this.dgvCustomers.TabIndex = 2;
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            // 
             // ssMain
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssMainLabel});
-            this.ssMain.Location = new System.Drawing.Point(0, 639);
+            this.ssMain.Location = new System.Drawing.Point(0, 628);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(1074, 22);
-            this.ssMain.TabIndex = 2;
+            this.ssMain.Size = new System.Drawing.Size(1088, 22);
+            this.ssMain.TabIndex = 4;
             this.ssMain.Text = "statusStrip1";
             // 
             // tssMainLabel
@@ -199,34 +183,32 @@
             this.tssMainLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tssMainLabel.ForeColor = System.Drawing.Color.Teal;
             this.tssMainLabel.Name = "tssMainLabel";
-            this.tssMainLabel.Size = new System.Drawing.Size(400, 17);
-            this.tssMainLabel.Text = "TIP: DOBLE CLICK EN PRODUCTO PARA VER DETALLE DEL MISMO.";
+            this.tssMainLabel.Size = new System.Drawing.Size(381, 17);
+            this.tssMainLabel.Text = "TIP: DOBLE CLICK EN CLIENTE PARA VER DETALLE DEL MISMO.";
             // 
-            // ProductList
+            // CustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 661);
+            this.ClientSize = new System.Drawing.Size(1088, 650);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.gbMain);
-            this.Controls.Add(this.dgvProducts);
+            this.Controls.Add(this.dgvCustomers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ProductList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LISTADO DE PRODUCTOS";
-            this.Load += new System.EventHandler(this.ProductList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            this.Name = "CustomerList";
+            this.Text = "LISTADO DE CLIENTES";
+            this.Load += new System.EventHandler(this.CustomerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).EndInit();
             this.gbMain.Panel.ResumeLayout(false);
             this.gbMain.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).EndInit();
             this.gbMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbPresentations)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSuppliers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbVisibility)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSearchMode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
             this.ResumeLayout(false);
@@ -236,16 +218,15 @@
 
         #endregion
 
-        private Krypton.Toolkit.KryptonDataGridView dgvProducts;
         private Krypton.Toolkit.KryptonGroupBox gbMain;
-        private System.Windows.Forms.Label label1;
-        private Krypton.Toolkit.KryptonComboBox cbSearchMode;
-        private Krypton.Toolkit.KryptonTextBox txtSearch;
-        private Krypton.Toolkit.KryptonButton btnSearch;
-        private Krypton.Toolkit.KryptonComboBox cbPresentations;
-        private Krypton.Toolkit.KryptonComboBox cbSuppliers;
-        private Krypton.Toolkit.KryptonButton btnReset;
         private System.Windows.Forms.Label label2;
+        private Krypton.Toolkit.KryptonButton btnReset;
+        private Krypton.Toolkit.KryptonButton btnSearch;
+        private Krypton.Toolkit.KryptonComboBox cbVisibility;
+        private Krypton.Toolkit.KryptonTextBox txtSearch;
+        private Krypton.Toolkit.KryptonComboBox cbSearchMode;
+        private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonDataGridView dgvCustomers;
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.ToolStripStatusLabel tssMainLabel;
     }

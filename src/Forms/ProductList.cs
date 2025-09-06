@@ -15,7 +15,6 @@ namespace kiosko_ssms.Forms
             InitializeComponent();
         }
 
-        private readonly AppDbContext DB_CONTEXT = new Data.AppDbContext();
         private List<Product> products = new List<Product>();
 
         private void ProductList_Load(object sender, EventArgs e)
@@ -89,10 +88,12 @@ namespace kiosko_ssms.Forms
         {
             try
             {
-                SupplierService _supplierService = new SupplierService(DB_CONTEXT);
-                cbSuppliers.DataSource = _supplierService.GetAllSuppliers(false);
-                cbSuppliers.DisplayMember = "Name";
-
+                using (var context = new AppDbContext())
+                {
+                    SupplierService _supplierService = new SupplierService(context);
+                    cbSuppliers.DataSource = _supplierService.GetAllSuppliers(false);
+                    cbSuppliers.DisplayMember = "Name";
+                }
             }
             catch
             {
@@ -105,8 +106,11 @@ namespace kiosko_ssms.Forms
         {
             try
             {
-                PresentationService _presentationService = new PresentationService(DB_CONTEXT);
-                cbPresentations.DataSource = _presentationService.getAllPresentations(false);
+                using (var context = new AppDbContext())
+                {
+                    PresentationService _presentationService = new PresentationService(context);
+                    cbPresentations.DataSource = _presentationService.GetAllPresentations(false);
+                }
             }
             catch
             {
@@ -122,28 +126,46 @@ namespace kiosko_ssms.Forms
                 switch (mode)
                 {
                     case "BY_NAME":
-                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text.Trim().ToUpper());
+                        using (var context = new AppDbContext())
+                        {
+                            products = new ProductService(context).GetProductsByName(txtSearch.Text.Trim().ToUpper());
+                        }
                         break;
                     case "BY_BARCODE":
-                        products = new ProductService(DB_CONTEXT).GetProductsByBarcode(txtSearch.Text.Trim());
+                        using (var context = new AppDbContext())
+                        {
+                            products = new ProductService(context).GetProductsByBarcode(txtSearch.Text.Trim());
+                        }
                         break;
                     case "BY_DESCRIPTION":
-                        products = new ProductService(DB_CONTEXT).GetProductsByName(txtSearch.Text.Trim().ToUpper());
+                        using (var context = new AppDbContext())
+                        {
+                            products = new ProductService(context).GetProductsByName(txtSearch.Text.Trim().ToUpper());
+                        }
                         break;
                     case "BY_SUPPLIER":
-                        if (cbSuppliers.SelectedItem is Supplier selectedSupplier)
+                        using (var context = new AppDbContext())
                         {
-                            products = new ProductService(DB_CONTEXT).GetProductsBySupplier(selectedSupplier.Id);
+                            if (cbSuppliers.SelectedItem is Supplier selectedSupplier)
+                            {
+                                products = new ProductService(context).GetProductsBySupplier(selectedSupplier.Id);
+                            }
                         }
                         break;
                     case "BY_PRESENTATION":
-                        if (cbPresentations.SelectedItem is Presentation selectedPresentation)
+                        using (var context = new AppDbContext())
                         {
-                            products = new ProductService(DB_CONTEXT).GetProductsByPresentation(selectedPresentation.Id);
+                            if (cbPresentations.SelectedItem is Presentation selectedPresentation)
+                            {
+                                products = new ProductService(context).GetProductsByPresentation(selectedPresentation.Id);
+                            }
                         }
                         break;
                     default:
-                        products = new ProductService(DB_CONTEXT).GetAllProducts(false);
+                        using (var context = new AppDbContext())
+                        {
+                            products = new ProductService(context).GetAllProducts(false);
+                        }
                         break;
                 }
                 dgvProducts.DataSource = products;
@@ -237,7 +259,7 @@ namespace kiosko_ssms.Forms
                 btnSearch.PerformClick();
             }
 
-            if (txtSearch.Text.Length >= 3 && (cbSearchMode.SelectedIndex == 0 || cbSearchMode.SelectedIndex == 2))
+            if (txtSearch.Text?.Trim().Length >= 3 && (cbSearchMode.SelectedIndex == 0 || cbSearchMode.SelectedIndex == 2))
             {
                 btnSearch.PerformClick();
             }

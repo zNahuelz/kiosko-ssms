@@ -19,8 +19,8 @@ namespace kiosko_ssms.Forms
             _product = product;
             txtId.Text = _product.Id.ToString();
             txtBarcode.Text = _product.Barcode;
-            txtName.Text = _product.Name.ToUpper();
-            txtDescription.Text = _product.Description.ToUpper();
+            txtName.Text = _product.Name?.ToUpper();
+            txtDescription.Text = _product.Description?.ToUpper();
             txtBuyPrice.Text = _product.BuyPrice.ToString("c", cultureInfo);
             txtSellPrice.Text = _product.SellPrice.ToString("c", cultureInfo);
             txtIsVisible.Text = _product.IsVisible ? "VISIBLE" : "NO VISIBLE";

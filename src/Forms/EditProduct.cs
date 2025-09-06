@@ -56,7 +56,7 @@ namespace kiosko_ssms.Forms
             try
             {
                 PresentationService _presentationService = new PresentationService(DB_CONTEXT);
-                cbPresentation.DataSource = _presentationService.getAllPresentations(false);
+                cbPresentation.DataSource = _presentationService.GetAllPresentations(false);
             }
             catch
             {
@@ -236,7 +236,8 @@ namespace kiosko_ssms.Forms
             HandleInfoFields(false);
             HandleSearchFields(true);
             selectedProductId = 0;
-            txtKeyword.Text = "";
+            txtKeyword.Clear();
+            txtKeyword.Focus();
         }
 
         private string GenerateRandomBarcode()
@@ -281,9 +282,9 @@ namespace kiosko_ssms.Forms
                 Product product = new Product
                 {
                     Id = selectedProductId,
-                    Barcode = txtBarcode.Text.Trim().ToUpper(),
-                    Name = txtName.Text.Trim().ToUpper(),
-                    Description = txtDescription.Text.Trim().ToUpper(),
+                    Barcode = txtBarcode.Text,
+                    Name = txtName.Text,
+                    Description = txtDescription.Text,
                     BuyPrice = nudBuyPrice.Value,
                     SellPrice = nudSellPrice.Value,
                     Profit = (nudSellPrice.Value - nudBuyPrice.Value) <= 0 ? 0 : nudSellPrice.Value - nudBuyPrice.Value,
@@ -291,8 +292,8 @@ namespace kiosko_ssms.Forms
                     StockMin = (int)nudStockMin.Value,
                     SupplierId = ((Supplier)cbSupplier.SelectedItem).Id,
                     PresentationId = ((Presentation)cbPresentation.SelectedItem).Id,
-                    IsDeleted = chkIsDeleted.Checked,
-                    IsVisible = chkIsVisible.Checked,
+                    IsDeleted = chkIsDeleted.Checked ? true : false,
+                    IsVisible = chkIsVisible.Checked ? true : false,
                 };
 
                 try
@@ -305,6 +306,7 @@ namespace kiosko_ssms.Forms
                     HandleSearchFields(true);
                     selectedProductId = 0;
                     txtKeyword.Text = "";
+                    txtKeyword.Focus();
                 }
                 catch (Exception ex)
                 {

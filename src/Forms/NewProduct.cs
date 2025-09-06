@@ -1,5 +1,4 @@
-﻿using kiosko_ssms.Data;
-using kiosko_ssms.Data.Entities;
+﻿using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
 using System;
 using System.Text.RegularExpressions;
@@ -9,7 +8,6 @@ namespace kiosko_ssms.Forms
 {
     public partial class NewProduct : Krypton.Toolkit.KryptonForm
     {
-        private readonly AppDbContext DB_CONTEXT = new Data.AppDbContext();
 
         public NewProduct()
         {
@@ -38,10 +36,13 @@ namespace kiosko_ssms.Forms
             while (!valid)
             {
                 barcode = BarcodeFactory();
-                var products = new ProductService(DB_CONTEXT).GetProductsByBarcode(barcode);
-                if (products.Count <= 0)
+                using (var context = new Data.AppDbContext())
                 {
-                    valid = true;
+                    var products = new ProductService(context).GetProductsByBarcode(barcode);
+                    if (products.Count <= 0)
+                    {
+                        valid = true;
+                    }
                 }
             }
             return barcode;
@@ -59,10 +60,12 @@ namespace kiosko_ssms.Forms
         {
             try
             {
-                SupplierService _supplierService = new SupplierService(DB_CONTEXT);
-                cbSupplier.DataSource = _supplierService.GetAllSuppliers(false);
-                cbSupplier.DisplayMember = "Name";
-
+                using (var context = new Data.AppDbContext())
+                {
+                    SupplierService _supplierService = new SupplierService(context);
+                    cbSupplier.DataSource = _supplierService.GetAllSuppliers(false);
+                    cbSupplier.DisplayMember = "Name";
+                }
             }
             catch
             {
@@ -78,8 +81,11 @@ namespace kiosko_ssms.Forms
         {
             try
             {
-                PresentationService _presentationService = new PresentationService(DB_CONTEXT);
-                cbPresentation.DataSource = _presentationService.getAllPresentations(false);
+                using (var context = new Data.AppDbContext())
+                {
+                    PresentationService _presentationService = new PresentationService(context);
+                    cbPresentation.DataSource = _presentationService.GetAllPresentations(false);
+                }
             }
             catch
             {
@@ -98,9 +104,9 @@ namespace kiosko_ssms.Forms
             {
                 Product product = new Product
                 {
-                    Barcode = txtBarcode.Text.Trim().ToUpper(),
-                    Name = txtName.Text.Trim().ToUpper(),
-                    Description = txtDescription.Text.Trim().ToUpper(),
+                    Barcode = txtBarcode.Text,
+                    Name = txtName.Text,
+                    Description = txtDescription.Text,
                     BuyPrice = nudBuyPrice.Value,
                     SellPrice = nudSellPrice.Value,
                     Profit = nudSellPrice.Value - nudBuyPrice.Value,
@@ -116,10 +122,13 @@ namespace kiosko_ssms.Forms
 
                 try
                 {
-                    ProductService productService = new ProductService(DB_CONTEXT);
-                    var savedProduct = productService.CreateProduct(product);
-                    MessageBox.Show($"Producto: {savedProduct.Name} creado exitosamente. Asignado ID: {savedProduct.Id} y Código de Barras: {savedProduct.Barcode}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFields();
+                    using (var context = new Data.AppDbContext())
+                    {
+                        ProductService productService = new ProductService(context);
+                        var savedProduct = productService.CreateProduct(product);
+                        MessageBox.Show($"Producto: {savedProduct.Name} creado exitosamente. Asignado ID: {savedProduct.Id} y Código de Barras: {savedProduct.Barcode}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearFields();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -155,7 +164,7 @@ namespace kiosko_ssms.Forms
 
         private bool ValidateName()
         {
-            string name = txtName.Text.Trim();
+            string name = txtName.Text.Trim().ToUpper();
 
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -184,7 +193,7 @@ namespace kiosko_ssms.Forms
 
         private bool ValidateDescription()
         {
-            string description = txtDescription.Text.Trim();
+            string description = txtDescription.Text.Trim().ToUpper();
 
             if (string.IsNullOrWhiteSpace(description))
             {
@@ -317,14 +326,17 @@ namespace kiosko_ssms.Forms
 
         private bool ValidateExistingBarcode(string barcode)
         {
-            var products = new ProductService(DB_CONTEXT).GetProductsByBarcode(barcode);
-            if (products.Count > 0)
+            using (var context = new Data.AppDbContext())
             {
-                errorProvider.SetError(txtBarcode, "El código de barras ya existe en otro producto.");
-                return false;
+                var products = new ProductService(context).GetProductsByBarcode(barcode);
+                if (products.Count > 0)
+                {
+                    errorProvider.SetError(txtBarcode, "El código de barras ya existe en otro producto.");
+                    return false;
+                }
+                errorProvider.SetError(txtBarcode, "");
+                return true;
             }
-            errorProvider.SetError(txtBarcode, "");
-            return true;
         }
 
         private bool ValidateAllFields()

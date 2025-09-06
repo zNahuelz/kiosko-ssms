@@ -38,6 +38,8 @@
             this.cbSearchMode = new Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSuppliers = new Krypton.Toolkit.KryptonDataGridView();
+            this.ssMain = new System.Windows.Forms.StatusStrip();
+            this.tssMainLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).BeginInit();
             this.gbMain.Panel.SuspendLayout();
@@ -45,6 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbVisibility)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSearchMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
+            this.ssMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbMain
@@ -166,11 +169,30 @@
             this.dgvSuppliers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppliers_CellClick);
             this.dgvSuppliers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppliers_CellDoubleClick);
             // 
+            // ssMain
+            // 
+            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssMainLabel});
+            this.ssMain.Location = new System.Drawing.Point(0, 648);
+            this.ssMain.Name = "ssMain";
+            this.ssMain.Size = new System.Drawing.Size(1002, 22);
+            this.ssMain.TabIndex = 4;
+            this.ssMain.Text = "statusStrip1";
+            // 
+            // tssMainLabel
+            // 
+            this.tssMainLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssMainLabel.ForeColor = System.Drawing.Color.Teal;
+            this.tssMainLabel.Name = "tssMainLabel";
+            this.tssMainLabel.Size = new System.Drawing.Size(407, 17);
+            this.tssMainLabel.Text = "TIP: DOBLE CLICK EN PROVEEDOR PARA VER DETALLE DEL MISMO.";
+            // 
             // SupplierList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 637);
+            this.ClientSize = new System.Drawing.Size(1002, 670);
+            this.Controls.Add(this.ssMain);
             this.Controls.Add(this.dgvSuppliers);
             this.Controls.Add(this.gbMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -188,7 +210,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbVisibility)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSearchMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
+            this.ssMain.ResumeLayout(false);
+            this.ssMain.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -203,5 +228,7 @@
         private Krypton.Toolkit.KryptonComboBox cbSearchMode;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonDataGridView dgvSuppliers;
+        private System.Windows.Forms.StatusStrip ssMain;
+        private System.Windows.Forms.ToolStripStatusLabel tssMainLabel;
     }
 }

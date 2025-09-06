@@ -16,12 +16,12 @@ namespace kiosko_ssms.Forms
         {
             _supplier = supplier;
             txtId.Text = _supplier.Id.ToString();
-            txtName.Text = _supplier.Name.Trim().ToUpper();
-            txtRuc.Text = _supplier.Ruc.Trim();
-            txtAddress.Text = _supplier.Address.Trim().ToUpper();
-            txtPhoneNumber.Text = _supplier.PhoneNumber.Trim();
-            txtEmail.Text = _supplier.Email.Trim().ToUpper();
-            txtDescription.Text = _supplier.Description.ToUpper().Trim();
+            txtName.Text = _supplier.Name?.Trim().ToUpper();
+            txtRuc.Text = _supplier.Ruc?.Trim();
+            txtAddress.Text = _supplier.Address?.Trim().ToUpper();
+            txtPhoneNumber.Text = _supplier.PhoneNumber?.Trim();
+            txtEmail.Text = _supplier.Email?.Trim().ToUpper();
+            txtDescription.Text = _supplier.Description?.ToUpper().Trim();
             txtIsDeleted.Text = _supplier.IsDeleted ? "ELIMINADO" : "NO ELIMINADO";
             txtCreatedAt.Text = _supplier.CreatedAt.ToString("g");
             txtUpdatedAt.Text = _supplier.UpdatedAt.ToString("g");
