@@ -54,6 +54,10 @@
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnKillForms = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnExit = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnAbout = new Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +67,10 @@
             this.mainRibbon.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.mainRibbon.RibbonFileAppButton.AppButtonImage = global::kiosko_ssms.Properties.Resources.server_window;
             this.mainRibbon.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
-            this.mainTab});
+            this.mainTab,
+            this.kryptonRibbonTab1});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1363, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1417, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -197,12 +202,14 @@
             this.btnNewCustomer.ImageLarge = global::kiosko_ssms.Properties.Resources.Directory_Services;
             this.btnNewCustomer.ImageSmall = global::kiosko_ssms.Properties.Resources.Directory_Services;
             this.btnNewCustomer.TextLine1 = "NUEVO";
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
             // btnEditCustomer
             // 
             this.btnEditCustomer.ImageLarge = global::kiosko_ssms.Properties.Resources.Fax_Sender_Information;
             this.btnEditCustomer.ImageSmall = global::kiosko_ssms.Properties.Resources.Fax_Sender_Information;
             this.btnEditCustomer.TextLine1 = "GESTIONAR";
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // rbManagementGroup
             // 
@@ -231,12 +238,36 @@
             this.btnExit.TextLine1 = "SALIR";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // kryptonRibbonTab1
+            // 
+            this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup1});
+            this.kryptonRibbonTab1.Text = "AYUDA";
+            // 
+            // kryptonRibbonGroup1
+            // 
+            this.kryptonRibbonGroup1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple6});
+            this.kryptonRibbonGroup1.TextLine1 = "INFO.";
+            // 
+            // kryptonRibbonGroupTriple6
+            // 
+            this.kryptonRibbonGroupTriple6.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnAbout});
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.ImageLarge = global::kiosko_ssms.Properties.Resources.msg_information_1;
+            this.btnAbout.ImageSmall = global::kiosko_ssms.Properties.Resources.msg_information_1;
+            this.btnAbout.TextLine1 = "ACERCA DE";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1363, 381);
+            this.ClientSize = new System.Drawing.Size(1417, 506);
             this.CloseBox = false;
             this.Controls.Add(this.mainRibbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -280,5 +311,9 @@
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple5;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnNewSale;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnSalesReport;
+        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple6;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnAbout;
     }
 }

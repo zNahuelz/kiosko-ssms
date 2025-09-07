@@ -392,11 +392,11 @@
             // statusStripMain
             // 
             this.statusStripMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.statusStripMain.Location = new System.Drawing.Point(0, 620);
+            this.statusStripMain.Location = new System.Drawing.Point(0, 622);
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.ProgressBars = null;
             this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStripMain.Size = new System.Drawing.Size(717, 22);
+            this.statusStripMain.Size = new System.Drawing.Size(731, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "kryptonStatusStrip1";
             // 
@@ -408,7 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 642);
+            this.ClientSize = new System.Drawing.Size(731, 644);
             this.Controls.Add(this.statusStripMain);
             this.Controls.Add(this.gbMain);
             this.Controls.Add(this.gbInfo);

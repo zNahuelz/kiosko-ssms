@@ -148,5 +148,23 @@ namespace kiosko_ssms.Forms
         {
             dgvCustomers.CurrentRow.Selected = true;
         }
+
+        private void dgvCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedCustomer = dgvCustomers.Rows[e.RowIndex].DataBoundItem as Customer;
+                if (selectedCustomer != null)
+                {
+                    Main parent = this.MdiParent as Main;
+                    if (parent != null)
+                    {
+                        parent.OpenForm(ref parent.customerDetailForm,
+                            (s, ev) => parent.CloseForm(ref parent.customerDetailForm, s, ev));
+                        parent.customerDetailForm.LoadCustomer(selectedCustomer);
+                    }
+                }
+            }
+        }
     }
 }

@@ -193,6 +193,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap msg_information_1 {
+            get {
+                object obj = ResourceManager.GetObject("msg_information-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outlook_express_4 {
             get {
                 object obj = ResourceManager.GetObject("outlook_express-4", resourceCulture);
@@ -256,6 +266,16 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap Setup1 {
             get {
                 object obj = ResourceManager.GetObject("Setup1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap song_yi {
+            get {
+                object obj = ResourceManager.GetObject("song_yi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -7,24 +7,24 @@ using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
 {
-    public partial class EditSupplier : Krypton.Toolkit.KryptonForm
+    public partial class EditCustomer : Krypton.Toolkit.KryptonForm
     {
-        int selectedSupplierId = 0;
-        public EditSupplier()
+        private int selectedCustomerId = 0;
+        public EditCustomer()
         {
             InitializeComponent();
+            txtKeyword.CausesValidation = false;
             btnReset.CausesValidation = false;
             btnSearch.CausesValidation = false;
-            txtKeyword.CausesValidation = false;
         }
 
-        private void HandleInfoFields(bool isEnabled)
+        public void HandleInfoFields(bool isEnabled)
         {
-            txtName.Enabled = isEnabled;
-            txtRuc.Enabled = isEnabled;
-            txtDescription.Enabled = isEnabled;
-            txtAddress.Enabled = isEnabled;
+            txtNames.Enabled = isEnabled;
+            txtSurnames.Enabled = isEnabled;
+            txtDni.Enabled = isEnabled;
             txtPhoneNumber.Enabled = isEnabled;
+            txtAddress.Enabled = isEnabled;
             txtEmail.Enabled = isEnabled;
             chkIsDeleted.Enabled = isEnabled;
             btnUpdate.Enabled = isEnabled;
@@ -39,11 +39,11 @@ namespace kiosko_ssms.Forms
 
         private void ClearFields()
         {
-            txtName.Clear();
-            txtRuc.Clear();
-            txtDescription.Clear();
-            txtAddress.Clear();
+            txtNames.Clear();
+            txtSurnames.Clear();
+            txtDni.Clear();
             txtPhoneNumber.Clear();
+            txtAddress.Clear();
             txtEmail.Clear();
             chkIsDeleted.Checked = false;
         }
@@ -70,36 +70,54 @@ namespace kiosko_ssms.Forms
             }
         }
 
-
-        private bool ValidateRuc(TextBox field)
+        private bool ValidateDni(TextBox field)
         {
-            string ruc = field.Text.Trim();
-            if (string.IsNullOrWhiteSpace(ruc))
+            string dni = field.Text.Trim();
+            if (string.IsNullOrWhiteSpace(dni))
             {
-                errorProvider.SetError(field, "Debe ingresar un RUC.");
+                errorProvider.SetError(field, "Debe ingresar un DNI.");
                 return false;
             }
-
-            if (!Regex.IsMatch(ruc, @"^(10|20)[0-9]{9}$"))
+            if (!Regex.IsMatch(dni, @"^.*\S.*$"))
             {
-                errorProvider.SetError(field, "El RUC debe comenzar con 10 o 20 y tener 11 dígitos en total.");
+                errorProvider.SetError(field, "El DNI no puede ser solo espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(dni, @"^\S.*$"))
+            {
+                errorProvider.SetError(field, "El DNI no debe comenzar con espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(dni, @"^[0-9]{7,15}$"))
+            {
+                errorProvider.SetError(field, "El DNI solo debe contener números.");
                 return false;
             }
             errorProvider.SetError(field, "");
             return true;
         }
 
-        private bool ValidateRuc(Krypton.Toolkit.KryptonTextBox field)
+        private bool ValidateDni(Krypton.Toolkit.KryptonTextBox field)
         {
-            string ruc = field.Text.Trim();
-            if (string.IsNullOrWhiteSpace(ruc))
+            string dni = field.Text.Trim();
+            if (string.IsNullOrWhiteSpace(dni))
             {
-                errorProvider.SetError(field, "Debe ingresar un RUC.");
+                errorProvider.SetError(field, "Debe ingresar un DNI.");
                 return false;
             }
-            if (!Regex.IsMatch(ruc, @"^(10|20)[0-9]{9}$"))
+            if (!Regex.IsMatch(dni, @"^.*\S.*$"))
             {
-                errorProvider.SetError(field, "El RUC debe comenzar con 10 o 20 y tener 11 dígitos en total.");
+                errorProvider.SetError(field, "El DNI no puede ser solo espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(dni, @"^\S.*$"))
+            {
+                errorProvider.SetError(field, "El DNI no debe comenzar con espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(dni, @"^[0-9]{7,15}$"))
+            {
+                errorProvider.SetError(field, "El DNI solo debe contener números.");
                 return false;
             }
             errorProvider.SetError(field, "");
@@ -108,44 +126,43 @@ namespace kiosko_ssms.Forms
 
         private bool ValidateSearch()
         {
-            if (!ValidateRuc(txtKeyword))
+            if (!ValidateDni(txtKeyword))
             {
-                txtKeyword.Focus();
                 return false;
             }
             return true;
         }
 
-        private void SearchSupplier(string ruc)
+        private void SearchCustomer(string dni)
         {
             using (var context = new AppDbContext())
             {
-                SupplierService supplierService = new SupplierService(context);
-                var suppliers = supplierService.GetSuppliersByRUC(ruc, true);
-                if (suppliers.Count <= 0)
+                CustomerService customerService = new CustomerService(context);
+                var customers = customerService.GetCustomersByDni(dni, true);
+                if (customers.Count <= 0)
                 {
-                    MessageBox.Show("No se encontró ningún proveedor con el RUC proporcionado.", "Proveedor no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró ningún cliente con el DNI proporcionado.", "Cliente no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtKeyword.Focus();
                     ClearFields();
                     return;
                 }
                 else
                 {
-                    FillFields(suppliers[0]);
+                    FillFields(customers[0]);
                 }
             }
         }
 
-        private void FillFields(Supplier supplier)
+        private void FillFields(Customer customer)
         {
-            selectedSupplierId = supplier.Id;
-            txtName.Text = supplier.Name;
-            txtRuc.Text = supplier.Ruc;
-            txtDescription.Text = supplier.Description;
-            txtAddress.Text = supplier.Address;
-            txtPhoneNumber.Text = supplier.PhoneNumber;
-            txtEmail.Text = supplier.Email;
-            chkIsDeleted.Checked = supplier.IsDeleted;
+            selectedCustomerId = customer.Id;
+            txtNames.Text = customer.Names;
+            txtSurnames.Text = customer.Surnames;
+            txtDni.Text = customer.Dni;
+            txtPhoneNumber.Text = customer.PhoneNumber;
+            txtAddress.Text = customer.Address;
+            txtEmail.Text = customer.Email;
+            chkIsDeleted.Checked = customer.IsDeleted;
             HandleInfoFields(true);
             HandleSearchFields(false);
         }
@@ -154,7 +171,7 @@ namespace kiosko_ssms.Forms
         {
             if (ValidateSearch())
             {
-                SearchSupplier(txtKeyword.Text.Trim());
+                SearchCustomer(txtKeyword.Text.Trim());
             }
         }
 
@@ -163,79 +180,89 @@ namespace kiosko_ssms.Forms
             ClearFields();
             HandleInfoFields(false);
             HandleSearchFields(true);
-            selectedSupplierId = 0;
+            selectedCustomerId = 0;
             txtKeyword.Clear();
             txtKeyword.Focus();
         }
 
-        private bool ValidateName()
+        private bool ValidateNames()
         {
-            string name = txtName.Text.Trim().ToUpper();
+            string name = txtNames.Text.Trim().ToUpper();
             if (string.IsNullOrWhiteSpace(name))
             {
-                errorProvider.SetError(txtName, "Debe ingresar un nombre.");
+                errorProvider.SetError(txtNames, "Debe ingresar un nombre.");
                 return false;
             }
-            if (name.Length < 5 || name.Length > 150)
+            if (name.Length < 2 || name.Length > 30)
             {
-                errorProvider.SetError(txtName, "El nombre debe tener entre 5 y 150 caracteres.");
+                errorProvider.SetError(txtNames, "El nombre debe tener entre 2 y 30 caracteres.");
                 return false;
             }
             if (!Regex.IsMatch(name, @"^.*\S.*$"))
             {
-                errorProvider.SetError(txtName, "El nombre no puede ser solo espacios en blanco.");
+                errorProvider.SetError(txtNames, "El nombre no puede ser solo espacios en blanco.");
                 return false;
             }
             if (!Regex.IsMatch(name, @"^\S.*$"))
             {
-                errorProvider.SetError(txtName, "El nombre no debe comenzar con espacios en blanco.");
+                errorProvider.SetError(txtNames, "El nombre no debe comenzar con espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(name, @"^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]{2,30}$"))
+            {
+                errorProvider.SetError(txtNames, "El nombre solo debe contener letras mayúsculas y espacios.");
                 return false;
             }
 
-            errorProvider.SetError(txtName, "");
+            errorProvider.SetError(txtNames, "");
             return true;
         }
 
-        private bool ValidateExistingRuc(string ruc)
+        private bool ValidateSurnames()
         {
-            using (var context = new Data.AppDbContext())
+            string surnames = txtSurnames.Text.Trim().ToUpper();
+            if (string.IsNullOrWhiteSpace(surnames))
             {
-                var suppliers = new SupplierService(context).GetSuppliersByRUC(ruc, true);
+                errorProvider.SetError(txtSurnames, "Debe ingresar un apellido.");
+                return false;
+            }
+            if (surnames.Length < 2 || surnames.Length > 30)
+            {
+                errorProvider.SetError(txtSurnames, "El apellido debe tener entre 2 y 30 caracteres.");
+                return false;
+            }
+            if (!Regex.IsMatch(surnames, @"^.*\S.*$"))
+            {
+                errorProvider.SetError(txtSurnames, "El apellido no puede ser solo espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(surnames, @"^\S.*$"))
+            {
+                errorProvider.SetError(txtSurnames, "El apellido no debe comenzar con espacios en blanco.");
+                return false;
+            }
+            if (!Regex.IsMatch(surnames, @"^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]{2,30}$"))
+            {
+                errorProvider.SetError(txtSurnames, "El apellido solo debe contener letras mayúsculas y espacios.");
+                return false;
+            }
+            errorProvider.SetError(txtSurnames, "");
+            return true;
+        }
 
-                if (suppliers.Count >= 1)
+        private bool ValidateExistingDni(string dni)
+        {
+            using (var context = new AppDbContext())
+            {
+                var customers = new CustomerService(context).GetCustomersByDni(dni, true);
+
+                if (customers.Count >= 1)
                 {
-                    errorProvider.SetError(txtRuc, "Ya existe un proveedor registrado con el RUC ingresado.");
+                    errorProvider.SetError(txtDni, "Ya existe un cliente registrado con el DNI ingresado.");
                     return false;
                 }
             }
-            errorProvider.SetError(txtRuc, "");
-            return true;
-        }
-
-        private bool ValidateDescription()
-        {
-            string description = txtDescription.Text.Trim().ToUpper();
-
-            if (string.IsNullOrWhiteSpace(description))
-            {
-                errorProvider.SetError(txtDescription, "Debe ingresar una descripción.");
-                return false;
-            }
-
-            if (!Regex.IsMatch(description, @"^\S.*$"))
-            {
-                errorProvider.SetError(txtDescription, "La descripción no debe comenzar con espacios en blanco.");
-                return false;
-            }
-
-
-            if (description.Length <= 5 || description.Length >= 150)
-            {
-                errorProvider.SetError(txtDescription, "La descripción es opcional. Debe tener entre 5 y 150 caracteres.");
-                return false;
-            }
-
-            errorProvider.SetError(txtDescription, "");
+            errorProvider.SetError(txtDni, "");
             return true;
         }
 
@@ -313,15 +340,14 @@ namespace kiosko_ssms.Forms
         private bool ValidateEditFields()
         {
             bool isValid = true;
-
-            if (!ValidateName()) isValid = false;
-            if (!ValidateRuc(txtRuc))
+            if (!ValidateNames()) isValid = false;
+            if (!ValidateSurnames()) isValid = false;
+            if (!ValidateDni(txtDni))
             {
-                if (!ValidateExistingRuc(txtRuc.Text?.Trim())) isValid = false;
+                if (!ValidateExistingDni(txtDni.Text?.Trim())) isValid = false;
             }
-            if (!ValidateDescription()) isValid = false;
-            if (!ValidateAddress()) isValid = false;
             if (!ValidatePhoneNumber()) isValid = false;
+            if (!ValidateAddress()) isValid = false;
             if (!ValidateEmail()) isValid = false;
             return isValid;
         }
@@ -330,39 +356,40 @@ namespace kiosko_ssms.Forms
         {
             if (ValidateEditFields())
             {
-                Supplier supplier = new Supplier
+                Customer customer = new Customer
                 {
-                    Id = selectedSupplierId,
-                    Name = txtName.Text,
-                    Ruc = txtRuc.Text,
-                    Description = txtDescription.Text,
-                    Address = txtAddress.Text,
+                    Id = selectedCustomerId,
+                    Names = txtNames.Text,
+                    Surnames = txtSurnames.Text,
+                    Dni = txtDni.Text.Trim(),
                     PhoneNumber = txtPhoneNumber.Text,
+                    Address = txtAddress.Text,
                     Email = txtEmail.Text,
                     IsDeleted = chkIsDeleted.Checked ? true : false,
                     UpdatedAt = DateTime.UtcNow
                 };
-
                 try
                 {
                     using (var context = new AppDbContext())
                     {
-                        var updatedSupplier = new SupplierService(context).UpdateSupplier(supplier);
-                        MessageBox.Show($"Proveedor '{updatedSupplier.Name}' actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var updatedCustomer = new CustomerService(context).UpdateCustomer(customer);
+                        MessageBox.Show($"Cliente {updatedCustomer.Names} {updatedCustomer.Surnames} actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearFields();
                         HandleInfoFields(false);
                         HandleSearchFields(true);
-                        selectedSupplierId = 0;
+                        selectedCustomerId = 0;
                         txtKeyword.Clear();
                         txtKeyword.Focus();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al actualizar el proveedor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al actualizar el cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
         }
+
+
     }
 }

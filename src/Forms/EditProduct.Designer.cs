@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
+            this.chkIsVisible = new System.Windows.Forms.CheckBox();
+            this.chkIsDeleted = new System.Windows.Forms.CheckBox();
             this.txtProfit = new Krypton.Toolkit.KryptonTextBox();
             this.nudStockMin = new Krypton.Toolkit.KryptonNumericUpDown();
             this.nudStock = new Krypton.Toolkit.KryptonNumericUpDown();
@@ -55,12 +57,10 @@
             this.txtName = new Krypton.Toolkit.KryptonTextBox();
             this.txtBarcode = new Krypton.Toolkit.KryptonTextBox();
             this.gbSearch = new Krypton.Toolkit.KryptonGroupBox();
-            this.txtKeyword = new System.Windows.Forms.TextBox();
-            this.btnSearch = new Krypton.Toolkit.KryptonButton();
             this.kryptonLabel11 = new Krypton.Toolkit.KryptonLabel();
+            this.btnSearch = new Krypton.Toolkit.KryptonButton();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkIsDeleted = new System.Windows.Forms.CheckBox();
-            this.chkIsVisible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).BeginInit();
             this.gbMain.Panel.SuspendLayout();
@@ -109,6 +109,28 @@
             this.gbMain.Size = new System.Drawing.Size(695, 452);
             this.gbMain.TabIndex = 2;
             this.gbMain.Values.Heading = "INFORMACIÓN DEL PRODUCTO";
+            // 
+            // chkIsVisible
+            // 
+            this.chkIsVisible.AutoSize = true;
+            this.chkIsVisible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.chkIsVisible.Location = new System.Drawing.Point(553, 138);
+            this.chkIsVisible.Name = "chkIsVisible";
+            this.chkIsVisible.Size = new System.Drawing.Size(66, 17);
+            this.chkIsVisible.TabIndex = 32;
+            this.chkIsVisible.Text = "VISIBLE";
+            this.chkIsVisible.UseVisualStyleBackColor = false;
+            // 
+            // chkIsDeleted
+            // 
+            this.chkIsDeleted.AutoSize = true;
+            this.chkIsDeleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.chkIsDeleted.Location = new System.Drawing.Point(415, 138);
+            this.chkIsDeleted.Name = "chkIsDeleted";
+            this.chkIsDeleted.Size = new System.Drawing.Size(85, 17);
+            this.chkIsDeleted.TabIndex = 31;
+            this.chkIsDeleted.Text = "ELIMINADO";
+            this.chkIsDeleted.UseVisualStyleBackColor = false;
             // 
             // txtProfit
             // 
@@ -402,16 +424,13 @@
             this.gbSearch.TabIndex = 3;
             this.gbSearch.Values.Heading = "BUSQUEDA DE PRODUCTO";
             // 
-            // txtKeyword
+            // kryptonLabel11
             // 
-            this.txtKeyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKeyword.ForeColor = System.Drawing.Color.Red;
-            this.txtKeyword.Location = new System.Drawing.Point(26, 35);
-            this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(312, 38);
-            this.txtKeyword.TabIndex = 0;
-            this.txtKeyword.DoubleClick += new System.EventHandler(this.txtKeyword_DoubleClick);
-            this.txtKeyword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyword_KeyPress);
+            this.kryptonLabel11.Location = new System.Drawing.Point(121, 9);
+            this.kryptonLabel11.Name = "kryptonLabel11";
+            this.kryptonLabel11.Size = new System.Drawing.Size(123, 20);
+            this.kryptonLabel11.TabIndex = 29;
+            this.kryptonLabel11.Values.Text = "CÓDIGO DE BARRAS";
             // 
             // btnSearch
             // 
@@ -424,45 +443,26 @@
             this.btnSearch.Values.Text = "BUSCAR";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // kryptonLabel11
+            // txtKeyword
             // 
-            this.kryptonLabel11.Location = new System.Drawing.Point(121, 9);
-            this.kryptonLabel11.Name = "kryptonLabel11";
-            this.kryptonLabel11.Size = new System.Drawing.Size(123, 20);
-            this.kryptonLabel11.TabIndex = 29;
-            this.kryptonLabel11.Values.Text = "CÓDIGO DE BARRAS";
+            this.txtKeyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKeyword.ForeColor = System.Drawing.Color.Red;
+            this.txtKeyword.Location = new System.Drawing.Point(26, 35);
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(312, 38);
+            this.txtKeyword.TabIndex = 0;
+            this.txtKeyword.DoubleClick += new System.EventHandler(this.txtKeyword_DoubleClick);
+            this.txtKeyword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyword_KeyPress);
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // chkIsDeleted
-            // 
-            this.chkIsDeleted.AutoSize = true;
-            this.chkIsDeleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
-            this.chkIsDeleted.Location = new System.Drawing.Point(415, 138);
-            this.chkIsDeleted.Name = "chkIsDeleted";
-            this.chkIsDeleted.Size = new System.Drawing.Size(85, 17);
-            this.chkIsDeleted.TabIndex = 31;
-            this.chkIsDeleted.Text = "ELIMINADO";
-            this.chkIsDeleted.UseVisualStyleBackColor = false;
-            // 
-            // chkIsVisible
-            // 
-            this.chkIsVisible.AutoSize = true;
-            this.chkIsVisible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
-            this.chkIsVisible.Location = new System.Drawing.Point(553, 138);
-            this.chkIsVisible.Name = "chkIsVisible";
-            this.chkIsVisible.Size = new System.Drawing.Size(66, 17);
-            this.chkIsVisible.TabIndex = 32;
-            this.chkIsVisible.Text = "VISIBLE";
-            this.chkIsVisible.UseVisualStyleBackColor = false;
-            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 610);
+            this.ClientSize = new System.Drawing.Size(728, 607);
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.gbMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

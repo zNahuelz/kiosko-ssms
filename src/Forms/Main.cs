@@ -14,6 +14,11 @@ namespace kiosko_ssms.Forms
         private NewSupplier newSupplierForm;
         private EditSupplier editSupplierForm;
         private CustomerList customerListForm;
+        public CustomerDetail customerDetailForm;
+        private NewCustomer newCustomerForm;
+        private EditCustomer editCustomerForm;
+
+        private About aboutForm;
 
         public Main()
         {
@@ -98,6 +103,21 @@ namespace kiosko_ssms.Forms
             OpenForm(ref customerListForm, (s, ev) => CloseForm(ref customerListForm, s, ev));
         }
 
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newCustomerForm, (s, ev) => CloseForm(ref newCustomerForm, s, ev));
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref editCustomerForm, (s, ev) => CloseForm(ref editCustomerForm, s, ev));
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref aboutForm, (s, ev) => CloseForm(ref aboutForm, s, ev));
+        }
+
         private void btnKillForms_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cerrar todas las herramientas de trabajo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -106,6 +126,5 @@ namespace kiosko_ssms.Forms
                 KillChildForms();
             }
         }
-
     }
 }

@@ -179,7 +179,7 @@ namespace kiosko_ssms.Forms
 
             if (!ValidateName()) isValid = false;
             if (!ValidateRuc()) isValid = false;
-            if (!ValidateRucUnique(txtRuc.Text.Trim())) isValid = false;
+            if (!ValidateRucUnique(txtRuc.Text?.Trim())) isValid = false;
             if (!ValidateDescription()) isValid = false;
             if (!ValidateAddress()) isValid = false;
             if (!ValidatePhoneNumber()) isValid = false;

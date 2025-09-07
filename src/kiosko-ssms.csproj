@@ -185,11 +185,29 @@
     <Compile Include="Data\Migrations\RoleSeeder.cs" />
     <Compile Include="Data\Migrations\SupplierSeeder.cs" />
     <Compile Include="Data\Migrations\UserSeeder.cs" />
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerDetail.Designer.cs">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CustomerList.Designer.cs">
       <DependentUpon>CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditProduct.cs">
       <SubType>Form</SubType>
@@ -208,6 +226,12 @@
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewProduct.cs">
       <SubType>Form</SubType>
@@ -252,8 +276,17 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\SupplierService.cs" />
     <Compile Include="Utils\Constants.cs" />
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerDetail.resx">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
@@ -263,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>
@@ -342,6 +378,8 @@
     <None Include="Resources\Windows Journal.png" />
     <None Include="Resources\usd.png" />
     <None Include="Resources\chart.png" />
+    <None Include="Resources\msg_information-1.png" />
+    <None Include="Resources\song_yi.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -167,14 +167,15 @@
             this.dgvCustomers.Size = new System.Drawing.Size(807, 620);
             this.dgvCustomers.TabIndex = 2;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            this.dgvCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellDoubleClick);
             // 
             // ssMain
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssMainLabel});
-            this.ssMain.Location = new System.Drawing.Point(0, 628);
+            this.ssMain.Location = new System.Drawing.Point(0, 647);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(1088, 22);
+            this.ssMain.Size = new System.Drawing.Size(1096, 22);
             this.ssMain.TabIndex = 4;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -190,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 650);
+            this.ClientSize = new System.Drawing.Size(1096, 669);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.gbMain);
             this.Controls.Add(this.dgvCustomers);

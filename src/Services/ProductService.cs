@@ -52,7 +52,7 @@ namespace kiosko_ssms.Services
             product.Name = product?.Name?.Trim().ToUpper();
             product.Description = product?.Description?.Trim().ToUpper();
             product.Barcode = product?.Barcode?.Trim().ToUpper();
-            bool barcodeExists = dbContext.Products.Any(p => p.Barcode == product.Barcode && !p.IsDeleted);
+            bool barcodeExists = dbContext.Products.Any(p => p.Barcode == product.Barcode);
             if (barcodeExists)
             {
                 throw new InvalidOperationException("Ya existe un producto registrado con el código de barras ingresado.");
@@ -81,6 +81,11 @@ namespace kiosko_ssms.Services
             existing.Name = product.Name?.Trim().ToUpper();
             existing.Description = product.Description?.Trim().ToUpper();
             existing.Barcode = product.Barcode?.Trim().ToUpper();
+            bool barcodeExists = dbContext.Products.Any(p => p.Barcode == product.Barcode && p.Id != product.Id);
+            if (barcodeExists)
+            {
+                throw new InvalidOperationException("Ya existe un producto registrado con el código de barras ingresado.");
+            }
             existing.BuyPrice = product.BuyPrice;
             existing.SellPrice = product.SellPrice;
             existing.Profit = (product.SellPrice - product.BuyPrice) <= 0 ? 0 : product.SellPrice - product.BuyPrice;
