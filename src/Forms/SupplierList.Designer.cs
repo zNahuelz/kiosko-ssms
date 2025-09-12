@@ -173,9 +173,9 @@
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssMainLabel});
-            this.ssMain.Location = new System.Drawing.Point(0, 648);
+            this.ssMain.Location = new System.Drawing.Point(0, 655);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(1002, 22);
+            this.ssMain.Size = new System.Drawing.Size(1006, 22);
             this.ssMain.TabIndex = 4;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 670);
+            this.ClientSize = new System.Drawing.Size(1006, 677);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.dgvSuppliers);
             this.Controls.Add(this.gbMain);

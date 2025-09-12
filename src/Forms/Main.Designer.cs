@@ -50,6 +50,14 @@
             this.btnCustomerList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnNewCustomer = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnEditCustomer = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupLines1 = new Krypton.Ribbon.KryptonRibbonGroupLines();
+            this.btnPresentationList = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnNewPresentation = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnEditPresentation = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroup3 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupLines2 = new Krypton.Ribbon.KryptonRibbonGroupLines();
+            this.btnVoucherList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbManagementGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnKillForms = new Krypton.Ribbon.KryptonRibbonGroupButton();
@@ -70,7 +78,7 @@
             this.mainTab,
             this.kryptonRibbonTab1});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1417, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1477, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -80,6 +88,8 @@
             this.rbProductsGroup,
             this.rbSuppliersGroup,
             this.rbCustomersGroup,
+            this.kryptonRibbonGroup2,
+            this.kryptonRibbonGroup3,
             this.rbManagementGroup});
             this.mainTab.Text = "INICIO";
             // 
@@ -101,6 +111,7 @@
             this.btnNewSale.ImageSmall = global::kiosko_ssms.Properties.Resources.usd;
             this.btnNewSale.TextLine1 = "NUEVA";
             this.btnNewSale.TextLine2 = "VENTA";
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnSalesReport
             // 
@@ -211,6 +222,57 @@
             this.btnEditCustomer.TextLine1 = "GESTIONAR";
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
+            // kryptonRibbonGroup2
+            // 
+            this.kryptonRibbonGroup2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupLines1});
+            this.kryptonRibbonGroup2.TextLine1 = "PRESENTACIONES";
+            // 
+            // kryptonRibbonGroupLines1
+            // 
+            this.kryptonRibbonGroupLines1.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnPresentationList,
+            this.btnNewPresentation,
+            this.btnEditPresentation});
+            // 
+            // btnPresentationList
+            // 
+            this.btnPresentationList.ImageLarge = global::kiosko_ssms.Properties.Resources.appwizard_list;
+            this.btnPresentationList.ImageSmall = global::kiosko_ssms.Properties.Resources.appwizard_list;
+            this.btnPresentationList.TextLine1 = "LISTADO";
+            this.btnPresentationList.Click += new System.EventHandler(this.btnPresentationList_Click);
+            // 
+            // btnNewPresentation
+            // 
+            this.btnNewPresentation.ImageLarge = global::kiosko_ssms.Properties.Resources.catalog_1;
+            this.btnNewPresentation.ImageSmall = global::kiosko_ssms.Properties.Resources.catalog_1;
+            this.btnNewPresentation.TextLine1 = "NUEVA";
+            this.btnNewPresentation.Click += new System.EventHandler(this.btnNewPresentation_Click);
+            // 
+            // btnEditPresentation
+            // 
+            this.btnEditPresentation.ImageLarge = global::kiosko_ssms.Properties.Resources.notepad_file_gear_2;
+            this.btnEditPresentation.ImageSmall = global::kiosko_ssms.Properties.Resources.notepad_file_gear_2;
+            this.btnEditPresentation.TextLine1 = "GESTIONAR";
+            this.btnEditPresentation.Click += new System.EventHandler(this.btnEditPresentation_Click);
+            // 
+            // kryptonRibbonGroup3
+            // 
+            this.kryptonRibbonGroup3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupLines2});
+            this.kryptonRibbonGroup3.TextLine1 = "BOLETAS-FACTURAS";
+            // 
+            // kryptonRibbonGroupLines2
+            // 
+            this.kryptonRibbonGroupLines2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnVoucherList});
+            // 
+            // btnVoucherList
+            // 
+            this.btnVoucherList.ImageLarge = global::kiosko_ssms.Properties.Resources.search_directory_0;
+            this.btnVoucherList.ImageSmall = global::kiosko_ssms.Properties.Resources.search_directory_0;
+            this.btnVoucherList.TextLine1 = "LISTADO";
+            // 
             // rbManagementGroup
             // 
             this.rbManagementGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
@@ -267,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1417, 506);
+            this.ClientSize = new System.Drawing.Size(1477, 466);
             this.CloseBox = false;
             this.Controls.Add(this.mainRibbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -315,5 +377,13 @@
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple6;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnAbout;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
+        private Krypton.Ribbon.KryptonRibbonGroupLines kryptonRibbonGroupLines1;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnPresentationList;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnNewPresentation;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnEditPresentation;
+        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup3;
+        private Krypton.Ribbon.KryptonRibbonGroupLines kryptonRibbonGroupLines2;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnVoucherList;
     }
 }

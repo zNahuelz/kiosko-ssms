@@ -10,9 +10,9 @@ namespace kiosko_ssms.Data.Migrations
             new Presentation
     {
                 Id = 1,
-        Name = "Unidad",
+        Name = "UNIDAD",
         Quantity = 1,
-        Unit = "Uni.",
+        Unit = "UNI.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -20,9 +20,9 @@ namespace kiosko_ssms.Data.Migrations
     new Presentation
     {
         Id = 2,
-        Name = "Bolsa",
+        Name = "BOLSA",
         Quantity = 1,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -30,9 +30,9 @@ namespace kiosko_ssms.Data.Migrations
     new Presentation
     {
         Id = 3,
-        Name = "Bolsa",
+        Name = "BOLSA",
         Quantity = 42.5,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -40,9 +40,9 @@ namespace kiosko_ssms.Data.Migrations
     new Presentation
     {
         Id = 4,
-        Name = "Bolsa",
+        Name = "BOLSA",
         Quantity = 2,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -50,9 +50,9 @@ namespace kiosko_ssms.Data.Migrations
     new Presentation
     {
         Id = 5,
-        Name = "Bolsa",
+        Name = "BOLSA",
         Quantity = 0.5,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -62,7 +62,7 @@ namespace kiosko_ssms.Data.Migrations
         Id = 6,
         Name = "Balde",
         Quantity = 5,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -72,7 +72,7 @@ namespace kiosko_ssms.Data.Migrations
         Id = 7,
         Name = "Balde",
         Quantity = 2.5,
-        Unit = "Kg.",
+        Unit = "KG.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -82,7 +82,7 @@ namespace kiosko_ssms.Data.Migrations
         Id = 8,
         Name = "Paquete",
         Quantity = 1000,
-        Unit = "Uni.",
+        Unit = "UNI.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -92,7 +92,7 @@ namespace kiosko_ssms.Data.Migrations
         Id = 9,
         Name = "Paquete",
         Quantity = 500,
-        Unit = "Uni.",
+        Unit = "UNI.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now
@@ -102,7 +102,7 @@ namespace kiosko_ssms.Data.Migrations
         Id = 10,
         Name = "Rollo",
         Quantity = 100,
-        Unit = "Mts.",
+        Unit = "MTS.",
         IsDeleted = false,
         CreatedAt = DateTime.Now,
         UpdatedAt = DateTime.Now

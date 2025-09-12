@@ -17,6 +17,11 @@ namespace kiosko_ssms.Forms
         public CustomerDetail customerDetailForm;
         private NewCustomer newCustomerForm;
         private EditCustomer editCustomerForm;
+        private NewPresentation newPresentationForm;
+        private PresentationList presentationListForm;
+        private EditPresentation editPresentationForm;
+
+        private NewSale newSaleForm;
 
         private About aboutForm;
 
@@ -113,9 +118,29 @@ namespace kiosko_ssms.Forms
             OpenForm(ref editCustomerForm, (s, ev) => CloseForm(ref editCustomerForm, s, ev));
         }
 
+        private void btnPresentationList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref presentationListForm, (s, ev) => CloseForm(ref presentationListForm, s, ev));
+        }
+
+        private void btnEditPresentation_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref editPresentationForm, (s, ev) => CloseForm(ref editPresentationForm, s, ev));
+        }
+
+        private void btnNewPresentation_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newPresentationForm, (s, ev) => CloseForm(ref newPresentationForm, s, ev));
+        }
+
         private void btnAbout_Click(object sender, EventArgs e)
         {
             OpenForm(ref aboutForm, (s, ev) => CloseForm(ref aboutForm, s, ev));
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newSaleForm, (s, ev) => CloseForm(ref newSaleForm, s, ev));
         }
 
         private void btnKillForms_Click(object sender, EventArgs e)

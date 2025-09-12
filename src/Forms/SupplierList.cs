@@ -134,6 +134,7 @@ namespace kiosko_ssms.Forms
             txtSearch.Clear();
             cbSearchMode.SelectedIndex = 0;
             cbVisibility.SelectedIndex = 0;
+            txtSearch.Focus();
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)

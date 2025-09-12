@@ -8,5 +8,6 @@ namespace kiosko_ssms.Utils
         public static List<string> SupplierSearchModes = new List<string> { "POR NOMBRE", "POR RUC" };
         public static List<string> VisibilityOptions = new List<string> { "MOSTRAR ELIMINADOS", "OCULTAR ELIMINADOS" };
         public static List<string> CustomerSearchModes = new List<string> { "POR NOMBRE", "POR DNI" };
+        public static List<string> PresentationSearchModes = new List<string> { "POR ID", "POR NOMBRE", "POR UNIDAD" };
     }
 }

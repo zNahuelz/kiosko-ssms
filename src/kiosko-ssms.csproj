@@ -106,8 +106,8 @@
       <HintPath>packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
@@ -209,6 +209,12 @@
     <Compile Include="Forms\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditPresentation.Designer.cs">
+      <DependentUpon>EditPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,17 +239,35 @@
     <Compile Include="Forms\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewPresentation.Designer.cs">
+      <DependentUpon>NewPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NewProduct.Designer.cs">
       <DependentUpon>NewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewSale.Designer.cs">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PresentationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PresentationList.Designer.cs">
+      <DependentUpon>PresentationList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductDetail.cs">
       <SubType>Form</SubType>
@@ -288,6 +312,9 @@
     <EmbeddedResource Include="Forms\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditPresentation.resx">
+      <DependentUpon>EditPresentation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,11 +327,20 @@
     <EmbeddedResource Include="Forms\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewPresentation.resx">
+      <DependentUpon>NewPresentation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewSale.resx">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewSupplier.resx">
       <DependentUpon>NewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PresentationList.resx">
+      <DependentUpon>PresentationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
@@ -380,6 +416,10 @@
     <None Include="Resources\chart.png" />
     <None Include="Resources\msg_information-1.png" />
     <None Include="Resources\song_yi.png" />
+    <None Include="Resources\appwizard_list.png" />
+    <None Include="Resources\catalog-1.png" />
+    <None Include="Resources\notepad_file_gear-2.png" />
+    <None Include="Resources\search_directory-0.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

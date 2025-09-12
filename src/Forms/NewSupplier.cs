@@ -11,6 +11,7 @@ namespace kiosko_ssms.Forms
         public NewSupplier()
         {
             InitializeComponent();
+            btnClear.CausesValidation = false;
         }
 
         private bool ValidateName()
@@ -195,6 +196,7 @@ namespace kiosko_ssms.Forms
             txtAddress.Clear();
             txtPhoneNumber.Clear();
             txtEmail.Clear();
+            txtName.Focus();
         }
 
         private void btnClear_Click(object sender, EventArgs e)

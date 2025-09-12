@@ -103,9 +103,29 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appwizard_list {
+            get {
+                object obj = ResourceManager.GetObject("appwizard_list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Attributes {
             get {
                 object obj = ResourceManager.GetObject("Attributes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap catalog_1 {
+            get {
+                object obj = ResourceManager.GetObject("catalog-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +223,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notepad_file_gear_2 {
+            get {
+                object obj = ResourceManager.GetObject("notepad_file_gear-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outlook_express_4 {
             get {
                 object obj = ResourceManager.GetObject("outlook_express-4", resourceCulture);
@@ -236,6 +266,16 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap replace_directory {
             get {
                 object obj = ResourceManager.GetObject("replace_directory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_directory_0 {
+            get {
+                object obj = ResourceManager.GetObject("search_directory-0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
