@@ -1,7 +1,30 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="kiosko_ssms.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="taxValue" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.18</Value>
+    </Setting>
+    <Setting Name="taxesStatus" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="taxName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">IGV</Value>
+    </Setting>
+    <Setting Name="currencyShortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">S./ </Value>
+    </Setting>
+    <Setting Name="currencyLongName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SOLES</Value>
+    </Setting>
+    <Setting Name="companyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PRECOMPRIMIDO Y ASOCIADOS S.A.C</Value>
+    </Setting>
+    <Setting Name="companyAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CALLE AIJA 4900 - LOS OLIVOS 15301 - LIMA PE.</Value>
+    </Setting>
+    <Setting Name="companyTaxId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10110022001</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -1,6 +1,5 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

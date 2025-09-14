@@ -281,6 +281,12 @@
     <Compile Include="Forms\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SupplierDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,7 @@
     <Compile Include="Services\PresentationService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Utils\Constants.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -347,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupplierDetail.resx">
       <DependentUpon>SupplierDetail.cs</DependentUpon>
@@ -408,7 +418,6 @@
     <None Include="Resources\Fax Received Succesfully.png" />
     <None Include="Resources\Pop up blocked.png" />
     <None Include="Resources\Directory Services.png" />
-    <None Include="Resources\Address Book.png" />
     <None Include="Resources\Address BookXP.png" />
     <None Include="Resources\Fax Sender Information.png" />
     <None Include="Resources\Windows Journal.png" />
@@ -420,6 +429,7 @@
     <None Include="Resources\catalog-1.png" />
     <None Include="Resources\notepad_file_gear-2.png" />
     <None Include="Resources\search_directory-0.png" />
+    <None Include="Resources\server_gear-1.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

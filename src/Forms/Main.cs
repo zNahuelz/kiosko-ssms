@@ -24,10 +24,13 @@ namespace kiosko_ssms.Forms
         private NewSale newSaleForm;
 
         private About aboutForm;
+        private Settings settingsForm;
 
         public Main()
         {
             InitializeComponent();
+            tssDate.Text = $"FECHA ACTUAL: {DateTime.Now.ToString("dd/MM/yyyy")}";
+            mainTimer.Enabled = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -133,14 +136,19 @@ namespace kiosko_ssms.Forms
             OpenForm(ref newPresentationForm, (s, ev) => CloseForm(ref newPresentationForm, s, ev));
         }
 
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newSaleForm, (s, ev) => CloseForm(ref newSaleForm, s, ev));
+        }
+
         private void btnAbout_Click(object sender, EventArgs e)
         {
             OpenForm(ref aboutForm, (s, ev) => CloseForm(ref aboutForm, s, ev));
         }
 
-        private void btnNewSale_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
-            OpenForm(ref newSaleForm, (s, ev) => CloseForm(ref newSaleForm, s, ev));
+            OpenForm(ref settingsForm, (s, ev) => CloseForm(ref settingsForm, s, ev));
         }
 
         private void btnKillForms_Click(object sender, EventArgs e)
@@ -150,6 +158,11 @@ namespace kiosko_ssms.Forms
             {
                 KillChildForms();
             }
+        }
+
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            tssClock.Text = $"HORA ACTUAL: {DateTime.Now.ToString("hh:mm:ss tt")}";
         }
     }
 }

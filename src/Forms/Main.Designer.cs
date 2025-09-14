@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.mainRibbon = new Krypton.Ribbon.KryptonRibbon();
             this.mainTab = new Krypton.Ribbon.KryptonRibbonTab();
@@ -65,8 +66,14 @@
             this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnSettings = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnAbout = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.ssMain = new Krypton.Toolkit.KryptonStatusStrip();
+            this.tssClock = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssDate = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
+            this.ssMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainRibbon
@@ -78,7 +85,7 @@
             this.mainTab,
             this.kryptonRibbonTab1});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1477, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1501, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -315,7 +322,15 @@
             // kryptonRibbonGroupTriple6
             // 
             this.kryptonRibbonGroupTriple6.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnSettings,
             this.btnAbout});
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.ImageLarge = global::kiosko_ssms.Properties.Resources.server_gear_1;
+            this.btnSettings.ImageSmall = global::kiosko_ssms.Properties.Resources.server_gear_1;
+            this.btnSettings.TextLine1 = "CONFIGURACIÓN";
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnAbout
             // 
@@ -324,23 +339,63 @@
             this.btnAbout.TextLine1 = "ACERCA DE";
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
+            // mainTimer
+            // 
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
+            // 
+            // ssMain
+            // 
+            this.ssMain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssDate,
+            this.tssClock});
+            this.ssMain.Location = new System.Drawing.Point(0, 504);
+            this.ssMain.Name = "ssMain";
+            this.ssMain.ProgressBars = null;
+            this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            this.ssMain.Size = new System.Drawing.Size(1501, 26);
+            this.ssMain.TabIndex = 5;
+            this.ssMain.Text = "kryptonStatusStrip1";
+            // 
+            // tssClock
+            // 
+            this.tssClock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssClock.ForeColor = System.Drawing.Color.DarkGreen;
+            this.tssClock.Name = "tssClock";
+            this.tssClock.Size = new System.Drawing.Size(130, 21);
+            this.tssClock.Text = "<----CLOCK---->";
+            this.tssClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tssDate
+            // 
+            this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.tssDate.Name = "tssDate";
+            this.tssDate.Size = new System.Drawing.Size(1356, 21);
+            this.tssDate.Spring = true;
+            this.tssDate.Text = "<---DATE--->";
+            this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1477, 466);
+            this.ClientSize = new System.Drawing.Size(1501, 530);
             this.CloseBox = false;
+            this.Controls.Add(this.ssMain);
             this.Controls.Add(this.mainRibbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KIOSKO v0.1 = SISTEMA SIMPLE DE GESTIÓN DE VENTAS";
+            this.Text = "KIOSKO v0.7 = SISTEMA SIMPLE DE GESTIÓN DE VENTAS";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
+            this.ssMain.ResumeLayout(false);
+            this.ssMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,5 +440,10 @@
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup3;
         private Krypton.Ribbon.KryptonRibbonGroupLines kryptonRibbonGroupLines2;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnVoucherList;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnSettings;
+        private System.Windows.Forms.Timer mainTimer;
+        private Krypton.Toolkit.KryptonStatusStrip ssMain;
+        private System.Windows.Forms.ToolStripStatusLabel tssClock;
+        private System.Windows.Forms.ToolStripStatusLabel tssDate;
     }
 }
