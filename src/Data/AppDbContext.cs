@@ -30,6 +30,8 @@ namespace kiosko_ssms.Data
             modelBuilder.Entity<Supplier>().HasData(new Migrations.SupplierSeeder().Suppliers);
             modelBuilder.Entity<Presentation>().HasData(new Migrations.PresentationSeeder().Presentations);
             modelBuilder.Entity<Product>().HasData(new Migrations.ProductSeeder().Products);
+            modelBuilder.Entity<PaymentType>().HasData(new Migrations.PaymentTypeSeeder().PaymentTypes);
+            modelBuilder.Entity<Customer>().HasData(new Migrations.CustomerSeeder().Customers);
         }
     }
 }

@@ -57,6 +57,8 @@
             this.txtBarcode = new Krypton.Toolkit.KryptonTextBox();
             this.statusStripMain = new Krypton.Toolkit.KryptonStatusStrip();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblTaxPercentage = new System.Windows.Forms.Label();
+            this.lblTaxValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbInfo.Panel)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -84,6 +86,8 @@
             // 
             // gbMain.Panel
             // 
+            this.gbMain.Panel.Controls.Add(this.lblTaxValue);
+            this.gbMain.Panel.Controls.Add(this.lblTaxPercentage);
             this.gbMain.Panel.Controls.Add(this.txtProfit);
             this.gbMain.Panel.Controls.Add(this.nudStockMin);
             this.gbMain.Panel.Controls.Add(this.nudStock);
@@ -396,7 +400,7 @@
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.ProgressBars = null;
             this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStripMain.Size = new System.Drawing.Size(726, 22);
+            this.statusStripMain.Size = new System.Drawing.Size(722, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "kryptonStatusStrip1";
             // 
@@ -404,11 +408,35 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblTaxPercentage
+            // 
+            this.lblTaxPercentage.AutoSize = true;
+            this.lblTaxPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.lblTaxPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxPercentage.ForeColor = System.Drawing.Color.Black;
+            this.lblTaxPercentage.Location = new System.Drawing.Point(385, 278);
+            this.lblTaxPercentage.Name = "lblTaxPercentage";
+            this.lblTaxPercentage.Size = new System.Drawing.Size(130, 16);
+            this.lblTaxPercentage.TabIndex = 36;
+            this.lblTaxPercentage.Text = "IMPUESTO (%): --";
+            // 
+            // lblTaxValue
+            // 
+            this.lblTaxValue.AutoSize = true;
+            this.lblTaxValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.lblTaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxValue.ForeColor = System.Drawing.Color.Black;
+            this.lblTaxValue.Location = new System.Drawing.Point(385, 304);
+            this.lblTaxValue.Name = "lblTaxValue";
+            this.lblTaxValue.Size = new System.Drawing.Size(125, 16);
+            this.lblTaxValue.TabIndex = 37;
+            this.lblTaxValue.Text = "IMPUESTO ($): --";
+            // 
             // NewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 638);
+            this.ClientSize = new System.Drawing.Size(722, 638);
             this.Controls.Add(this.statusStripMain);
             this.Controls.Add(this.gbMain);
             this.Controls.Add(this.gbInfo);
@@ -465,5 +493,7 @@
         private Krypton.Toolkit.KryptonNumericUpDown nudStock;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private Krypton.Toolkit.KryptonTextBox txtProfit;
+        private System.Windows.Forms.Label lblTaxPercentage;
+        private System.Windows.Forms.Label lblTaxValue;
     }
 }

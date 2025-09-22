@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
+using kiosko_ssms.Utils;
 using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace kiosko_ssms.Forms
 {
     public partial class EditProduct : Krypton.Toolkit.KryptonForm
     {
+        private double TAX_PERCENTAGE = 0.18;
         private readonly AppDbContext DB_CONTEXT = new Data.AppDbContext();
 
         private int selectedProductId = 0;
@@ -21,6 +23,7 @@ namespace kiosko_ssms.Forms
             btnRandomBarcode.CausesValidation = false;
             cbSupplier.CausesValidation = false;
             cbPresentation.CausesValidation = false;
+            LoadTax();
         }
 
         private void EditProduct_Load(object sender, EventArgs e)
@@ -47,7 +50,7 @@ namespace kiosko_ssms.Forms
                 btnReset.Enabled = false;
                 btnUpdate.Enabled = false;
                 btnRandomBarcode.Enabled = false;
-                MessageBox.Show("Imposible cargar el listado de proveedores. La creación de productos se encuentra deshabilitada. Debe tener proveedores registrados previamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.Messages.Error.SUPPLIERS_LOAD_FAILED_CREATE_PRODUCT_DISABLED, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,7 +67,7 @@ namespace kiosko_ssms.Forms
                 btnReset.Enabled = false;
                 btnUpdate.Enabled = false;
                 btnRandomBarcode.Enabled = false;
-                MessageBox.Show("Imposible cargar el listado de presentaciones de productos. La creación de productos se encuentra deshabilitada. Debe tener presentaciones de productos registradas previamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.Messages.Error.PRESENTATION_LOAD_FAILED_CREATE_PRODUCT_DISABLED, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -211,7 +214,7 @@ namespace kiosko_ssms.Forms
             txtDescription.Text = product.Description;
             nudBuyPrice.Value = product.BuyPrice;
             nudSellPrice.Value = product.SellPrice;
-            txtProfit.Text = product.Profit.ToString();
+            txtProfit.Text = Math.Round(product.Profit, 2).ToString();
             nudStock.Value = product.Stock;
             nudStockMin.Value = product.StockMin;
             cbSupplier.SelectedItem = product.Supplier;
@@ -238,6 +241,7 @@ namespace kiosko_ssms.Forms
             selectedProductId = 0;
             txtKeyword.Clear();
             txtKeyword.Focus();
+            lblTaxValue.Text = "IMPUESTO: ---";
         }
 
         private string GenerateRandomBarcode()
@@ -275,6 +279,17 @@ namespace kiosko_ssms.Forms
             }
         }
 
+        private decimal CalculateProfit(decimal buyPrice, decimal sellPriceWithTax)
+        {
+            if (buyPrice <= 0 || sellPriceWithTax <= 0)
+                return 0;
+
+            decimal sellPriceWithoutTax = sellPriceWithTax / (1 + (decimal)TAX_PERCENTAGE);
+            decimal profit = Math.Round((sellPriceWithoutTax - buyPrice), 2);
+
+            return profit > 0 ? profit : 0;
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (ValidateEditFields())
@@ -287,7 +302,7 @@ namespace kiosko_ssms.Forms
                     Description = txtDescription.Text,
                     BuyPrice = nudBuyPrice.Value,
                     SellPrice = nudSellPrice.Value,
-                    Profit = (nudSellPrice.Value - nudBuyPrice.Value) <= 0 ? 0 : nudSellPrice.Value - nudBuyPrice.Value,
+                    Profit = CalculateProfit(nudBuyPrice.Value, nudSellPrice.Value),
                     Stock = (int)nudStock.Value,
                     StockMin = (int)nudStockMin.Value,
                     SupplierId = ((Supplier)cbSupplier.SelectedItem).Id,
@@ -307,6 +322,7 @@ namespace kiosko_ssms.Forms
                     selectedProductId = 0;
                     txtKeyword.Text = "";
                     txtKeyword.Focus();
+                    lblTaxValue.Text = "IMPUESTO: ---";
                 }
                 catch (Exception ex)
                 {
@@ -518,24 +534,44 @@ namespace kiosko_ssms.Forms
 
         private void CalculateProfit()
         {
-            //TODO: Add IGV.
             if (ValidateBuyPrice() && ValidateSellPrice())
             {
                 decimal buyPrice = nudBuyPrice.Value;
-                decimal sellPrice = nudSellPrice.Value;
+                decimal sellPriceWithTax = nudSellPrice.Value;
+                decimal TAX_PERCENTAGE = 0.18m;
+
                 if (buyPrice > 0)
                 {
-                    decimal profit = sellPrice - buyPrice;
-                    txtProfit.Text = $"{profit:F2}";
+                    decimal sellPriceWithoutTax = sellPriceWithTax / (1 + TAX_PERCENTAGE);
+                    decimal taxValue = sellPriceWithTax - sellPriceWithoutTax;
+                    decimal profit = sellPriceWithoutTax - buyPrice;
+
+                    txtProfit.Text = $"{Math.Round(profit, 2)}";
+                    lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): {Properties.Settings.Default.currencyShortName} {taxValue:F2}";
                 }
                 else
                 {
                     txtProfit.Text = "---";
+                    lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): ---";
                 }
             }
             else
             {
                 txtProfit.Text = "---";
+                lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): ---";
+            }
+        }
+
+        private void LoadTax()
+        {
+            try
+            {
+                TAX_PERCENTAGE = Properties.Settings.Default.taxValue;
+                lblTaxPercentage.Text = $"IMPUESTO (%) {(TAX_PERCENTAGE * 100).ToString()}%";
+            }
+            catch
+            {
+                TAX_PERCENTAGE = 0.18;
             }
         }
 

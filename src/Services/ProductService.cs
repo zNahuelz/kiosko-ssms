@@ -57,9 +57,7 @@ namespace kiosko_ssms.Services
             {
                 throw new InvalidOperationException("Ya existe un producto registrado con el código de barras ingresado.");
             }
-
-            product.Profit = (product.SellPrice - product.BuyPrice) <= 0 ? 0 : product.SellPrice - product.BuyPrice;
-
+            product.Profit = product.Profit;
             product.IsVisible = true;
             product.IsDeleted = false;
             product.CreatedAt = DateTime.UtcNow;
@@ -88,7 +86,7 @@ namespace kiosko_ssms.Services
             }
             existing.BuyPrice = product.BuyPrice;
             existing.SellPrice = product.SellPrice;
-            existing.Profit = (product.SellPrice - product.BuyPrice) <= 0 ? 0 : product.SellPrice - product.BuyPrice;
+            existing.Profit = product.Profit;
             existing.Stock = product.Stock;
             existing.StockMin = product.StockMin;
             existing.SupplierId = product.SupplierId;

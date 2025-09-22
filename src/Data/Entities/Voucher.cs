@@ -7,6 +7,7 @@ namespace kiosko_ssms.Data.Entities
         public int Id { get; set; }
         public double Igv { get; set; }
         public double Tax { get; set; }
+        public double Subtotal { get; set; }
         public double Total { get; set; }
         public double Change { get; set; }
         public bool Paid { get; set; }

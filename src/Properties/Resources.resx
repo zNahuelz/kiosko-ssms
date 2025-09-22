@@ -178,11 +178,17 @@
   <data name="msg_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msg_error.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="server_gear-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server_gear-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="outlook_express-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outlook_express-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="msg_information-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msg_information-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="address_book_pad_users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book_pad_users.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +208,7 @@
   <data name="Setup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Setup1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="server_gear-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server_gear-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

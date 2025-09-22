@@ -180,6 +180,9 @@
     <Compile Include="Data\Entities\Voucher.cs" />
     <Compile Include="Data\Entities\VoucherDetail.cs" />
     <Compile Include="Data\Entities\VoucherType.cs" />
+    <Compile Include="Data\Helpers\CartItem.cs" />
+    <Compile Include="Data\Migrations\CustomerSeeder.cs" />
+    <Compile Include="Data\Migrations\PaymentTypeSeeder.cs" />
     <Compile Include="Data\Migrations\PresentationSeeder.cs" />
     <Compile Include="Data\Migrations\ProductSeeder.cs" />
     <Compile Include="Data\Migrations\RoleSeeder.cs" />
@@ -302,6 +305,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\PaymentTypeService.cs" />
     <Compile Include="Services\PresentationService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\SupplierService.cs" />
@@ -430,6 +434,8 @@
     <None Include="Resources\notepad_file_gear-2.png" />
     <None Include="Resources\search_directory-0.png" />
     <None Include="Resources\server_gear-1.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\check-0.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

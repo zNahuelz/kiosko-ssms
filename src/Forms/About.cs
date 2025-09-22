@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kiosko_ssms.Utils;
+using System;
 using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
@@ -16,7 +17,7 @@ namespace kiosko_ssms.Forms
             {
                 System.Diagnostics.Process.Start("https://github.com/zNahuelz");
             }
-            catch (Exception) { MessageBox.Show("It seems like you don't have any web browser installed on this PC :("); }
+            catch (Exception) { MessageBox.Show(Constants.Messages.Info.NO_BROWSER_FOUND); }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
+using kiosko_ssms.Utils;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -95,7 +96,7 @@ namespace kiosko_ssms.Forms
                 var presentations = presentationService.GetPresentationsById(id, true);
                 if (presentations.Count <= 0)
                 {
-                    MessageBox.Show("No se encontró ninguna presentación con el ID proporcionado.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Constants.Messages.Error.PRESENTATION_NOT_FOUND_BY_ID, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtKeyword.Focus();
                     ClearFields();
                     return;
@@ -233,7 +234,7 @@ namespace kiosko_ssms.Forms
             if (!ValidateUnit()) isValid = false;
             if (!ValidatePresentationUniqueness())
             {
-                MessageBox.Show("Ya existe una presentación con el mismo nombre, cantidad y unidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.Messages.Error.DUPLICATED_PRESENTATION, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 isValid = false;
             }
             return isValid;
@@ -258,7 +259,7 @@ namespace kiosko_ssms.Forms
                     using (var context = new AppDbContext())
                     {
                         var updatedPresentation = new PresentationService(context).UpdatePresentation(presentation);
-                        MessageBox.Show($"Presentación '{updatedPresentation.Name}' actualizada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Constants.Messages.Success.PRESENTATION_UPDATED(updatedPresentation.Name), Constants.Messages.Success.SUCCESS_TAG, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearFields();
                         HandleInfoFields(false);
                         HandleSearchFields(true);
@@ -269,7 +270,7 @@ namespace kiosko_ssms.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocurrió un error al actualizar la presentación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Constants.Messages.Error.PRESENTATION_UPDATE_FAILED(ex.Message), Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

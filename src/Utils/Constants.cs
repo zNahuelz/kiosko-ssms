@@ -2,12 +2,49 @@
 
 namespace kiosko_ssms.Utils
 {
-    public class Constants
+    public static class Constants
     {
-        public static List<string> ProductSearchModes = new List<string> { "POR NOMBRE", "POR COD. BARRAS", "POR DESCRIPCIÓN", "POR PROVEEDOR", "POR PRESENTACIÓN" };
-        public static List<string> SupplierSearchModes = new List<string> { "POR NOMBRE", "POR RUC" };
-        public static List<string> VisibilityOptions = new List<string> { "MOSTRAR ELIMINADOS", "OCULTAR ELIMINADOS" };
-        public static List<string> CustomerSearchModes = new List<string> { "POR NOMBRE", "POR DNI" };
-        public static List<string> PresentationSearchModes = new List<string> { "POR ID", "POR NOMBRE", "POR UNIDAD" };
+        public static readonly List<string> ProductSearchModes = new List<string> { "POR NOMBRE", "POR COD. BARRAS", "POR DESCRIPCIÓN", "POR PROVEEDOR", "POR PRESENTACIÓN" };
+        public static readonly List<string> SupplierSearchModes = new List<string> { "POR NOMBRE", "POR RUC" };
+        public static readonly List<string> VisibilityOptions = new List<string> { "MOSTRAR ELIMINADOS", "OCULTAR ELIMINADOS" };
+        public static readonly List<string> CustomerSearchModes = new List<string> { "POR NOMBRE", "POR DNI" };
+        public static readonly List<string> PresentationSearchModes = new List<string> { "POR ID", "POR NOMBRE", "POR UNIDAD" };
+
+
+        public static class Messages
+        {
+            public static class Success
+            {
+                public static string SUCCESS_TAG = "OPERACIÓN COMPLETADA";
+                public static string CUSTOMER_UPDATED(string names, string surnames) { return $"Cliente {names} {surnames} actualizado correctamente."; }
+                public static string PRESENTATION_UPDATED(string name) { return $"Presentación {name} actualizada correctamente."; }
+            }
+            public static class Error
+            {
+                public static string ERROR_TAG = "OPERACIÓN FALLIDA";
+                public static string DB_CONN_FAILED = "Ha fallado la conexión con la base de datos. \n DETALLES: \n";
+                public static string CUSTOMER_NOT_FOUND = "Cliente no encontrado.";
+                public static string CUSTOMER_NOT_FOUND_BY_DNI = "No se encontró ningún cliente con el DNI proporcionado.";
+                public static string CUSTOMER_UPDATE_FAILED = "No se pudo actualizar el cliente. Intente nuevamente. \n DETALLES: \n";
+                public static string PRESENTATION_NOT_FOUND_BY_ID = "No se encontró ninguna presentación con el ID proporcionado.";
+                public static string DUPLICATED_PRESENTATION = "Ya existe una presentación con el mismo nombre, cantidad y unidad.";
+                public static string PRESENTATION_UPDATE_FAILED(string ex) { return $"Ocurrió un error al actualizar la presentación: {ex}"; }
+                public static string PRESENTATIONS_LOAD_FAILED = "Imposible cargar el listado de presentaciones de productos. La busqueda de productos por esta característica se encuentra deshabilitada.";
+                public static string SUPPLIERS_LOAD_FAILED = "Imposible cargar el listado de proveedores. La busqueda de productos por esta característica se encuentra deshabilitada.";
+                public static string PRESENTATION_LOAD_FAILED_CREATE_PRODUCT_DISABLED = "Imposible cargar el listado de presentaciones de productos. La creación de productos se encuentra deshabilitada. Debe tener presentaciones registradas previamente.";
+                public static string SUPPLIERS_LOAD_FAILED_CREATE_PRODUCT_DISABLED = "Imposible cargar el listado de proveedores. La creación de productos se encuentra deshabilitada. Debe tener proveedores registrados previamente.";
+                public static string CUSTOMER_NOT_FOUND_BY_DNI_SALES_MODULE = "No se encontró ningún cliente con el DNI proporcionado. Intente nuevamente o realice la venta con DNI 0";
+                public static string PRODUCT_NOT_FOUND_BY_BARCODE = "No se encontró el producto con el código de barras proporcionado. Intente nuevamente.";
+                public static string PAYMENT_TYPES_NOT_LOADED = "No se encontraron métodos de pago para realizar la venta. Intente nuevamente o registre algunos.";
+            }
+
+            public static class Info
+            {
+                public static string NO_BROWSER_FOUND = "Parece que no tienes ningún navegador web instalado en este PC :(";
+                public static string COPIED_DNI = "DNI copiado al portapapeles!";
+                public static string COPIED_EMAIL = "Email copiado al portapapeles!";
+                public static string COPIED_ID = "ID copiado al portapapeles!";
+            }
+        }
     }
 }

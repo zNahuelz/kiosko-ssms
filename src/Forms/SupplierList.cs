@@ -70,7 +70,7 @@ namespace kiosko_ssms.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Constants.Messages.Error.DB_CONN_FAILED} {ex.Message}", Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -143,6 +143,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_0 {
+            get {
+                object obj = ResourceManager.GetObject("check-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cylinder_database {
             get {
                 object obj = ResourceManager.GetObject("cylinder_database", resourceCulture);
@@ -266,6 +276,16 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap replace_directory {
             get {
                 object obj = ResourceManager.GetObject("replace_directory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save {
+            get {
+                object obj = ResourceManager.GetObject("Save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

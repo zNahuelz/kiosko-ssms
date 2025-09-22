@@ -1,4 +1,5 @@
 ﻿using kiosko_ssms.Data.Entities;
+using kiosko_ssms.Utils;
 using System;
 using System.Windows.Forms;
 
@@ -35,19 +36,19 @@ namespace kiosko_ssms.Forms
         private void txtId_DoubleClick(object sender, EventArgs e)
         {
             Clipboard.SetText(txtId.Text);
-            tssLabel.Text = "ID copiado al portapapeles!";
+            tssLabel.Text = Constants.Messages.Info.COPIED_ID;
         }
 
         private void txtDni_DoubleClick(object sender, EventArgs e)
         {
             Clipboard.SetText(txtDni.Text);
-            tssLabel.Text = "DNI copiado al portapapeles!";
+            tssLabel.Text = Constants.Messages.Info.COPIED_DNI;
         }
 
         private void txtEmail_DoubleClick(object sender, EventArgs e)
         {
             Clipboard.SetText(txtEmail.Text?.Trim().ToUpper());
-            tssLabel.Text = "Email copiado al portapapeles!";
+            tssLabel.Text = Constants.Messages.Info.COPIED_EMAIL;
         }
     }
 }

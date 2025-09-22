@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
+            this.lblTaxValue = new System.Windows.Forms.Label();
+            this.lblTaxPercentage = new System.Windows.Forms.Label();
             this.chkIsVisible = new System.Windows.Forms.CheckBox();
             this.chkIsDeleted = new System.Windows.Forms.CheckBox();
             this.txtProfit = new Krypton.Toolkit.KryptonTextBox();
@@ -81,6 +83,8 @@
             // 
             // gbMain.Panel
             // 
+            this.gbMain.Panel.Controls.Add(this.lblTaxValue);
+            this.gbMain.Panel.Controls.Add(this.lblTaxPercentage);
             this.gbMain.Panel.Controls.Add(this.chkIsVisible);
             this.gbMain.Panel.Controls.Add(this.chkIsDeleted);
             this.gbMain.Panel.Controls.Add(this.txtProfit);
@@ -109,6 +113,30 @@
             this.gbMain.Size = new System.Drawing.Size(695, 452);
             this.gbMain.TabIndex = 2;
             this.gbMain.Values.Heading = "INFORMACIÓN DEL PRODUCTO";
+            // 
+            // lblTaxValue
+            // 
+            this.lblTaxValue.AutoSize = true;
+            this.lblTaxValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.lblTaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxValue.ForeColor = System.Drawing.Color.Black;
+            this.lblTaxValue.Location = new System.Drawing.Point(385, 355);
+            this.lblTaxValue.Name = "lblTaxValue";
+            this.lblTaxValue.Size = new System.Drawing.Size(125, 16);
+            this.lblTaxValue.TabIndex = 39;
+            this.lblTaxValue.Text = "IMPUESTO ($): --";
+            // 
+            // lblTaxPercentage
+            // 
+            this.lblTaxPercentage.AutoSize = true;
+            this.lblTaxPercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(221)))));
+            this.lblTaxPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxPercentage.ForeColor = System.Drawing.Color.Black;
+            this.lblTaxPercentage.Location = new System.Drawing.Point(385, 329);
+            this.lblTaxPercentage.Name = "lblTaxPercentage";
+            this.lblTaxPercentage.Size = new System.Drawing.Size(130, 16);
+            this.lblTaxPercentage.TabIndex = 38;
+            this.lblTaxPercentage.Text = "IMPUESTO (%): --";
             // 
             // chkIsVisible
             // 
@@ -462,7 +490,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 607);
+            this.ClientSize = new System.Drawing.Size(718, 608);
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.gbMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -519,5 +547,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.CheckBox chkIsDeleted;
         private System.Windows.Forms.CheckBox chkIsVisible;
+        private System.Windows.Forms.Label lblTaxValue;
+        private System.Windows.Forms.Label lblTaxPercentage;
     }
 }

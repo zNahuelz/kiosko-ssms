@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
+using kiosko_ssms.Utils;
 using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -141,7 +142,7 @@ namespace kiosko_ssms.Forms
                 var customers = customerService.GetCustomersByDni(dni, true);
                 if (customers.Count <= 0)
                 {
-                    MessageBox.Show("No se encontró ningún cliente con el DNI proporcionado.", "Cliente no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Constants.Messages.Error.CUSTOMER_NOT_FOUND_BY_DNI, Constants.Messages.Error.CUSTOMER_NOT_FOUND, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtKeyword.Focus();
                     ClearFields();
                     return;
@@ -373,7 +374,7 @@ namespace kiosko_ssms.Forms
                     using (var context = new AppDbContext())
                     {
                         var updatedCustomer = new CustomerService(context).UpdateCustomer(customer);
-                        MessageBox.Show($"Cliente {updatedCustomer.Names} {updatedCustomer.Surnames} actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Constants.Messages.Success.CUSTOMER_UPDATED(updatedCustomer.Names, updatedCustomer.Surnames), Constants.Messages.Success.SUCCESS_TAG, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearFields();
                         HandleInfoFields(false);
                         HandleSearchFields(true);
@@ -384,7 +385,7 @@ namespace kiosko_ssms.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al actualizar el cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"{Constants.Messages.Error.CUSTOMER_UPDATE_FAILED} {ex.Message}", Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

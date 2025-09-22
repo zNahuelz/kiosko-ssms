@@ -8,7 +8,7 @@ namespace kiosko_ssms.Forms
 {
     public partial class NewProduct : Krypton.Toolkit.KryptonForm
     {
-
+        private double TAX_PERCENTAGE = 0.18;
         public NewProduct()
         {
             InitializeComponent();
@@ -16,6 +16,7 @@ namespace kiosko_ssms.Forms
             btnRandomBarcode.CausesValidation = false;
             cbSupplier.CausesValidation = false;
             cbPresentation.CausesValidation = false;
+            LoadTax();
         }
 
         private void NewProduct_Load(object sender, EventArgs e)
@@ -97,6 +98,16 @@ namespace kiosko_ssms.Forms
             }
         }
 
+        private decimal CalculateProfit(decimal buyPrice, decimal sellPriceWithTax)
+        {
+            if (buyPrice <= 0 || sellPriceWithTax <= 0)
+                return 0;
+
+            decimal sellPriceWithoutTax = sellPriceWithTax / (1 + (decimal)TAX_PERCENTAGE);
+            decimal profit = Math.Round((sellPriceWithoutTax - buyPrice), 2);
+
+            return profit > 0 ? profit : 0;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -109,7 +120,7 @@ namespace kiosko_ssms.Forms
                     Description = txtDescription.Text,
                     BuyPrice = nudBuyPrice.Value,
                     SellPrice = nudSellPrice.Value,
-                    Profit = nudSellPrice.Value - nudBuyPrice.Value,
+                    Profit = CalculateProfit(nudBuyPrice.Value, nudSellPrice.Value),
                     Stock = (int)nudStock.Value,
                     StockMin = (int)nudStockMin.Value,
                     SupplierId = ((Supplier)cbSupplier.SelectedItem).Id,
@@ -128,6 +139,7 @@ namespace kiosko_ssms.Forms
                         var savedProduct = productService.CreateProduct(product);
                         MessageBox.Show($"Producto: {savedProduct.Name} creado exitosamente. Asignado ID: {savedProduct.Id} y Código de Barras: {savedProduct.Barcode}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearFields();
+                        lblTaxValue.Text = "IMPUESTO: ---";
                     }
                 }
                 catch (Exception ex)
@@ -141,6 +153,7 @@ namespace kiosko_ssms.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
+            lblTaxValue.Text = "IMPUESTO: ---";
         }
 
         private bool ValidateBarcode()
@@ -362,24 +375,44 @@ namespace kiosko_ssms.Forms
 
         private void CalculateProfit()
         {
-            //TODO: Add IGV.
             if (ValidateBuyPrice() && ValidateSellPrice())
             {
                 decimal buyPrice = nudBuyPrice.Value;
-                decimal sellPrice = nudSellPrice.Value;
+                decimal sellPriceWithTax = nudSellPrice.Value;
+                decimal TAX_PERCENTAGE = 0.18m;
+
                 if (buyPrice > 0)
                 {
-                    decimal profit = sellPrice - buyPrice;
-                    txtProfit.Text = $"{profit:F2}";
+                    decimal sellPriceWithoutTax = sellPriceWithTax / (1 + TAX_PERCENTAGE);
+                    decimal taxValue = sellPriceWithTax - sellPriceWithoutTax;
+                    decimal profit = sellPriceWithoutTax - buyPrice;
+
+                    txtProfit.Text = $"{Math.Round(profit, 2)}";
+                    lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): {Properties.Settings.Default.currencyShortName} {taxValue:F2}";
                 }
                 else
                 {
                     txtProfit.Text = "---";
+                    lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): ---";
                 }
             }
             else
             {
                 txtProfit.Text = "---";
+                lblTaxValue.Text = $"IMPUESTO ({Properties.Settings.Default.taxName}): ---";
+            }
+        }
+
+        private void LoadTax()
+        {
+            try
+            {
+                TAX_PERCENTAGE = Properties.Settings.Default.taxValue;
+                lblTaxPercentage.Text = $"IMPUESTO (%) {(TAX_PERCENTAGE * 100).ToString()}%";
+            }
+            catch
+            {
+                TAX_PERCENTAGE = 0.18;
             }
         }
 

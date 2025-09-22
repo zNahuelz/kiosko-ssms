@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
+using kiosko_ssms.Utils;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -87,7 +88,7 @@ namespace kiosko_ssms.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Constants.Messages.Error.DB_CONN_FAILED} {ex.Message}", Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

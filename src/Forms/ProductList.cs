@@ -1,6 +1,7 @@
 ﻿using kiosko_ssms.Data;
 using kiosko_ssms.Data.Entities;
 using kiosko_ssms.Services;
+using kiosko_ssms.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -98,7 +99,7 @@ namespace kiosko_ssms.Forms
             catch
             {
                 cbSuppliers.Enabled = false;
-                MessageBox.Show("Imposible cargar el listado de proveedores. La busqueda de productos por esta característica se encuentra deshabilitada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.Messages.Error.SUPPLIERS_LOAD_FAILED, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,7 +116,7 @@ namespace kiosko_ssms.Forms
             catch
             {
                 cbPresentations.Enabled = false;
-                MessageBox.Show("Imposible cargar el listado de presentaciones de productos. La busqueda de productos por esta característica se encuentra deshabilitada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.Messages.Error.PRESENTATIONS_LOAD_FAILED, Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -173,7 +174,7 @@ namespace kiosko_ssms.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Constants.Messages.Error.DB_CONN_FAILED} {ex.Message}", Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
