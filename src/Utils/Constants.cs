@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using kiosko_ssms.Data.Entities;
+using System.Collections.Generic;
 
 namespace kiosko_ssms.Utils
 {
@@ -9,7 +10,7 @@ namespace kiosko_ssms.Utils
         public static readonly List<string> VisibilityOptions = new List<string> { "MOSTRAR ELIMINADOS", "OCULTAR ELIMINADOS" };
         public static readonly List<string> CustomerSearchModes = new List<string> { "POR NOMBRE", "POR DNI" };
         public static readonly List<string> PresentationSearchModes = new List<string> { "POR ID", "POR NOMBRE", "POR UNIDAD" };
-
+        public static readonly List<string> VoucherSearchModes = new List<string> { "POR ID", "POR DNI", "POR FECHA" };
 
         public static class Messages
         {
@@ -18,6 +19,7 @@ namespace kiosko_ssms.Utils
                 public static string SUCCESS_TAG = "OPERACIÓN COMPLETADA";
                 public static string CUSTOMER_UPDATED(string names, string surnames) { return $"Cliente {names} {surnames} actualizado correctamente."; }
                 public static string PRESENTATION_UPDATED(string name) { return $"Presentación {name} actualizada correctamente."; }
+                public static string SALE_SAVED(string hash, int id, Customer customer) { return $"Venta guardada correctamente. Asignado hash: {hash} y ID: {id}. \nCLIENTE: {customer.Names.ToUpper()} {customer.Surnames.ToUpper()}"; }
             }
             public static class Error
             {
@@ -36,6 +38,9 @@ namespace kiosko_ssms.Utils
                 public static string CUSTOMER_NOT_FOUND_BY_DNI_SALES_MODULE = "No se encontró ningún cliente con el DNI proporcionado. Intente nuevamente o realice la venta con DNI 0";
                 public static string PRODUCT_NOT_FOUND_BY_BARCODE = "No se encontró el producto con el código de barras proporcionado. Intente nuevamente.";
                 public static string PAYMENT_TYPES_NOT_LOADED = "No se encontraron métodos de pago para realizar la venta. Intente nuevamente o registre algunos.";
+                public static string VOUCHER_TYPES_NOT_LOADED = "No se encontraron tipos de pago para realizar la venta. Intente nuevamente o registra algunos.";
+                public static string SALE_SAVE_FAILED = "Error al guardar la venta, intente nuevamente.";
+                public static string ID_NOT_INTEGER = "El ID debe ser un número entero válido.";
             }
 
             public static class Info

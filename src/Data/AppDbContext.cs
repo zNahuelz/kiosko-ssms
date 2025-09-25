@@ -32,6 +32,7 @@ namespace kiosko_ssms.Data
             modelBuilder.Entity<Product>().HasData(new Migrations.ProductSeeder().Products);
             modelBuilder.Entity<PaymentType>().HasData(new Migrations.PaymentTypeSeeder().PaymentTypes);
             modelBuilder.Entity<Customer>().HasData(new Migrations.CustomerSeeder().Customers);
+            modelBuilder.Entity<VoucherType>().HasData(new Migrations.VoucherTypeSeeder().VoucherTypes);
         }
     }
 }

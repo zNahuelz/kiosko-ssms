@@ -20,6 +20,9 @@ namespace kiosko_ssms.Forms
         private NewPresentation newPresentationForm;
         private PresentationList presentationListForm;
         private EditPresentation editPresentationForm;
+        private VoucherList voucherListForm;
+        public VoucherDetail voucherDetailForm;
+        private SalesReport salesReportForm;
 
         private NewSale newSaleForm;
 
@@ -149,6 +152,16 @@ namespace kiosko_ssms.Forms
         private void btnSettings_Click(object sender, EventArgs e)
         {
             OpenForm(ref settingsForm, (s, ev) => CloseForm(ref settingsForm, s, ev));
+        }
+
+        private void btnVoucherList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref voucherListForm, (s, ev) => CloseForm(ref voucherListForm, s, ev));
+        }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref salesReportForm, (s, ev) => CloseForm(ref salesReportForm, s, ev));
         }
 
         private void btnKillForms_Click(object sender, EventArgs e)

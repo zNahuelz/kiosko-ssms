@@ -35,7 +35,6 @@
             this.lblSurnames = new System.Windows.Forms.Label();
             this.lblNames = new System.Windows.Forms.Label();
             this.lblDni = new System.Windows.Forms.Label();
-            this.btnUnlockCustomerSearch = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.gbAddProduct = new Krypton.Toolkit.KryptonGroupBox();
@@ -56,6 +55,8 @@
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnRemoveElement = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSubtractElement = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUnlockCustomerSearch = new System.Windows.Forms.Button();
+            this.cbVoucherType = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbCustomer.Panel)).BeginInit();
@@ -77,6 +78,7 @@
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.contextMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbVoucherType)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCart
@@ -150,16 +152,6 @@
             this.lblDni.TabIndex = 11;
             this.lblDni.Text = "DNI:";
             // 
-            // btnUnlockCustomerSearch
-            // 
-            this.btnUnlockCustomerSearch.Image = global::kiosko_ssms.Properties.Resources.check_0;
-            this.btnUnlockCustomerSearch.Location = new System.Drawing.Point(390, 56);
-            this.btnUnlockCustomerSearch.Name = "btnUnlockCustomerSearch";
-            this.btnUnlockCustomerSearch.Size = new System.Drawing.Size(42, 38);
-            this.btnUnlockCustomerSearch.TabIndex = 33;
-            this.btnUnlockCustomerSearch.UseVisualStyleBackColor = true;
-            this.btnUnlockCustomerSearch.Click += new System.EventHandler(this.btnUnlockCustomerSearch_Click);
-            // 
             // btnSearchCustomer
             // 
             this.btnSearchCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,6 +212,7 @@
             // 
             // gbSaleInfo.Panel
             // 
+            this.gbSaleInfo.Panel.Controls.Add(this.cbVoucherType);
             this.gbSaleInfo.Panel.Controls.Add(this.cbPaymentType);
             this.gbSaleInfo.Panel.Controls.Add(this.lblTotal);
             this.gbSaleInfo.Panel.Controls.Add(this.lblTax);
@@ -284,6 +277,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "GUARDAR VENTA";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClearCart
             // 
@@ -325,9 +319,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblInfo});
-            this.statusStrip.Location = new System.Drawing.Point(0, 606);
+            this.statusStrip.Location = new System.Drawing.Point(0, 603);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1088, 30);
+            this.statusStrip.Size = new System.Drawing.Size(1094, 30);
             this.statusStrip.TabIndex = 15;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -367,11 +361,31 @@
             this.btnSubtractElement.Text = "RESTAR";
             this.btnSubtractElement.Click += new System.EventHandler(this.btnSubtractElement_Click);
             // 
+            // btnUnlockCustomerSearch
+            // 
+            this.btnUnlockCustomerSearch.Image = global::kiosko_ssms.Properties.Resources.check_0;
+            this.btnUnlockCustomerSearch.Location = new System.Drawing.Point(390, 56);
+            this.btnUnlockCustomerSearch.Name = "btnUnlockCustomerSearch";
+            this.btnUnlockCustomerSearch.Size = new System.Drawing.Size(42, 38);
+            this.btnUnlockCustomerSearch.TabIndex = 33;
+            this.btnUnlockCustomerSearch.UseVisualStyleBackColor = true;
+            this.btnUnlockCustomerSearch.Click += new System.EventHandler(this.btnUnlockCustomerSearch_Click);
+            // 
+            // cbVoucherType
+            // 
+            this.cbVoucherType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVoucherType.DropDownWidth = 154;
+            this.cbVoucherType.Location = new System.Drawing.Point(262, 19);
+            this.cbVoucherType.Name = "cbVoucherType";
+            this.cbVoucherType.Size = new System.Drawing.Size(170, 22);
+            this.cbVoucherType.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbVoucherType.TabIndex = 11;
+            // 
             // NewSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 636);
+            this.ClientSize = new System.Drawing.Size(1094, 633);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.gbShoppingCart);
             this.Controls.Add(this.btnCancel);
@@ -413,6 +427,7 @@
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.contextMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbVoucherType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +461,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem btnRemoveElement;
         private System.Windows.Forms.ToolStripMenuItem btnSubtractElement;
+        private Krypton.Toolkit.KryptonComboBox cbVoucherType;
     }
 }

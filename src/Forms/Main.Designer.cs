@@ -70,8 +70,8 @@
             this.btnAbout = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.ssMain = new Krypton.Toolkit.KryptonStatusStrip();
-            this.tssClock = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssClock = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.ssMain.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.mainTab,
             this.kryptonRibbonTab1});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1501, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1565, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -126,6 +126,7 @@
             this.btnSalesReport.ImageSmall = global::kiosko_ssms.Properties.Resources.chart;
             this.btnSalesReport.TextLine1 = "REPORTE";
             this.btnSalesReport.TextLine2 = "VENTAS";
+            this.btnSalesReport.Click += new System.EventHandler(this.btnSalesReport_Click);
             // 
             // rbProductsGroup
             // 
@@ -279,6 +280,7 @@
             this.btnVoucherList.ImageLarge = global::kiosko_ssms.Properties.Resources.search_directory_0;
             this.btnVoucherList.ImageSmall = global::kiosko_ssms.Properties.Resources.search_directory_0;
             this.btnVoucherList.TextLine1 = "LISTADO";
+            this.btnVoucherList.Click += new System.EventHandler(this.btnVoucherList_Click);
             // 
             // rbManagementGroup
             // 
@@ -349,13 +351,23 @@
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssDate,
             this.tssClock});
-            this.ssMain.Location = new System.Drawing.Point(0, 504);
+            this.ssMain.Location = new System.Drawing.Point(0, 438);
             this.ssMain.Name = "ssMain";
             this.ssMain.ProgressBars = null;
             this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.ssMain.Size = new System.Drawing.Size(1501, 26);
+            this.ssMain.Size = new System.Drawing.Size(1565, 26);
             this.ssMain.TabIndex = 5;
             this.ssMain.Text = "kryptonStatusStrip1";
+            // 
+            // tssDate
+            // 
+            this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.tssDate.Name = "tssDate";
+            this.tssDate.Size = new System.Drawing.Size(1420, 21);
+            this.tssDate.Spring = true;
+            this.tssDate.Text = "<---DATE--->";
+            this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tssClock
             // 
@@ -366,22 +378,12 @@
             this.tssClock.Text = "<----CLOCK---->";
             this.tssClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tssDate
-            // 
-            this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
-            this.tssDate.Name = "tssDate";
-            this.tssDate.Size = new System.Drawing.Size(1356, 21);
-            this.tssDate.Spring = true;
-            this.tssDate.Text = "<---DATE--->";
-            this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1501, 530);
+            this.ClientSize = new System.Drawing.Size(1565, 464);
             this.CloseBox = false;
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.mainRibbon);

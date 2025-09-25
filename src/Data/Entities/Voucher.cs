@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace kiosko_ssms.Data.Entities
 {
@@ -11,9 +12,7 @@ namespace kiosko_ssms.Data.Entities
         public double Total { get; set; }
         public double Change { get; set; }
         public bool Paid { get; set; }
-        public string Set { get; set; }
-        public string Correlative { get; set; }
-        public string PaymentSerial { get; set; }
+        public string SaleSerial { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
@@ -25,5 +24,6 @@ namespace kiosko_ssms.Data.Entities
         public Customer Customer { get; set; }
         public VoucherType VoucherType { get; set; }
         public PaymentType PaymentType { get; set; }
+        public List<VoucherDetail> VoucherDetails { get; set; } = new List<VoucherDetail>();
     }
 }
