@@ -11,6 +11,13 @@ namespace kiosko_ssms.Utils
         public static readonly List<string> CustomerSearchModes = new List<string> { "POR NOMBRE", "POR DNI" };
         public static readonly List<string> PresentationSearchModes = new List<string> { "POR ID", "POR NOMBRE", "POR UNIDAD" };
         public static readonly List<string> VoucherSearchModes = new List<string> { "POR ID", "POR DNI", "POR FECHA" };
+        public static readonly List<string> ReportTypes = new List<string> { "INGRESOS VS IMPUESTOS - POR MES", "INGRESOS VS IMPUESTOS - POR AÑO", "PRODUCTOS MÁS VENDIDOS - POR MES", "PRODUCTOS MÁS VENDIDOS - POR AÑO", "CANTIDAD DE VENTAS - POR DÍA", "CANTIDAD DE VENTAS - POR MES", "CANTIDAD DE VENTAS - POR AÑO" };
+        public static readonly List<StartupOption> StartupOptions = new List<StartupOption>
+        {
+            new StartupOption { FormName = "DISABLED", Tag = "DESACTIVADO" },
+            new StartupOption { FormName = "SALES_FORM", Tag = "VENTAS" },
+            new StartupOption { FormName = "REPORTS_FORM", Tag = "REPORTES" },
+        };
 
         public static class Messages
         {
@@ -41,6 +48,8 @@ namespace kiosko_ssms.Utils
                 public static string VOUCHER_TYPES_NOT_LOADED = "No se encontraron tipos de pago para realizar la venta. Intente nuevamente o registra algunos.";
                 public static string SALE_SAVE_FAILED = "Error al guardar la venta, intente nuevamente.";
                 public static string ID_NOT_INTEGER = "El ID debe ser un número entero válido.";
+                public static string YEAR_WITHOUT_VOUCHERS = "No se encontraron ventas registradas en el año seleccionado.";
+                public static string MONTH_WITHOUT_VOUCHERS = "No se encontraron ventas registradas en el mes seleccionado.";
             }
 
             public static class Info
@@ -50,6 +59,12 @@ namespace kiosko_ssms.Utils
                 public static string COPIED_EMAIL = "Email copiado al portapapeles!";
                 public static string COPIED_ID = "ID copiado al portapapeles!";
             }
+        }
+
+        public class StartupOption
+        {
+            public string FormName { get; set; }
+            public string Tag { get; set; }
         }
     }
 }

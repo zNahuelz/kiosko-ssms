@@ -36,6 +36,11 @@ namespace kiosko_ssms.Forms
             mainTimer.Enabled = true;
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            OpenStartupTool();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas salir?", "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -176,6 +181,28 @@ namespace kiosko_ssms.Forms
         private void mainTimer_Tick(object sender, EventArgs e)
         {
             tssClock.Text = $"HORA ACTUAL: {DateTime.Now.ToString("hh:mm:ss tt")}";
+        }
+
+        private void OpenStartupTool()
+        {
+            try
+            {
+                switch (Properties.Settings.Default.startupTool)
+                {
+                    case "SALES_FORM":
+                        btnNewSale.PerformClick();
+                        break;
+                    case "REPORTS_FORM":
+                        btnSalesReport.PerformClick();
+                        break;
+                    case "DISABLED":
+                    default: break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la herramienta de inicio: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

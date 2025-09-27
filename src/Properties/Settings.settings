@@ -26,5 +26,8 @@
     <Setting Name="companyTaxId" Type="System.String" Scope="User">
       <Value Profile="(Default)">10110022001</Value>
     </Setting>
+    <Setting Name="startupTool" Type="System.String" Scope="User">
+      <Value Profile="(Default)">REPORTS_FORM</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -141,5 +141,19 @@ namespace kiosko_ssms.Services
             var voucherTypes = dbContext.VoucherTypes.Where(s => showDeleted || !s.IsDeleted).OrderBy(s => s.Name).ToList();
             return voucherTypes;
         }
+
+        public List<Voucher> GetAllVouchersBetweenDates(DateTime startDate, DateTime endDate, bool showDeleted)
+        {
+            var vouchers = dbContext.Vouchers
+                .Where(s => (showDeleted || !s.IsDeleted) && s.CreatedAt.Date >= startDate.Date && s.CreatedAt.Date <= endDate.Date)
+                .Include(s => s.Customer)
+                .Include(s => s.VoucherType)
+                .Include(s => s.PaymentType)
+                .Include(s => s.VoucherDetails)
+                .ThenInclude(vd => vd.Product)
+                .OrderByDescending(s => s.CreatedAt)
+                .ToList();
+            return vouchers;
+        }
     }
 }

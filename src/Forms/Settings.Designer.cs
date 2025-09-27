@@ -43,27 +43,32 @@
             this.gbWarning = new System.Windows.Forms.GroupBox();
             this.lblWarning = new System.Windows.Forms.Label();
             this.gbCurrency = new System.Windows.Forms.GroupBox();
-            this.btnResetCurrencyConfig = new System.Windows.Forms.Button();
-            this.btnSaveCurrencyConfig = new System.Windows.Forms.Button();
-            this.txtCurrencyLong = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCurrencyShort = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtCurrencyLong = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnResetCurrencyConfig = new System.Windows.Forms.Button();
+            this.btnSaveCurrencyConfig = new System.Windows.Forms.Button();
             this.gbCompany = new System.Windows.Forms.GroupBox();
-            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnResetCompanyInfo = new System.Windows.Forms.Button();
-            this.btnSaveCompanyInfo = new System.Windows.Forms.Button();
             this.txtTaxId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyAddress = new System.Windows.Forms.Label();
+            this.btnSaveCompanyInfo = new System.Windows.Forms.Button();
+            this.btnResetCompanyInfo = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gbStartup = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbStartupTool = new System.Windows.Forms.ComboBox();
+            this.btnSaveStartupTool = new System.Windows.Forms.Button();
             this.gbTaxes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTaxValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.gbWarning.SuspendLayout();
             this.gbCurrency.SuspendLayout();
             this.gbCompany.SuspendLayout();
+            this.gbStartup.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbTaxes
@@ -198,6 +203,40 @@
             this.gbCurrency.TabStop = false;
             this.gbCurrency.Text = "CONFIGURACIÓN MONETARIA";
             // 
+            // txtCurrencyShort
+            // 
+            this.txtCurrencyShort.Location = new System.Drawing.Point(43, 79);
+            this.txtCurrencyShort.MaxLength = 10;
+            this.txtCurrencyShort.Name = "txtCurrencyShort";
+            this.txtCurrencyShort.Size = new System.Drawing.Size(212, 20);
+            this.txtCurrencyShort.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "NOMBRE CORTO";
+            // 
+            // txtCurrencyLong
+            // 
+            this.txtCurrencyLong.Location = new System.Drawing.Point(43, 38);
+            this.txtCurrencyLong.MaxLength = 50;
+            this.txtCurrencyLong.Name = "txtCurrencyLong";
+            this.txtCurrencyLong.Size = new System.Drawing.Size(212, 20);
+            this.txtCurrencyLong.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "NOMBRE LARGO";
+            // 
             // btnResetCurrencyConfig
             // 
             this.btnResetCurrencyConfig.Location = new System.Drawing.Point(43, 105);
@@ -218,40 +257,6 @@
             this.btnSaveCurrencyConfig.UseVisualStyleBackColor = true;
             this.btnSaveCurrencyConfig.Click += new System.EventHandler(this.btnSaveCurrencyConfig_Click);
             // 
-            // txtCurrencyLong
-            // 
-            this.txtCurrencyLong.Location = new System.Drawing.Point(43, 38);
-            this.txtCurrencyLong.MaxLength = 50;
-            this.txtCurrencyLong.Name = "txtCurrencyLong";
-            this.txtCurrencyLong.Size = new System.Drawing.Size(212, 20);
-            this.txtCurrencyLong.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "NOMBRE LARGO";
-            // 
-            // txtCurrencyShort
-            // 
-            this.txtCurrencyShort.Location = new System.Drawing.Point(43, 79);
-            this.txtCurrencyShort.MaxLength = 10;
-            this.txtCurrencyShort.Name = "txtCurrencyShort";
-            this.txtCurrencyShort.Size = new System.Drawing.Size(212, 20);
-            this.txtCurrencyShort.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "NOMBRE CORTO";
-            // 
             // gbCompany
             // 
             this.gbCompany.Controls.Add(this.txtTaxId);
@@ -268,6 +273,23 @@
             this.gbCompany.TabIndex = 3;
             this.gbCompany.TabStop = false;
             this.gbCompany.Text = "CONFIGURACIÓN EMPRESARIAL";
+            // 
+            // txtTaxId
+            // 
+            this.txtTaxId.Location = new System.Drawing.Point(39, 289);
+            this.txtTaxId.MaxLength = 20;
+            this.txtTaxId.Name = "txtTaxId";
+            this.txtTaxId.Size = new System.Drawing.Size(212, 20);
+            this.txtTaxId.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 273);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "ID/COD TRIBUTARIO";
             // 
             // txtCompanyAddress
             // 
@@ -287,24 +309,14 @@
             this.txtCompanyName.Size = new System.Drawing.Size(212, 115);
             this.txtCompanyName.TabIndex = 14;
             // 
-            // label6
+            // lblCompanyAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "NOMBRE EMPRESA";
-            // 
-            // btnResetCompanyInfo
-            // 
-            this.btnResetCompanyInfo.Location = new System.Drawing.Point(39, 315);
-            this.btnResetCompanyInfo.Name = "btnResetCompanyInfo";
-            this.btnResetCompanyInfo.Size = new System.Drawing.Size(212, 23);
-            this.btnResetCompanyInfo.TabIndex = 15;
-            this.btnResetCompanyInfo.Text = "POR DEFECTO";
-            this.btnResetCompanyInfo.UseVisualStyleBackColor = true;
-            this.btnResetCompanyInfo.Click += new System.EventHandler(this.btnResetCompanyInfo_Click);
+            this.lblCompanyAddress.AutoSize = true;
+            this.lblCompanyAddress.Location = new System.Drawing.Point(36, 172);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(66, 13);
+            this.lblCompanyAddress.TabIndex = 16;
+            this.lblCompanyAddress.Text = "DIRECCIÓN";
             // 
             // btnSaveCompanyInfo
             // 
@@ -316,38 +328,72 @@
             this.btnSaveCompanyInfo.UseVisualStyleBackColor = true;
             this.btnSaveCompanyInfo.Click += new System.EventHandler(this.btnSaveCompanyInfo_Click);
             // 
-            // txtTaxId
+            // btnResetCompanyInfo
             // 
-            this.txtTaxId.Location = new System.Drawing.Point(39, 289);
-            this.txtTaxId.MaxLength = 20;
-            this.txtTaxId.Name = "txtTaxId";
-            this.txtTaxId.Size = new System.Drawing.Size(212, 20);
-            this.txtTaxId.TabIndex = 13;
+            this.btnResetCompanyInfo.Location = new System.Drawing.Point(39, 315);
+            this.btnResetCompanyInfo.Name = "btnResetCompanyInfo";
+            this.btnResetCompanyInfo.Size = new System.Drawing.Size(212, 23);
+            this.btnResetCompanyInfo.TabIndex = 15;
+            this.btnResetCompanyInfo.Text = "POR DEFECTO";
+            this.btnResetCompanyInfo.UseVisualStyleBackColor = true;
+            this.btnResetCompanyInfo.Click += new System.EventHandler(this.btnResetCompanyInfo_Click);
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "ID/COD TRIBUTARIO";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "NOMBRE EMPRESA";
             // 
-            // lblCompanyAddress
+            // gbStartup
             // 
-            this.lblCompanyAddress.AutoSize = true;
-            this.lblCompanyAddress.Location = new System.Drawing.Point(36, 172);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(66, 13);
-            this.lblCompanyAddress.TabIndex = 16;
-            this.lblCompanyAddress.Text = "DIRECCIÓN";
+            this.gbStartup.Controls.Add(this.btnSaveStartupTool);
+            this.gbStartup.Controls.Add(this.cbStartupTool);
+            this.gbStartup.Controls.Add(this.label7);
+            this.gbStartup.Location = new System.Drawing.Point(12, 512);
+            this.gbStartup.Name = "gbStartup";
+            this.gbStartup.Size = new System.Drawing.Size(596, 49);
+            this.gbStartup.TabIndex = 4;
+            this.gbStartup.TabStop = false;
+            this.gbStartup.Text = "CONFIGURACIÓN DE INICIO";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(40, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "HERRAMIENTA INICIAL:";
+            // 
+            // cbStartupTool
+            // 
+            this.cbStartupTool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStartupTool.FormattingEnabled = true;
+            this.cbStartupTool.Location = new System.Drawing.Point(190, 17);
+            this.cbStartupTool.Name = "cbStartupTool";
+            this.cbStartupTool.Size = new System.Drawing.Size(212, 21);
+            this.cbStartupTool.TabIndex = 9;
+            // 
+            // btnSaveStartupTool
+            // 
+            this.btnSaveStartupTool.Location = new System.Drawing.Point(408, 17);
+            this.btnSaveStartupTool.Name = "btnSaveStartupTool";
+            this.btnSaveStartupTool.Size = new System.Drawing.Size(143, 23);
+            this.btnSaveStartupTool.TabIndex = 8;
+            this.btnSaveStartupTool.Text = "GUARDAR";
+            this.btnSaveStartupTool.UseVisualStyleBackColor = true;
+            this.btnSaveStartupTool.Click += new System.EventHandler(this.btnSaveStartupForm_Click);
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(620, 518);
+            this.ClientSize = new System.Drawing.Size(620, 573);
+            this.Controls.Add(this.gbStartup);
             this.Controls.Add(this.gbCompany);
             this.Controls.Add(this.gbCurrency);
             this.Controls.Add(this.gbWarning);
@@ -369,6 +415,8 @@
             this.gbCurrency.PerformLayout();
             this.gbCompany.ResumeLayout(false);
             this.gbCompany.PerformLayout();
+            this.gbStartup.ResumeLayout(false);
+            this.gbStartup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,5 +451,9 @@
         private System.Windows.Forms.TextBox txtTaxId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCompanyAddress;
+        private System.Windows.Forms.GroupBox gbStartup;
+        private System.Windows.Forms.ComboBox cbStartupTool;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnSaveStartupTool;
     }
 }

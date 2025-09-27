@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kiosko_ssms.Utils;
+using System;
 using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
@@ -13,6 +14,7 @@ namespace kiosko_ssms.Forms
         private readonly string DefaultCompanyName = "Mi Empresa";
         private readonly string DefaultCompanyTaxId = "10001100221";
         private readonly string DefaultCompanyAddress = "Av. Principal 123, Ciudad";
+        private readonly string DefaultStartupForm = "REPORTS_FORM";
 
         public Settings()
         {
@@ -20,6 +22,7 @@ namespace kiosko_ssms.Forms
             LoadTaxSettings();
             LoadCurrencySettings();
             LoadCompanySettings();
+            FillStartupTools();
         }
 
         private void LoadTaxSettings()
@@ -95,8 +98,6 @@ namespace kiosko_ssms.Forms
             }
         }
 
-
-
         private void UpdateCurrencySettings()
         {
             if (ValidateCurrencySettings())
@@ -150,6 +151,45 @@ namespace kiosko_ssms.Forms
                     Properties.Settings.Default.Save();
                     LoadCompanySettings();
                     MessageBox.Show("Configuración de empresa actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void FillStartupTools()
+        {
+            cbStartupTool.DataSource = Constants.StartupOptions;
+            cbStartupTool.DisplayMember = "Tag";
+            LoadStartupTools();
+        }
+
+        private void LoadStartupTools()
+        {
+            string startupForm = Properties.Settings.Default.startupTool;
+            foreach (var item in cbStartupTool.Items)
+            {
+                if (item is Constants.StartupOption option && option.FormName == startupForm)
+                {
+                    cbStartupTool.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        private void UpdateStartupTool()
+        {
+            if (cbStartupTool.SelectedItem is Constants.StartupOption selectedOption)
+            {
+                DialogResult result = MessageBox.Show(
+                $"¿Estás seguro de que deseas actualizar la configuración de la herramienta de inicio? " +
+                $"Se guardará el siguiente valor:\n" +
+                $"HERRAMIENTA DE INICIO: {selectedOption.Tag}\n",
+                "CONFIRMAR OPERACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Properties.Settings.Default.startupTool = selectedOption.FormName;
+                    Properties.Settings.Default.Save();
+                    LoadStartupTools();
+                    MessageBox.Show("Configuración de herramienta de inicio actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -309,6 +349,11 @@ namespace kiosko_ssms.Forms
         private void btnSaveCompanyInfo_Click(object sender, EventArgs e)
         {
             UpdateCompanySettings();
+        }
+
+        private void btnSaveStartupForm_Click(object sender, EventArgs e)
+        {
+            UpdateStartupTool();
         }
     }
 }

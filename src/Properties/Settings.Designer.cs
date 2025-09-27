@@ -118,5 +118,17 @@ namespace kiosko_ssms.Properties {
                 this["companyTaxId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("REPORTS_FORM")]
+        public string startupTool {
+            get {
+                return ((string)(this["startupTool"]));
+            }
+            set {
+                this["startupTool"] = value;
+            }
+        }
     }
 }

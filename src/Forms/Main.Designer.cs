@@ -51,19 +51,29 @@
             this.btnCustomerList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnNewCustomer = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnEditCustomer = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroup2 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.rbPresentationsGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupLines1 = new Krypton.Ribbon.KryptonRibbonGroupLines();
             this.btnPresentationList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnNewPresentation = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnEditPresentation = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroup3 = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.rbVouchersGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupLines2 = new Krypton.Ribbon.KryptonRibbonGroupLines();
             this.btnVoucherList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbManagementGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnKillForms = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnExit = new Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonTab1 = new Krypton.Ribbon.KryptonRibbonTab();
+            this.moreTab = new Krypton.Ribbon.KryptonRibbonTab();
+            this.rbPaymentTypesGroup = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple7 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnPaymentTypeList = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnManagePaymentType = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.rbVoucherTypesGroup = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple8 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnVoucherTypeList = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnNewVoucherType = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnManageVoucherTypes = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.helpTab = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnSettings = new Krypton.Ribbon.KryptonRibbonGroupButton();
@@ -83,9 +93,10 @@
             this.mainRibbon.RibbonFileAppButton.AppButtonImage = global::kiosko_ssms.Properties.Resources.server_window;
             this.mainRibbon.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
             this.mainTab,
-            this.kryptonRibbonTab1});
+            this.moreTab,
+            this.helpTab});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1565, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1641, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -95,8 +106,8 @@
             this.rbProductsGroup,
             this.rbSuppliersGroup,
             this.rbCustomersGroup,
-            this.kryptonRibbonGroup2,
-            this.kryptonRibbonGroup3,
+            this.rbPresentationsGroup,
+            this.rbVouchersGroup,
             this.rbManagementGroup});
             this.mainTab.Text = "INICIO";
             // 
@@ -230,11 +241,11 @@
             this.btnEditCustomer.TextLine1 = "GESTIONAR";
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
-            // kryptonRibbonGroup2
+            // rbPresentationsGroup
             // 
-            this.kryptonRibbonGroup2.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.rbPresentationsGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupLines1});
-            this.kryptonRibbonGroup2.TextLine1 = "PRESENTACIONES";
+            this.rbPresentationsGroup.TextLine1 = "PRESENTACIONES";
             // 
             // kryptonRibbonGroupLines1
             // 
@@ -264,11 +275,11 @@
             this.btnEditPresentation.TextLine1 = "GESTIONAR";
             this.btnEditPresentation.Click += new System.EventHandler(this.btnEditPresentation_Click);
             // 
-            // kryptonRibbonGroup3
+            // rbVouchersGroup
             // 
-            this.kryptonRibbonGroup3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.rbVouchersGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupLines2});
-            this.kryptonRibbonGroup3.TextLine1 = "BOLETAS-FACTURAS";
+            this.rbVouchersGroup.TextLine1 = "BOLETAS-FACTURAS";
             // 
             // kryptonRibbonGroupLines2
             // 
@@ -309,11 +320,73 @@
             this.btnExit.TextLine1 = "SALIR";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // kryptonRibbonTab1
+            // moreTab
             // 
-            this.kryptonRibbonTab1.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.moreTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.rbPaymentTypesGroup,
+            this.rbVoucherTypesGroup});
+            this.moreTab.Text = "OTROS";
+            // 
+            // rbPaymentTypesGroup
+            // 
+            this.rbPaymentTypesGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple7});
+            this.rbPaymentTypesGroup.TextLine1 = "TIPO DE PAGOS";
+            // 
+            // kryptonRibbonGroupTriple7
+            // 
+            this.kryptonRibbonGroupTriple7.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnPaymentTypeList,
+            this.btnManagePaymentType});
+            // 
+            // btnPaymentTypeList
+            // 
+            this.btnPaymentTypeList.ImageLarge = global::kiosko_ssms.Properties.Resources.cardfile_1;
+            this.btnPaymentTypeList.ImageSmall = global::kiosko_ssms.Properties.Resources.cardfile_1;
+            this.btnPaymentTypeList.TextLine1 = "LISTADO";
+            // 
+            // btnManagePaymentType
+            // 
+            this.btnManagePaymentType.ImageLarge = global::kiosko_ssms.Properties.Resources.address_book_card_copy_0;
+            this.btnManagePaymentType.ImageSmall = global::kiosko_ssms.Properties.Resources.address_book_card_copy_0;
+            this.btnManagePaymentType.TextLine1 = "GESTIONAR";
+            // 
+            // rbVoucherTypesGroup
+            // 
+            this.rbVoucherTypesGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple8});
+            this.rbVoucherTypesGroup.TextLine1 = "TIPO DE COMPS.";
+            // 
+            // kryptonRibbonGroupTriple8
+            // 
+            this.kryptonRibbonGroupTriple8.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnVoucherTypeList,
+            this.btnNewVoucherType,
+            this.btnManageVoucherTypes});
+            // 
+            // btnVoucherTypeList
+            // 
+            this.btnVoucherTypeList.ImageLarge = global::kiosko_ssms.Properties.Resources.window_red_hilights;
+            this.btnVoucherTypeList.ImageSmall = global::kiosko_ssms.Properties.Resources.window_red_hilights;
+            this.btnVoucherTypeList.TextLine1 = "LISTADO";
+            // 
+            // btnNewVoucherType
+            // 
+            this.btnNewVoucherType.ImageLarge = global::kiosko_ssms.Properties.Resources.write_red;
+            this.btnNewVoucherType.ImageSmall = global::kiosko_ssms.Properties.Resources.write_red;
+            this.btnNewVoucherType.TextLine1 = "NUEVO";
+            // 
+            // btnManageVoucherTypes
+            // 
+            this.btnManageVoucherTypes.ImageLarge = global::kiosko_ssms.Properties.Resources.windows_three;
+            this.btnManageVoucherTypes.ImageSmall = global::kiosko_ssms.Properties.Resources.windows_three;
+            this.btnManageVoucherTypes.TextLine1 = "GESTIONAR";
+            // 
+            // helpTab
+            // 
+            this.helpTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
             this.kryptonRibbonGroup1});
-            this.kryptonRibbonTab1.Text = "AYUDA";
+            this.helpTab.Text = "AYUDA";
             // 
             // kryptonRibbonGroup1
             // 
@@ -351,11 +424,11 @@
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssDate,
             this.tssClock});
-            this.ssMain.Location = new System.Drawing.Point(0, 438);
+            this.ssMain.Location = new System.Drawing.Point(0, 350);
             this.ssMain.Name = "ssMain";
             this.ssMain.ProgressBars = null;
             this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.ssMain.Size = new System.Drawing.Size(1565, 26);
+            this.ssMain.Size = new System.Drawing.Size(1641, 26);
             this.ssMain.TabIndex = 5;
             this.ssMain.Text = "kryptonStatusStrip1";
             // 
@@ -364,7 +437,7 @@
             this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
             this.tssDate.Name = "tssDate";
-            this.tssDate.Size = new System.Drawing.Size(1420, 21);
+            this.tssDate.Size = new System.Drawing.Size(1496, 21);
             this.tssDate.Spring = true;
             this.tssDate.Text = "<---DATE--->";
             this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -383,7 +456,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1565, 464);
+            this.ClientSize = new System.Drawing.Size(1641, 376);
             this.CloseBox = false;
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.mainRibbon);
@@ -395,6 +468,7 @@
             this.Text = "KIOSKO v0.7 = SISTEMA SIMPLE DE GESTIÓN DE VENTAS";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
@@ -430,16 +504,16 @@
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple5;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnNewSale;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnSalesReport;
-        private Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab1;
+        private Krypton.Ribbon.KryptonRibbonTab helpTab;
         private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
         private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple6;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnAbout;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup2;
+        private Krypton.Ribbon.KryptonRibbonGroup rbPresentationsGroup;
         private Krypton.Ribbon.KryptonRibbonGroupLines kryptonRibbonGroupLines1;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnPresentationList;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnNewPresentation;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnEditPresentation;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup3;
+        private Krypton.Ribbon.KryptonRibbonGroup rbVouchersGroup;
         private Krypton.Ribbon.KryptonRibbonGroupLines kryptonRibbonGroupLines2;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnVoucherList;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnSettings;
@@ -447,5 +521,15 @@
         private Krypton.Toolkit.KryptonStatusStrip ssMain;
         private System.Windows.Forms.ToolStripStatusLabel tssClock;
         private System.Windows.Forms.ToolStripStatusLabel tssDate;
+        private Krypton.Ribbon.KryptonRibbonTab moreTab;
+        private Krypton.Ribbon.KryptonRibbonGroup rbPaymentTypesGroup;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple7;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnPaymentTypeList;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnManagePaymentType;
+        private Krypton.Ribbon.KryptonRibbonGroup rbVoucherTypesGroup;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple8;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnVoucherTypeList;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnManageVoucherTypes;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnNewVoucherType;
     }
 }
