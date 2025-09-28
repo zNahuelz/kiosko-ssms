@@ -117,31 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="mainTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>60</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
-        AAD///8AAAAAAAAAAAAAAAAAAAAAAACHd3d3d3d3gAAAAAAAAAAAh3d3d3d5l4gAAAAAAAAAAId3d3d3
-        d3eIgAAAAAAAAACHd3d3cAAAAAAAAAAAAAAAh3d3d3h3d3d3d3d3d3AAAId3d3d4f/////////9wAACH
-        d3d3eH/MzMzMzMz/cAAAh3d3d3h//////////3AAAId3d3d4f8zMzMzMz/9wAACHd3d3eH//////////
-        cAAAh3d3d3h/zMzMzMzMz3AAAId3d3d4f/////////9wAACHd3d3eH/MzMzMzMz/cAAAh3d3d3h/////
-        /////3AAAI/////4d3d3d3d3d3dwAACIiIiIiHh4eIeHh4hwcAAAh3d3d3h3d3d3d3d3d3AAAId3d3d4
-        RERERERPDw8AAACHd3d3eEREREREREREQAAAh3d3d3iIiIiIiIiIiIAAAI////////94gAAAAAAAAACI
-        iIiIiIiIB4AAAAAAAAAAh3d3d3d3d4BwAAAAAAAAAId3d3d3d3eIAAAAAAAAAACHd3d3d3d3iIAAAAAA
-        AAAAh3d3d3d3d4iAAAAAAAAAAId3d3d3d3eIgAAAAAAAAACP////////iIAAAAAAAAAACHd3d3d3d3iA
-        AAAAAAAAAACHd3d3d3d3gAAAAAAAAAAACIiIiIiIiIAAAAAAAADgAH//wAA//8AAH//AAA//wAAAA8AA
-        AAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AA
-        AAPAAA//wAAP/8AAD//AAA//wAAP/8AAD//AAA//wAAP/+AAD//wAA//+AAf/w==
+        AAABAAIAICAIAAAAAADoAgAAJgAAABAQCAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIAC
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAAAAAB3iI
+        AAAAAAjwAAAAAAAAB3d4iAAACAAI//AAAAAAB3d3eIgAAPCACP//8AAAAId3d3iIAA//iA/////wAACH
+        d3d4iACP/3j//////4AAh3d3eIgAj///iP////+AAId3d3iIAI////+I////gACHd3d4iACP////DwD/
+        8AAAh3d3eIgAj////w94AAAAAId3d3iIAI////8PeIiAAACHd3d4iACP////D3iIgAAAh3d3eIgIj///
+        /w94iIAAAId3d3iICH////8PeIiAAACHd3d4iAd/////D3iIgAAAh3d3eIgAB3///w94iIAAAId3d3iI
+        AAAHf/8PeIiAAACHd3d4iACAAAdwf3iIgAAAh3d/93gAgIAAB394iIAAAId/93eICACAgAd/eIiAAACP
+        93eIcIAIAIAHf3iIgAAAiHeI93cAgAgAB394iIAAAACIAIj3dwCAAHd/eIiAAAAAAAAAiPd3AAd3f/iI
+        gAAAAAAAAACI93d3f/d4iIAAAAAAAAAAAIh3f/d3d3iAAAAAAAAAAAAIf/d3d3d3gAAAAAAAAAAACPd3
+        d3d3iAAAAAAAAAAAAACId3d3iAAAAAAAAAAAAAAAAIh3iAAAAAAAAAAAAAAAAAAAiAAAAAAA/5////4H
+        +f/4B/h/4Ac4H8AGGAfABAABwAQAAcAEAAHABAABwAQAA8AEAAfABAADwAQAA8AAAAPAAAADwAAAA8AA
+        AAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPzAAAD/8AAA//wAAP//AAD//4AA//+AA///wA////A////
+        8/8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
+        AACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAgAAAAAAAAIh4gADw
+        AACId3iAAP/wAI93eIAA///wj3d4gAD///CPd3iAD///8I93eID4j//wj3d4gP/4j/CPd3iA//CAAI93
+        //D/8IgAj//4j//wiACP+AAA/weIAIiAiAAAd/8AAAAACHf/iAAAAAAI/4AAAAAAAAiIAAAA8Z8AAMCH
+        AAAAgQAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAEAEAAP4DAAD+DwAA/j8AAA==
 </value>
   </data>
 </root>

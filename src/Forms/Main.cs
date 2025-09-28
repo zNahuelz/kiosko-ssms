@@ -23,6 +23,11 @@ namespace kiosko_ssms.Forms
         private VoucherList voucherListForm;
         public VoucherDetail voucherDetailForm;
         private SalesReport salesReportForm;
+        private NewVoucherType newVoucherTypeForm;
+        private VoucherTypeList voucherTypeListForm;
+        private EditVoucherType editVoucherTypeForm;
+        private EditPaymentType editPaymentTypeForm;
+        private PaymentTypeList paymentTypeListForm;
 
         private NewSale newSaleForm;
 
@@ -169,6 +174,31 @@ namespace kiosko_ssms.Forms
             OpenForm(ref salesReportForm, (s, ev) => CloseForm(ref salesReportForm, s, ev));
         }
 
+        private void btnPaymentTypeList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref paymentTypeListForm, (s, ev) => CloseForm(ref paymentTypeListForm, s, ev));
+        }
+
+        private void btnManagePaymentType_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref editPaymentTypeForm, (s, ev) => CloseForm(ref editPaymentTypeForm, s, ev));
+        }
+
+        private void btnVoucherTypeList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref voucherTypeListForm, (s, ev) => CloseForm(ref voucherTypeListForm, s, ev));
+        }
+
+        private void btnNewVoucherType_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newVoucherTypeForm, (s, ev) => CloseForm(ref newVoucherTypeForm, s, ev));
+        }
+
+        private void btnManageVoucherTypes_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref editVoucherTypeForm, (s, ev) => CloseForm(ref editVoucherTypeForm, s, ev));
+        }
+
         private void btnKillForms_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cerrar todas las herramientas de trabajo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -204,5 +234,6 @@ namespace kiosko_ssms.Forms
                 MessageBox.Show($"Error al abrir la herramienta de inicio: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

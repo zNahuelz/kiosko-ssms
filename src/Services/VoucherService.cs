@@ -142,6 +142,52 @@ namespace kiosko_ssms.Services
             return voucherTypes;
         }
 
+        public List<VoucherType> GetVoucherTypesByName(string name)
+        {
+            var voucherTypes = dbContext.VoucherTypes
+                .Where(s => s.Name.ToUpper() == name.ToUpper())
+                .ToList();
+            return voucherTypes;
+        }
+
+        public VoucherType CreateVoucherType(string name)
+        {
+            var voucherType = new VoucherType
+            {
+                Name = name.Trim().ToUpper(),
+                IsDeleted = false,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now
+            };
+            dbContext.VoucherTypes.Add(voucherType);
+            dbContext.SaveChanges();
+            return voucherType;
+        }
+
+        public VoucherType UpdateVoucherType(int id, string name, bool isDeleted)
+        {
+            var voucherType = dbContext.VoucherTypes.Find(id);
+            if (voucherType != null)
+            {
+                voucherType.Name = name.Trim().ToUpper();
+                voucherType.UpdatedAt = DateTime.Now;
+                voucherType.IsDeleted = isDeleted;
+                dbContext.VoucherTypes.Update(voucherType);
+                dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"Voucher de ID: {id} no encontrado.");
+            }
+            return voucherType;
+        }
+
+        public VoucherType GetVoucherTypeById(int id)
+        {
+            var voucherType = dbContext.VoucherTypes.Find(id);
+            return voucherType;
+        }
+
         public List<Voucher> GetAllVouchersBetweenDates(DateTime startDate, DateTime endDate, bool showDeleted)
         {
             var vouchers = dbContext.Vouchers

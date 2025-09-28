@@ -214,6 +214,12 @@
     <Compile Include="Forms\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditPaymentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditPaymentType.Designer.cs">
+      <DependentUpon>EditPaymentType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditPresentation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,12 @@
     </Compile>
     <Compile Include="Forms\EditSupplier.Designer.cs">
       <DependentUpon>EditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditVoucherType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditVoucherType.Designer.cs">
+      <DependentUpon>EditVoucherType.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -273,6 +285,18 @@
     </Compile>
     <Compile Include="Forms\NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewVoucherType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewVoucherType.Designer.cs">
+      <DependentUpon>NewVoucherType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentTypeList.Designer.cs">
+      <DependentUpon>PaymentTypeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PresentationList.cs">
       <SubType>Form</SubType>
@@ -334,6 +358,12 @@
     <Compile Include="Forms\VoucherList.Designer.cs">
       <DependentUpon>VoucherList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VoucherTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VoucherTypeList.Designer.cs">
+      <DependentUpon>VoucherTypeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerService.cs" />
@@ -356,6 +386,9 @@
     <EmbeddedResource Include="Forms\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditPaymentType.resx">
+      <DependentUpon>EditPaymentType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditPresentation.resx">
       <DependentUpon>EditPresentation.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditSupplier.resx">
       <DependentUpon>EditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditVoucherType.resx">
+      <DependentUpon>EditVoucherType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -385,6 +421,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewSupplier.resx">
       <DependentUpon>NewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewVoucherType.resx">
+      <DependentUpon>NewVoucherType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentTypeList.resx">
+      <DependentUpon>PaymentTypeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PresentationList.resx">
       <DependentUpon>PresentationList.cs</DependentUpon>
@@ -415,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VoucherList.resx">
       <DependentUpon>VoucherList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VoucherTypeList.resx">
+      <DependentUpon>VoucherTypeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

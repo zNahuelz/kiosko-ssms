@@ -96,7 +96,7 @@
             this.moreTab,
             this.helpTab});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1641, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1669, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -344,12 +344,14 @@
             this.btnPaymentTypeList.ImageLarge = global::kiosko_ssms.Properties.Resources.cardfile_1;
             this.btnPaymentTypeList.ImageSmall = global::kiosko_ssms.Properties.Resources.cardfile_1;
             this.btnPaymentTypeList.TextLine1 = "LISTADO";
+            this.btnPaymentTypeList.Click += new System.EventHandler(this.btnPaymentTypeList_Click);
             // 
             // btnManagePaymentType
             // 
             this.btnManagePaymentType.ImageLarge = global::kiosko_ssms.Properties.Resources.address_book_card_copy_0;
             this.btnManagePaymentType.ImageSmall = global::kiosko_ssms.Properties.Resources.address_book_card_copy_0;
             this.btnManagePaymentType.TextLine1 = "GESTIONAR";
+            this.btnManagePaymentType.Click += new System.EventHandler(this.btnManagePaymentType_Click);
             // 
             // rbVoucherTypesGroup
             // 
@@ -369,18 +371,21 @@
             this.btnVoucherTypeList.ImageLarge = global::kiosko_ssms.Properties.Resources.window_red_hilights;
             this.btnVoucherTypeList.ImageSmall = global::kiosko_ssms.Properties.Resources.window_red_hilights;
             this.btnVoucherTypeList.TextLine1 = "LISTADO";
+            this.btnVoucherTypeList.Click += new System.EventHandler(this.btnVoucherTypeList_Click);
             // 
             // btnNewVoucherType
             // 
             this.btnNewVoucherType.ImageLarge = global::kiosko_ssms.Properties.Resources.write_red;
             this.btnNewVoucherType.ImageSmall = global::kiosko_ssms.Properties.Resources.write_red;
             this.btnNewVoucherType.TextLine1 = "NUEVO";
+            this.btnNewVoucherType.Click += new System.EventHandler(this.btnNewVoucherType_Click);
             // 
             // btnManageVoucherTypes
             // 
             this.btnManageVoucherTypes.ImageLarge = global::kiosko_ssms.Properties.Resources.windows_three;
             this.btnManageVoucherTypes.ImageSmall = global::kiosko_ssms.Properties.Resources.windows_three;
             this.btnManageVoucherTypes.TextLine1 = "GESTIONAR";
+            this.btnManageVoucherTypes.Click += new System.EventHandler(this.btnManageVoucherTypes_Click);
             // 
             // helpTab
             // 
@@ -424,11 +429,11 @@
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssDate,
             this.tssClock});
-            this.ssMain.Location = new System.Drawing.Point(0, 350);
+            this.ssMain.Location = new System.Drawing.Point(0, 455);
             this.ssMain.Name = "ssMain";
             this.ssMain.ProgressBars = null;
             this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.ssMain.Size = new System.Drawing.Size(1641, 26);
+            this.ssMain.Size = new System.Drawing.Size(1669, 26);
             this.ssMain.TabIndex = 5;
             this.ssMain.Text = "kryptonStatusStrip1";
             // 
@@ -437,7 +442,7 @@
             this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
             this.tssDate.Name = "tssDate";
-            this.tssDate.Size = new System.Drawing.Size(1496, 21);
+            this.tssDate.Size = new System.Drawing.Size(1524, 21);
             this.tssDate.Spring = true;
             this.tssDate.Text = "<---DATE--->";
             this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -456,7 +461,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1641, 376);
+            this.ClientSize = new System.Drawing.Size(1669, 481);
             this.CloseBox = false;
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.mainRibbon);
