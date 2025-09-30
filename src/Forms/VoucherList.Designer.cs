@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoucherList));
             this.dgvVouchers = new Krypton.Toolkit.KryptonDataGridView();
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
@@ -42,6 +43,9 @@
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.tssLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pbMain = new System.Windows.Forms.PictureBox();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnViewPdf = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSavePdf = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVouchers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).BeginInit();
@@ -50,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbSearchMode)).BeginInit();
             this.ssMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
+            this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvVouchers
@@ -72,6 +77,7 @@
             this.dgvVouchers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVouchers_CellClick);
             this.dgvVouchers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVouchers_CellDoubleClick);
             this.dgvVouchers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvVouchers_CellFormatting);
+            this.dgvVouchers.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvVouchers_CellMouseDown);
             // 
             // gbMain
             // 
@@ -184,9 +190,9 @@
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssLabel});
-            this.ssMain.Location = new System.Drawing.Point(0, 586);
+            this.ssMain.Location = new System.Drawing.Point(0, 581);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(980, 26);
+            this.ssMain.Size = new System.Drawing.Size(970, 26);
             this.ssMain.TabIndex = 6;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -208,11 +214,34 @@
             this.pbMain.TabIndex = 7;
             this.pbMain.TabStop = false;
             // 
+            // contextMenu
+            // 
+            this.contextMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnViewPdf,
+            this.btnSavePdf});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(181, 70);
+            // 
+            // btnViewPdf
+            // 
+            this.btnViewPdf.Name = "btnViewPdf";
+            this.btnViewPdf.Size = new System.Drawing.Size(180, 22);
+            this.btnViewPdf.Text = "VER PDF";
+            this.btnViewPdf.Click += new System.EventHandler(this.btnViewPdf_Click);
+            // 
+            // btnSavePdf
+            // 
+            this.btnSavePdf.Name = "btnSavePdf";
+            this.btnSavePdf.Size = new System.Drawing.Size(180, 22);
+            this.btnSavePdf.Text = "GUARDAR PDF";
+            this.btnSavePdf.Click += new System.EventHandler(this.btnSavePdf_Click);
+            // 
             // VoucherList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 612);
+            this.ClientSize = new System.Drawing.Size(970, 607);
             this.Controls.Add(this.pbMain);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.gbMain);
@@ -235,6 +264,7 @@
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
+            this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +285,8 @@
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.Label label3;
         private Krypton.Toolkit.KryptonDateTimePicker dtpDate;
+        private System.Windows.Forms.ContextMenuStrip contextMenu;
+        private System.Windows.Forms.ToolStripMenuItem btnViewPdf;
+        private System.Windows.Forms.ToolStripMenuItem btnSavePdf;
     }
 }

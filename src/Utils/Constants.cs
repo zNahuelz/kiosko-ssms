@@ -50,6 +50,7 @@ namespace kiosko_ssms.Utils
                 public static string ID_NOT_INTEGER = "El ID debe ser un número entero válido.";
                 public static string YEAR_WITHOUT_VOUCHERS = "No se encontraron ventas registradas en el año seleccionado.";
                 public static string MONTH_WITHOUT_VOUCHERS = "No se encontraron ventas registradas en el mes seleccionado.";
+                public static string UNEXPECTED_ERROR = "Ha ocurrido un error inesperado. \n DETALLES: \n";
             }
 
             public static class Info

@@ -103,6 +103,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap address_book_user {
+            get {
+                object obj = ResourceManager.GetObject("address_book_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Address_BookXP {
             get {
                 object obj = ResourceManager.GetObject("Address BookXP", resourceCulture);
@@ -396,6 +406,26 @@ namespace kiosko_ssms.Properties {
         internal static System.Drawing.Bitmap usd {
             get {
                 object obj = ResourceManager.GetObject("usd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_green_2 {
+            get {
+                object obj = ResourceManager.GetObject("users_green-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_key_4 {
+            get {
+                object obj = ResourceManager.GetObject("users_key-4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

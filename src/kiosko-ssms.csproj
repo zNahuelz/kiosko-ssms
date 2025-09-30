@@ -42,6 +42,12 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Krypton.Ribbon, Version=95.25.6.174, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Ribbon.95.25.6.174\lib\net48\Krypton.Ribbon.dll</HintPath>
     </Reference>
@@ -286,6 +292,12 @@
     <Compile Include="Forms\NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewVoucherType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +358,12 @@
     <Compile Include="Forms\SupplierList.Designer.cs">
       <DependentUpon>SupplierList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VoucherDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +392,7 @@
     <Compile Include="Services\VoucherService.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\PdfGenerator.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +441,9 @@
     <EmbeddedResource Include="Forms\NewSupplier.resx">
       <DependentUpon>NewSupplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewVoucherType.resx">
       <DependentUpon>NewVoucherType.cs</DependentUpon>
     </EmbeddedResource>
@@ -451,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupplierList.resx">
       <DependentUpon>SupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VoucherDetail.resx">
       <DependentUpon>VoucherDetail.cs</DependentUpon>
@@ -536,6 +561,9 @@
     <None Include="Resources\write_red.png" />
     <None Include="Resources\window_red_hilights.png" />
     <None Include="Resources\windows_three.png" />
+    <None Include="Resources\users_key-4.png" />
+    <None Include="Resources\users_green-2.png" />
+    <None Include="Resources\address_book_user.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -5,6 +5,7 @@ using kiosko_ssms.Utils;
 using Krypton.Ribbon;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
@@ -233,5 +234,55 @@ namespace kiosko_ssms.Forms
                 }
             }
         }
+
+        private void dgvVouchers_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvVouchers.ClearSelection();
+                dgvVouchers.Rows[e.RowIndex].Selected = true;
+                dgvVouchers.CurrentCell = dgvVouchers.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                contextMenu.Show(Cursor.Position);
+            }
+        }
+
+        private void btnViewPdf_Click(object sender, EventArgs e)
+        {
+            if (dgvVouchers.SelectedRows.Count > 0)
+            {
+                var voucher = (Voucher)dgvVouchers.SelectedRows[0].DataBoundItem;
+                string pdfPath = PdfGenerator.GenerateVoucher(voucher);
+                Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
+            }
+        }
+
+        private void btnSavePdf_Click(object sender, EventArgs e)
+        {
+            if (dgvVouchers.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Title = "Guardar Comprobante en PDF";
+                        saveFileDialog.Filter = "Archivo PDF|*.pdf";
+                        saveFileDialog.FileName = $"{(dgvVouchers.SelectedRows[0].DataBoundItem as Voucher).SaleSerial}_{DateTime.Now:dd_MM_yyyy}.pdf";
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+
+                            Voucher voucher = (Voucher)dgvVouchers.SelectedRows[0].DataBoundItem;
+                            string pdfPath = PdfGenerator.GenerateVoucher(voucher, saveFileDialog.FileName);
+                            MessageBox.Show($"Comprobante guardado en:\n{pdfPath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{Constants.Messages.Error.UNEXPECTED_ERROR} {ex}", Constants.Messages.Error.ERROR_TAG, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
     }
 }

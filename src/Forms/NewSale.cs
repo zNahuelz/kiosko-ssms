@@ -18,6 +18,7 @@ namespace kiosko_ssms.Forms
         private double subtotal = 0;
         private double tax = 0;
         private double total = 0;
+        private decimal igvValue = 0;
         private List<PaymentType> paymentTypes = new List<PaymentType>();
         private List<VoucherType> voucherTypes = new List<VoucherType>();
 
@@ -239,12 +240,15 @@ namespace kiosko_ssms.Forms
         {
             subtotal = 0;
             total = 0;
+            igvValue = 0;
             foreach (CartItem item in cart)
             {
                 subtotal += (double)(item.Amount * item.Cost);
                 total += (double)(item.Amount * item.Cost);
+                igvValue += (decimal)item.Tax;
             }
             lblSubtotal.Text = $"SUBTOTAL: {subtotal:F2}";
+            lblTax.Text = $"IGV: {igvValue:F2}";
             lblTotal.Text = $"TOTAL: {total:F2}";
             HandleSaleButtons();
         }

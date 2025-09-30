@@ -73,6 +73,10 @@
             this.btnVoucherTypeList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnNewVoucherType = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnManageVoucherTypes = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.rbUsersGroup = new Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple9 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnUserList = new Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.btnNewUser = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.helpTab = new Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple6 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -82,8 +86,11 @@
             this.ssMain = new Krypton.Toolkit.KryptonStatusStrip();
             this.tssDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssClock = new System.Windows.Forms.ToolStripStatusLabel();
+            this.kryptonToolStrip1 = new Krypton.Toolkit.KryptonToolStrip();
+            this.btnUsername = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             this.ssMain.SuspendLayout();
+            this.kryptonToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainRibbon
@@ -96,7 +103,7 @@
             this.moreTab,
             this.helpTab});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1669, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1741, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -324,7 +331,8 @@
             // 
             this.moreTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
             this.rbPaymentTypesGroup,
-            this.rbVoucherTypesGroup});
+            this.rbVoucherTypesGroup,
+            this.rbUsersGroup});
             this.moreTab.Text = "OTROS";
             // 
             // rbPaymentTypesGroup
@@ -387,6 +395,32 @@
             this.btnManageVoucherTypes.TextLine1 = "GESTIONAR";
             this.btnManageVoucherTypes.Click += new System.EventHandler(this.btnManageVoucherTypes_Click);
             // 
+            // rbUsersGroup
+            // 
+            this.rbUsersGroup.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple9});
+            this.rbUsersGroup.TextLine1 = "USUARIOS";
+            // 
+            // kryptonRibbonGroupTriple9
+            // 
+            this.kryptonRibbonGroupTriple9.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnUserList,
+            this.btnNewUser});
+            // 
+            // btnUserList
+            // 
+            this.btnUserList.ImageLarge = global::kiosko_ssms.Properties.Resources.users_key_4;
+            this.btnUserList.ImageSmall = global::kiosko_ssms.Properties.Resources.users_key_4;
+            this.btnUserList.TextLine1 = "LISTADO";
+            this.btnUserList.Click += new System.EventHandler(this.btnUserList_Click);
+            // 
+            // btnNewUser
+            // 
+            this.btnNewUser.ImageLarge = global::kiosko_ssms.Properties.Resources.users_green_2;
+            this.btnNewUser.ImageSmall = global::kiosko_ssms.Properties.Resources.users_green_2;
+            this.btnNewUser.TextLine1 = "NUEVO";
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
+            // 
             // helpTab
             // 
             this.helpTab.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
@@ -429,11 +463,11 @@
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssDate,
             this.tssClock});
-            this.ssMain.Location = new System.Drawing.Point(0, 455);
+            this.ssMain.Location = new System.Drawing.Point(0, 379);
             this.ssMain.Name = "ssMain";
             this.ssMain.ProgressBars = null;
             this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.ssMain.Size = new System.Drawing.Size(1669, 26);
+            this.ssMain.Size = new System.Drawing.Size(1741, 26);
             this.ssMain.TabIndex = 5;
             this.ssMain.Text = "kryptonStatusStrip1";
             // 
@@ -442,7 +476,7 @@
             this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
             this.tssDate.Name = "tssDate";
-            this.tssDate.Size = new System.Drawing.Size(1524, 21);
+            this.tssDate.Size = new System.Drawing.Size(1596, 21);
             this.tssDate.Spring = true;
             this.tssDate.Text = "<---DATE--->";
             this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -456,13 +490,36 @@
             this.tssClock.Text = "<----CLOCK---->";
             this.tssClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // kryptonToolStrip1
+            // 
+            this.kryptonToolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.kryptonToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnUsername});
+            this.kryptonToolStrip1.Location = new System.Drawing.Point(0, 115);
+            this.kryptonToolStrip1.Name = "kryptonToolStrip1";
+            this.kryptonToolStrip1.Size = new System.Drawing.Size(1741, 25);
+            this.kryptonToolStrip1.TabIndex = 7;
+            this.kryptonToolStrip1.Text = "kryptonToolStrip1";
+            // 
+            // btnUsername
+            // 
+            this.btnUsername.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsername.ForeColor = System.Drawing.Color.Snow;
+            this.btnUsername.Image = global::kiosko_ssms.Properties.Resources.address_book_user;
+            this.btnUsername.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUsername.Name = "btnUsername";
+            this.btnUsername.Size = new System.Drawing.Size(192, 22);
+            this.btnUsername.Text = "USUARIO: N/A - ROL: DEV.";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1669, 481);
+            this.ClientSize = new System.Drawing.Size(1741, 405);
             this.CloseBox = false;
+            this.Controls.Add(this.kryptonToolStrip1);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.mainRibbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -477,6 +534,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).EndInit();
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
+            this.kryptonToolStrip1.ResumeLayout(false);
+            this.kryptonToolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,5 +595,11 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton btnVoucherTypeList;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnManageVoucherTypes;
         private Krypton.Ribbon.KryptonRibbonGroupButton btnNewVoucherType;
+        private Krypton.Ribbon.KryptonRibbonGroup rbUsersGroup;
+        private Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple9;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnUserList;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnNewUser;
+        private Krypton.Toolkit.KryptonToolStrip kryptonToolStrip1;
+        private System.Windows.Forms.ToolStripButton btnUsername;
     }
 }

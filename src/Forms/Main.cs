@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kiosko_ssms.Data.Entities;
+using System;
 using System.Windows.Forms;
 
 namespace kiosko_ssms.Forms
@@ -28,11 +29,15 @@ namespace kiosko_ssms.Forms
         private EditVoucherType editVoucherTypeForm;
         private EditPaymentType editPaymentTypeForm;
         private PaymentTypeList paymentTypeListForm;
+        private UserList userListForm;
+        private NewUser newUserForm;
 
         private NewSale newSaleForm;
 
         private About aboutForm;
         private Settings settingsForm;
+
+        private User currentUser { get; set; }
 
         public Main()
         {
@@ -44,6 +49,57 @@ namespace kiosko_ssms.Forms
         private void Main_Load(object sender, EventArgs e)
         {
             OpenStartupTool();
+            ManagePermissions("GERENTE");
+        }
+
+        private void ManagePermissions(string test)
+        {
+            try
+            {
+                switch (test)
+                //switch (user.Role?.Name?.Trim().ToUpper())
+                {
+                    case "VENDEDOR":
+                        HandleSellerPermissions();
+                        break;
+                    case "GERENTE":
+                        HandleManagerPermissions();
+                        break;
+                    default: goto case "VENDEDOR";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al gestionar los permisos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void HandleSellerPermissions()
+        {
+            btnSalesReport.Visible = false;
+            btnNewProduct.Visible = false;
+            btnEditProduct.Visible = false;
+            btnNewSupplier.Visible = false;
+            btnEditSupplier.Visible = false;
+            btnCustomerList.Visible = true;
+            btnNewCustomer.Visible = true;
+            btnEditCustomer.Visible = true;
+            btnPresentationList.Visible = true;
+            btnNewPresentation.Visible = false;
+            btnEditPresentation.Visible = false;
+            btnVoucherList.Visible = true;
+            btnKillForms.Visible = true;
+            btnSettings.Visible = false;
+            rbVoucherTypesGroup.Visible = false;
+            rbPaymentTypesGroup.Visible = false;
+        }
+
+        private void HandleManagerPermissions()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.Visible = true;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -197,6 +253,16 @@ namespace kiosko_ssms.Forms
         private void btnManageVoucherTypes_Click(object sender, EventArgs e)
         {
             OpenForm(ref editVoucherTypeForm, (s, ev) => CloseForm(ref editVoucherTypeForm, s, ev));
+        }
+
+        private void btnUserList_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref userListForm, (s, ev) => CloseForm(ref userListForm, s, ev));
+        }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+            OpenForm(ref newUserForm, (s, ev) => CloseForm(ref newUserForm, s, ev));
         }
 
         private void btnKillForms_Click(object sender, EventArgs e)

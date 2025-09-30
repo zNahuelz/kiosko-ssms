@@ -149,7 +149,17 @@ namespace kiosko_ssms.Forms
                 }
                 else
                 {
-                    FillFields(customers[0]);
+                    if (customers[0].Dni == "00000000")
+                    {
+                        MessageBox.Show("El cliente con DNI 00000000 es un cliente genérico. No puede ser editado.", Constants.Messages.Error.CUSTOMER_NOT_FOUND, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtKeyword.Focus();
+                        ClearFields();
+                        return;
+                    }
+                    else
+                    {
+                        FillFields(customers[0]);
+                    }
                 }
             }
         }

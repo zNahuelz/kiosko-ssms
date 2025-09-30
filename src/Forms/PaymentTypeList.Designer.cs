@@ -41,9 +41,9 @@
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblMessage});
-            this.ssMain.Location = new System.Drawing.Point(0, 552);
+            this.ssMain.Location = new System.Drawing.Point(0, 555);
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(682, 22);
+            this.ssMain.Size = new System.Drawing.Size(686, 22);
             this.ssMain.TabIndex = 3;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 574);
+            this.ClientSize = new System.Drawing.Size(686, 577);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.dgvPaymentType);
