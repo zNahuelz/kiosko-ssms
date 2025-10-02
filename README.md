@@ -39,6 +39,7 @@ Puedes dirigirte a la sección de [releases](https://github.com/zNahuelz/kiosko-
 | seller@app.com  | seller | Vendedor |
 
 ## Imágenes
+
 Inicio de sesión
 <img src="docs/public/login.png" alt="Inicio de sesión"/>
 
