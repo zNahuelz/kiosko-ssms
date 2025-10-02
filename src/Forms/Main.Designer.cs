@@ -61,6 +61,7 @@
             this.btnVoucherList = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.rbManagementGroup = new Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple3 = new Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.btnChangePassword = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnKillForms = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.btnExit = new Krypton.Ribbon.KryptonRibbonGroupButton();
             this.moreTab = new Krypton.Ribbon.KryptonRibbonTab();
@@ -103,7 +104,7 @@
             this.moreTab,
             this.helpTab});
             this.mainRibbon.SelectedTab = this.mainTab;
-            this.mainRibbon.Size = new System.Drawing.Size(1741, 115);
+            this.mainRibbon.Size = new System.Drawing.Size(1811, 115);
             this.mainRibbon.TabIndex = 3;
             // 
             // mainTab
@@ -309,8 +310,17 @@
             // kryptonRibbonGroupTriple3
             // 
             this.kryptonRibbonGroupTriple3.Items.AddRange(new Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.btnChangePassword,
             this.btnKillForms,
             this.btnExit});
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.ImageLarge = global::kiosko_ssms.Properties.Resources.key_padlock_0;
+            this.btnChangePassword.ImageSmall = global::kiosko_ssms.Properties.Resources.key_padlock_0;
+            this.btnChangePassword.TextLine1 = "CAMBIAR";
+            this.btnChangePassword.TextLine2 = "CONTRASEÑA";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnKillForms
             // 
@@ -463,11 +473,11 @@
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssDate,
             this.tssClock});
-            this.ssMain.Location = new System.Drawing.Point(0, 379);
+            this.ssMain.Location = new System.Drawing.Point(0, 443);
             this.ssMain.Name = "ssMain";
             this.ssMain.ProgressBars = null;
             this.ssMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.ssMain.Size = new System.Drawing.Size(1741, 26);
+            this.ssMain.Size = new System.Drawing.Size(1811, 26);
             this.ssMain.TabIndex = 5;
             this.ssMain.Text = "kryptonStatusStrip1";
             // 
@@ -476,7 +486,7 @@
             this.tssDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tssDate.ForeColor = System.Drawing.Color.DarkRed;
             this.tssDate.Name = "tssDate";
-            this.tssDate.Size = new System.Drawing.Size(1596, 21);
+            this.tssDate.Size = new System.Drawing.Size(1666, 21);
             this.tssDate.Spring = true;
             this.tssDate.Text = "<---DATE--->";
             this.tssDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -497,7 +507,7 @@
             this.btnUsername});
             this.kryptonToolStrip1.Location = new System.Drawing.Point(0, 115);
             this.kryptonToolStrip1.Name = "kryptonToolStrip1";
-            this.kryptonToolStrip1.Size = new System.Drawing.Size(1741, 25);
+            this.kryptonToolStrip1.Size = new System.Drawing.Size(1811, 25);
             this.kryptonToolStrip1.TabIndex = 7;
             this.kryptonToolStrip1.Text = "kryptonToolStrip1";
             // 
@@ -517,7 +527,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kiosko_ssms.Properties.Resources.Setup1;
-            this.ClientSize = new System.Drawing.Size(1741, 405);
+            this.ClientSize = new System.Drawing.Size(1811, 469);
             this.CloseBox = false;
             this.Controls.Add(this.kryptonToolStrip1);
             this.Controls.Add(this.ssMain);
@@ -527,7 +537,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KIOSKO v0.7 = SISTEMA SIMPLE DE GESTIÓN DE VENTAS";
+            this.Text = "KIOSKO v1.0 = SISTEMA SIMPLE DE GESTIÓN DE VENTAS";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
@@ -601,5 +611,6 @@
         private Krypton.Ribbon.KryptonRibbonGroupButton btnNewUser;
         private Krypton.Toolkit.KryptonToolStrip kryptonToolStrip1;
         private System.Windows.Forms.ToolStripButton btnUsername;
+        private Krypton.Ribbon.KryptonRibbonGroupButton btnChangePassword;
     }
 }

@@ -127,8 +127,14 @@
   <data name="notepad_file_gear-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad_file_gear-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="server_gear-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server_gear-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="song_yi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\song_yi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appwizard_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appwizard_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Windows Journal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows Journal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +145,14 @@
   <data name="catalog-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\catalog-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Indexing Service" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Indexing Service.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Address BookXP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Address BookXP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="users_green-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users_green-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cylinder_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cylinder_database.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="address_book_card_copy-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\address_book_card_copy-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Directory Services" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Directory Services.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +196,14 @@
   <data name="msg_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msg_error.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="address_book_card_copy-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\address_book_card_copy-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Indexing Service" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Indexing Service.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="server_gear-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server_gear-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="address_book_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\address_book_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_green-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_green-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="outlook_express-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outlook_express-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +223,8 @@
   <data name="users_key-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users_key-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appwizard_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appwizard_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Address BookXP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Address BookXP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_directory-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_directory-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +241,7 @@
   <data name="Setup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Setup1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="address_book_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\address_book_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key_padlock-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key_padlock-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

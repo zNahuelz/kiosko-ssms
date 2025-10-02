@@ -37,7 +37,6 @@
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.btnLogin = new Krypton.Toolkit.KryptonButton();
-            this.btnRecoverAccess = new Krypton.Toolkit.KryptonButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
@@ -56,6 +55,7 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // txtEmail
             // 
@@ -71,6 +71,7 @@
             this.txtPassword.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(276, 23);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // kryptonLabel1
             // 
@@ -104,23 +105,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(351, 176);
+            this.btnLogin.Location = new System.Drawing.Point(351, 177);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(90, 25);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLogin.Values.Text = "INGRESAR";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnRecoverAccess
-            // 
-            this.btnRecoverAccess.Location = new System.Drawing.Point(165, 176);
-            this.btnRecoverAccess.Name = "btnRecoverAccess";
-            this.btnRecoverAccess.Size = new System.Drawing.Size(180, 25);
-            this.btnRecoverAccess.TabIndex = 6;
-            this.btnRecoverAccess.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRecoverAccess.Values.Text = "RECUPERAR ACCESO";
-            this.btnRecoverAccess.Click += new System.EventHandler(this.btnRecoverAccess_Click);
             // 
             // errorProvider
             // 
@@ -130,8 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 213);
-            this.Controls.Add(this.btnRecoverAccess);
+            this.ClientSize = new System.Drawing.Size(486, 214);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.kryptonGroupBox1);
             this.Controls.Add(this.pbLogo);
@@ -162,7 +152,6 @@
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonButton btnLogin;
-        private Krypton.Toolkit.KryptonButton btnRecoverAccess;
         private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

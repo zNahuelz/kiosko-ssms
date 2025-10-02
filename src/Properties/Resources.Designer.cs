@@ -253,6 +253,16 @@ namespace kiosko_ssms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap key_padlock_0 {
+            get {
+                object obj = ResourceManager.GetObject("key_padlock-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Manage_Server_Roles {
             get {
                 object obj = ResourceManager.GetObject("Manage Server Roles", resourceCulture);

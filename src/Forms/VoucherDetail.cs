@@ -72,5 +72,10 @@ namespace kiosko_ssms.Forms
         {
             this.Close();
         }
+
+        private void dgvVoucherDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvVoucherDetail.CurrentRow.Selected = true;
+        }
     }
 }

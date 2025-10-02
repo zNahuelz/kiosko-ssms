@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("kiosko-ssms")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Herramienta para la gestión de ventas")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("kiosko-ssms")]

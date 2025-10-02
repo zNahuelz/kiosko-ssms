@@ -86,7 +86,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "KIOSKO v0.7";
+            this.label1.Text = "KIOSKO v1.0";
             // 
             // pictureBox1
             // 

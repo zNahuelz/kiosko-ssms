@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewUser));
             this.gbMain = new Krypton.Toolkit.KryptonGroupBox();
-            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.txtNames = new Krypton.Toolkit.KryptonTextBox();
-            this.txtSurnames = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
-            this.txtDni = new Krypton.Toolkit.KryptonTextBox();
-            this.lbl99 = new Krypton.Toolkit.KryptonLabel();
-            this.txtPhoneNumber = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
-            this.txtAddress = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
+            this.cbRole = new Krypton.Toolkit.KryptonComboBox();
             this.txtEmail = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
-            this.cbRole = new Krypton.Toolkit.KryptonComboBox();
-            this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
+            this.txtAddress = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            this.txtPhoneNumber = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
+            this.txtDni = new Krypton.Toolkit.KryptonTextBox();
+            this.lbl99 = new Krypton.Toolkit.KryptonLabel();
+            this.txtSurnames = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            this.txtNames = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.btnClear = new Krypton.Toolkit.KryptonButton();
             this.btnSave = new Krypton.Toolkit.KryptonButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -80,69 +80,39 @@
             this.gbMain.TabIndex = 0;
             this.gbMain.Values.Heading = "INFORMACIÓN DEL USUARIO";
             // 
-            // kryptonLabel1
+            // kryptonLabel6
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(18, 20);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(67, 20);
-            this.kryptonLabel1.TabIndex = 0;
-            this.kryptonLabel1.Values.Text = "NOMBRES";
+            this.kryptonLabel6.Location = new System.Drawing.Point(18, 445);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(33, 20);
+            this.kryptonLabel6.TabIndex = 13;
+            this.kryptonLabel6.Values.Text = "ROL";
             // 
-            // txtNames
+            // cbRole
             // 
-            this.txtNames.Location = new System.Drawing.Point(18, 46);
-            this.txtNames.MaxLength = 50;
-            this.txtNames.Name = "txtNames";
-            this.txtNames.Size = new System.Drawing.Size(269, 23);
-            this.txtNames.TabIndex = 1;
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.DropDownWidth = 269;
+            this.cbRole.Location = new System.Drawing.Point(18, 472);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(269, 22);
+            this.cbRole.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbRole.TabIndex = 12;
             // 
-            // txtSurnames
+            // txtEmail
             // 
-            this.txtSurnames.Location = new System.Drawing.Point(18, 107);
-            this.txtSurnames.MaxLength = 50;
-            this.txtSurnames.Name = "txtSurnames";
-            this.txtSurnames.Size = new System.Drawing.Size(269, 23);
-            this.txtSurnames.TabIndex = 3;
+            this.txtEmail.Location = new System.Drawing.Point(18, 410);
+            this.txtEmail.MaxLength = 50;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(269, 23);
+            this.txtEmail.TabIndex = 11;
             // 
-            // kryptonLabel2
+            // kryptonLabel5
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(18, 81);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(71, 20);
-            this.kryptonLabel2.TabIndex = 2;
-            this.kryptonLabel2.Values.Text = "APELLIDOS";
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(18, 171);
-            this.txtDni.MaxLength = 50;
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(269, 23);
-            this.txtDni.TabIndex = 5;
-            // 
-            // lbl99
-            // 
-            this.lbl99.Location = new System.Drawing.Point(18, 145);
-            this.lbl99.Name = "lbl99";
-            this.lbl99.Size = new System.Drawing.Size(105, 20);
-            this.lbl99.TabIndex = 4;
-            this.lbl99.Values.Text = "DOC. IDENTIDAD";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(18, 233);
-            this.txtPhoneNumber.MaxLength = 50;
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(269, 23);
-            this.txtPhoneNumber.TabIndex = 7;
-            // 
-            // kryptonLabel3
-            // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(18, 207);
-            this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(69, 20);
-            this.kryptonLabel3.TabIndex = 6;
-            this.kryptonLabel3.Values.Text = "TELÉFONO";
+            this.kryptonLabel5.Location = new System.Drawing.Point(18, 384);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(50, 20);
+            this.kryptonLabel5.TabIndex = 10;
+            this.kryptonLabel5.Values.Text = "E-MAIL";
             // 
             // txtAddress
             // 
@@ -161,39 +131,69 @@
             this.kryptonLabel4.TabIndex = 8;
             this.kryptonLabel4.Values.Text = "DIRECCIÓN";
             // 
-            // txtEmail
+            // txtPhoneNumber
             // 
-            this.txtEmail.Location = new System.Drawing.Point(18, 410);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(269, 23);
-            this.txtEmail.TabIndex = 11;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(18, 233);
+            this.txtPhoneNumber.MaxLength = 50;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(269, 23);
+            this.txtPhoneNumber.TabIndex = 7;
             // 
-            // kryptonLabel5
+            // kryptonLabel3
             // 
-            this.kryptonLabel5.Location = new System.Drawing.Point(18, 384);
-            this.kryptonLabel5.Name = "kryptonLabel5";
-            this.kryptonLabel5.Size = new System.Drawing.Size(50, 20);
-            this.kryptonLabel5.TabIndex = 10;
-            this.kryptonLabel5.Values.Text = "E-MAIL";
+            this.kryptonLabel3.Location = new System.Drawing.Point(18, 207);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(69, 20);
+            this.kryptonLabel3.TabIndex = 6;
+            this.kryptonLabel3.Values.Text = "TELÉFONO";
             // 
-            // cbRole
+            // txtDni
             // 
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.DropDownWidth = 269;
-            this.cbRole.Location = new System.Drawing.Point(18, 472);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(269, 22);
-            this.cbRole.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbRole.TabIndex = 12;
+            this.txtDni.Location = new System.Drawing.Point(18, 171);
+            this.txtDni.MaxLength = 50;
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(269, 23);
+            this.txtDni.TabIndex = 5;
             // 
-            // kryptonLabel6
+            // lbl99
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(18, 445);
-            this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(33, 20);
-            this.kryptonLabel6.TabIndex = 13;
-            this.kryptonLabel6.Values.Text = "ROL";
+            this.lbl99.Location = new System.Drawing.Point(18, 145);
+            this.lbl99.Name = "lbl99";
+            this.lbl99.Size = new System.Drawing.Size(105, 20);
+            this.lbl99.TabIndex = 4;
+            this.lbl99.Values.Text = "DOC. IDENTIDAD";
+            // 
+            // txtSurnames
+            // 
+            this.txtSurnames.Location = new System.Drawing.Point(18, 107);
+            this.txtSurnames.MaxLength = 50;
+            this.txtSurnames.Name = "txtSurnames";
+            this.txtSurnames.Size = new System.Drawing.Size(269, 23);
+            this.txtSurnames.TabIndex = 3;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(18, 81);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(71, 20);
+            this.kryptonLabel2.TabIndex = 2;
+            this.kryptonLabel2.Values.Text = "APELLIDOS";
+            // 
+            // txtNames
+            // 
+            this.txtNames.Location = new System.Drawing.Point(18, 46);
+            this.txtNames.MaxLength = 50;
+            this.txtNames.Name = "txtNames";
+            this.txtNames.Size = new System.Drawing.Size(269, 23);
+            this.txtNames.TabIndex = 1;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(18, 20);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(67, 20);
+            this.kryptonLabel1.TabIndex = 0;
+            this.kryptonLabel1.Values.Text = "NOMBRES";
             // 
             // btnClear
             // 
@@ -203,6 +203,7 @@
             this.btnClear.TabIndex = 1;
             this.btnClear.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnClear.Values.Text = "LIMPIAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -212,6 +213,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSave.Values.Text = "GUARDAR";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // errorProvider
             // 
@@ -221,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 604);
+            this.ClientSize = new System.Drawing.Size(342, 608);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.gbMain);
@@ -232,6 +234,7 @@
             this.Name = "NewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRO DE USUARIO";
+            this.Load += new System.EventHandler(this.NewUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbMain.Panel)).EndInit();
             this.gbMain.Panel.ResumeLayout(false);
             this.gbMain.Panel.PerformLayout();

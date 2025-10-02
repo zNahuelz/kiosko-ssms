@@ -202,6 +202,12 @@
     <Compile Include="Forms\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,12 +395,16 @@
     <Compile Include="Services\PresentationService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\VoucherService.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\PdfGenerator.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
@@ -564,6 +574,7 @@
     <None Include="Resources\users_key-4.png" />
     <None Include="Resources\users_green-2.png" />
     <None Include="Resources\address_book_user.png" />
+    <None Include="Resources\key_padlock-0.png" />
     <Content Include="server_window.ico" />
   </ItemGroup>
   <ItemGroup />

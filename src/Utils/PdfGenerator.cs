@@ -14,7 +14,12 @@ namespace kiosko_ssms.Utils
             if (string.IsNullOrEmpty(filePath))
             {
                 string appFolder = AppDomain.CurrentDomain.BaseDirectory;
-                filePath = Path.Combine(appFolder, $"{voucher.SaleSerial}_{DateTime.Now:dd_MM_yyyy}.pdf");
+                string vouchersFolder = Path.Combine(appFolder, "vouchers");
+                if (!Directory.Exists(vouchersFolder))
+                {
+                    Directory.CreateDirectory(vouchersFolder);
+                }
+                filePath = Path.Combine(vouchersFolder, $"{voucher.SaleSerial}_{DateTime.Now:dd_MM_yyyy}.pdf");
             }
 
             using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))

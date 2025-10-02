@@ -9,7 +9,6 @@ namespace kiosko_ssms.Services
 {
     public class ProductService
     {
-        //TODO: Use a new dbcontext for each operation.
         private readonly AppDbContext dbContext;
 
         public ProductService(AppDbContext dbContext)

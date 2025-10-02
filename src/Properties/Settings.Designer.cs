@@ -121,7 +121,7 @@ namespace kiosko_ssms.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("REPORTS_FORM")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SALES_FORM")]
         public string startupTool {
             get {
                 return ((string)(this["startupTool"]));

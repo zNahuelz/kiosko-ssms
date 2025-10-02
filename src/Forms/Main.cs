@@ -31,6 +31,7 @@ namespace kiosko_ssms.Forms
         private PaymentTypeList paymentTypeListForm;
         private UserList userListForm;
         private NewUser newUserForm;
+        private ChangePassword changePasswordForm;
 
         private NewSale newSaleForm;
 
@@ -38,6 +39,11 @@ namespace kiosko_ssms.Forms
         private Settings settingsForm;
 
         private User currentUser { get; set; }
+
+        public Main(User user) : this()
+        {
+            currentUser = user;
+        }
 
         public Main()
         {
@@ -49,15 +55,18 @@ namespace kiosko_ssms.Forms
         private void Main_Load(object sender, EventArgs e)
         {
             OpenStartupTool();
-            ManagePermissions("GERENTE");
+            if (currentUser != null)
+            {
+                ManagePermissions(currentUser.Role?.Name?.Trim().ToUpper());
+                btnUsername.Text = $"{currentUser.Names?.Trim().ToUpper()} - ROL: {currentUser.Role?.Name?.Trim().ToUpper()}";
+            }
         }
 
-        private void ManagePermissions(string test)
+        private void ManagePermissions(string userRole)
         {
             try
             {
-                switch (test)
-                //switch (user.Role?.Name?.Trim().ToUpper())
+                switch (userRole)
                 {
                     case "VENDEDOR":
                         HandleSellerPermissions();
@@ -92,6 +101,7 @@ namespace kiosko_ssms.Forms
             btnSettings.Visible = false;
             rbVoucherTypesGroup.Visible = false;
             rbPaymentTypesGroup.Visible = false;
+            rbUsersGroup.Visible = false;
         }
 
         private void HandleManagerPermissions()
@@ -263,6 +273,23 @@ namespace kiosko_ssms.Forms
         private void btnNewUser_Click(object sender, EventArgs e)
         {
             OpenForm(ref newUserForm, (s, ev) => CloseForm(ref newUserForm, s, ev));
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (changePasswordForm == null)
+            {
+                changePasswordForm = new ChangePassword(currentUser)
+                {
+                    MdiParent = this
+                };
+                changePasswordForm.FormClosed += (s, ev) => CloseForm(ref changePasswordForm, s, ev);
+                changePasswordForm.Show();
+            }
+            else
+            {
+                changePasswordForm.Focus();
+            }
         }
 
         private void btnKillForms_Click(object sender, EventArgs e)

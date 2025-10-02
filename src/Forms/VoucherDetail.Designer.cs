@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoucherDetail));
-            this.ssMain = new System.Windows.Forms.StatusStrip();
-            this.tssLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.txtId = new Krypton.Toolkit.KryptonTextBox();
             this.btnExit = new Krypton.Toolkit.KryptonButton();
@@ -62,27 +60,8 @@
             this.txtPaymentType = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel15 = new Krypton.Toolkit.KryptonLabel();
             this.dgvVoucherDetail = new Krypton.Toolkit.KryptonDataGridView();
-            this.ssMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVoucherDetail)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ssMain
-            // 
-            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tssLabel});
-            this.ssMain.Location = new System.Drawing.Point(0, 560);
-            this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(1142, 22);
-            this.ssMain.TabIndex = 27;
-            this.ssMain.Text = "statusStrip1";
-            // 
-            // tssLabel
-            // 
-            this.tssLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tssLabel.ForeColor = System.Drawing.Color.Teal;
-            this.tssLabel.Name = "tssLabel";
-            this.tssLabel.Size = new System.Drawing.Size(268, 17);
-            this.tssLabel.Text = "Doble click para copiar ID/código de barras";
             // 
             // kryptonLabel1
             // 
@@ -352,13 +331,14 @@
             this.dgvVoucherDetail.ReadOnly = true;
             this.dgvVoucherDetail.Size = new System.Drawing.Size(810, 364);
             this.dgvVoucherDetail.TabIndex = 60;
+            this.dgvVoucherDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVoucherDetail_CellClick);
             this.dgvVoucherDetail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvVoucherDetail_CellFormatting);
             // 
             // VoucherDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 582);
+            this.ClientSize = new System.Drawing.Size(1146, 570);
             this.Controls.Add(this.dgvVoucherDetail);
             this.Controls.Add(this.kryptonLabel15);
             this.Controls.Add(this.kryptonLabel14);
@@ -390,7 +370,6 @@
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.ssMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -398,8 +377,6 @@
             this.Name = "VoucherDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DETALLE DE VOUCHER";
-            this.ssMain.ResumeLayout(false);
-            this.ssMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVoucherDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -407,9 +384,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.StatusStrip ssMain;
-        private System.Windows.Forms.ToolStripStatusLabel tssLabel;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonTextBox txtId;
         private Krypton.Toolkit.KryptonButton btnExit;
